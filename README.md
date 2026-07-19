@@ -92,10 +92,10 @@ ridepulse-ai/
 │   │   └── evidence_card_template.md # 证据审校Agent Prompt
 │   └── governor/
 │       └── translation_prompt.md     # 翻译Agent Prompt
-└── images/
-    ├── architecture.png               # 总体架构图
-    ├── data_flow.png                  # 数据流程图
-    └── evidence_card_demo.png         # 证据卡Demo截图
+└── images/                            # 图片资源（计划制作）
+    ├── architecture.png               # 总体架构图（待制作）
+    ├── data_flow.png                  # 数据流程图（待制作）
+    └── evidence_card_demo.png         # 证据卡Demo截图（待制作）
 ```
 
 > 📌 本仓库公开展示方案架构、分类体系和Prompt设计方法。
@@ -111,7 +111,7 @@ ridepulse-ai/
 |------|------|------|---------|
 | 队长/AI架构师 | 张中宝 | 山东外国语职业技术大学 · 软件工程技术 | Claude/GPT/Codex、数学建模、软件项目 |
 | 骑行与商业 | 李昂 | 澳门科技大学 · 工商管理 | 多年骑行经验、产品商业化、竞品研究 |
-| 数据负责人 | 冯敬勤 | 四川师范大学 · 地理信息科学 | GIS、Python数据分析、可视化 |
+| 数据负责人 | 冯敬琴 | 四川师范大学 · 地理信息科学 | GIS、Python数据分析、可视化 |
 
 ---
 
