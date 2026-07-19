@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ridepulse.ai/schemas/feedback-classification-v1.json",
+  "title": "RidePulse AI Feedback Classification Schema v1.0",
+  "description": "骑行用户反馈结构化分类Schema。每条反馈经过理解Agent处理后输出符合此Schema的JSON。",
+  "type": "object",
+  "required": ["feedback_id", "sentiment", "theme_primary", "severity", "jtbd"],
+  "properties": {
+    "feedback_id": {
+      "type": "string",
+      "description": "唯一反馈标识符"
+    },
+    "source_platform": {
+      "type": "string",
+      "description": "来源平台（京东/天猫/App Store/Google Play/知乎/B站/美骑网/Reddit等）"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "原始评论URL"
+    },
+    "source_date": {
+      "type": "string",
+      "description": "原始评论日期（ISO 8601）"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["zh", "en", "ja", "de", "fr", "es", "it", "mixed", "other"]
+    },
+    "original_text": {
+      "type": "string",
+      "description": "原始评论文本（不修改）"
+    },
+    "translated_text": {
+      "type": "string",
+      "description": "翻译后文本（仅当语言非中文且翻译触发时填充）"
+    },
+    "brand": {
+      "type": "string",
+      "description": "产品品牌（迈金/Garmin/Wahoo/百锐腾/iGPSPORT/COROS等）"
+    },
+    "product_model": {
+      "type": "string",
+      "description": "产品型号（如C606/Edge 1050/Kickr Core）"
+    },
+    "firmware_version": {
+      "type": "string",
+      "description": "固件或App版本（用户提及时填充）"
+    },
+    "star_rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "平台评分（如有）"
+    },
+    "sentiment": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4, 5],
+      "description": "1=强烈负面 2=负面 3=中性 4=正面 5=强烈正面"
+    },
+    "theme_primary": {
+      "type": "string",
+      "enum": [
+        "connectivity", "firmware", "navigation", "data_accuracy",
+        "hardware", "display_ux", "after_sales", "price_value",
+        "compatibility", "feature_request", "packaging", "other"
+      ],
+      "description": "一级主题分类"
+    },
+    "theme_secondary": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "connectivity", "firmware", "navigation", "data_accuracy",
+          "hardware", "display_ux", "after_sales", "price_value",
+          "compatibility", "feature_request", "packaging", "other"
+        ]
+      },
+      "description": "二级主题（可多选）"
+    },
+    "scenario": {
+      "type": "string",
+      "enum": ["training", "commuting", "racing", "leisure", "indoor", "unknown"],
+      "description": "使用场景"
+    },
+    "user_type": {
+      "type": "string",
+      "enum": ["beginner", "enthusiast", "competitive", "casual", "unknown"],
+      "description": "用户类型"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["S1", "S2", "S3", "S4", "S5"],
+      "description": "S1=安全关键 S2=核心功能不可用 S3=功能严重受损 S4=使用体验下降 S5=轻度不便"
+    },
+    "purchase_impact": {
+      "type": "string",
+      "enum": ["blocker", "influence", "no_impact", "unknown"],
+      "description": "购买影响"
+    },
+    "jtbd": {
+      "type": "string",
+      "minLength": 10,
+      "description": "待完成任务，格式：用户希望[动作]以达成[目标]"
+    },
+    "is_actionable": {
+      "type": "boolean",
+      "description": "是否包含可行动的信息"
+    },
+    "is_constructive": {
+      "type": "boolean",
+      "description": "是否包含建设性建议"
+    },
+    "is_cross_platform": {
+      "type": "boolean",
+      "description": "同一问题是否在多个平台出现（由发现Agent填充）"
+    },
+    "cross_platform_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "跨平台复现次数（由发现Agent填充）"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "AI分类置信度"
+    },
+    "rationale": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "AI给出此分类的简短理由"
+    },
+    "annotator": {
+      "type": "string",
+      "description": "标注者标识"
+    },
+    "annotation_date": {
+      "type": "string",
+      "format": "date",
+      "description": "标注日期"
+    }
+  }
+}
