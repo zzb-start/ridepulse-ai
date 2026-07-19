@@ -8,7 +8,6 @@
 | 2 | Strava | Year In Sport: Trend Report 2025 | strava.com | 2026-07-19 |
 | 3 | Zwift | SPINBACK 2025 | zwift.com | 2026-07-19 |
 | 4 | ResearchAndMarkets | Cycle Computer Market Report 2025 | researchandmarkets.com/reports/6095437 | 2026-07-19 |
-| 5 | GII Research | Cycling Power Meters Market | gii.tw/report/go1883789 | 2026-07-19 |
 | 6 | 6Wresearch | Global Bike Computer Market (2025-2031) | 6wresearch.com/industry-report/global-bike-computer-market | 2026-07-19 |
 
 ## 新闻报道与行业事件
@@ -23,7 +22,7 @@
 
 | # | 来源 | URL | 访问日期 |
 |---|------|-----|---------|
-| 10 | Garmin Forum — Edge 1050 | forums.garmin.com/sports-fitness/cycling/f/edge-1050/390022 | 2026-07-19 |
+| 10 | Garmin Forum — Edge 1050板块 | forums.garmin.com/sports-fitness/cycling/f/edge-1050/ | 2026-07-19 |
 | 11 | Trustpilot — Wahoo Fitness | au.trustpilot.com/review/www.wahoofitness.com | 2026-07-19 |
 | 12 | TrainerRoad — Kickr Core | trainerroad.com/forum/t/buying-a-new-kickr-help-needed/100362 | 2026-07-19 |
 | 13 | Zwift Forum — Kickr Resistance | forums.zwift.com/t/new-wahoo-kickr-core-resistance/654647 | 2026-07-19 |
