@@ -5,7 +5,10 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.venv/
 venv/
+
+# 凭证
 .env
 
 # IDE
@@ -18,11 +21,19 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Data (sensitive)
+# 测试缓存
+.pytest_cache/
+
+# 数据库（本地状态，不提交）
+*.db
+*.db-journal
+
+# Data (敏感/原始数据不提交)
 *.xlsx
 *.xls
-!sample_feedback_24.csv
+data/raw/*
+!data/raw/README.md
 
-# Output
+# Output（运行产物不提交）
 output/
 logs/

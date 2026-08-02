@@ -11,15 +11,15 @@
 
 ## 📖 项目背景
 
-迈金科技（Magene）成立于2015年，是中国领先的智能骑行科技企业，旗下包含Magene、Onelap（顽鹿）、EXAR等品牌。产品覆盖GPS智能码表（C206-C706系列）、功率计（P325/P505/P705）、智能骑行台和传感器，服务全球100多个国家和地区的数百万用户。2024年智能骑行台出货量全球第一。
+迈金科技（Magene）是中国领先的智能骑行科技企业，旗下包含Magene、Onelap（顽鹿）、EXAR等品牌，产品覆盖GPS智能码表、功率计、智能骑行台和传感器，服务全球100多个国家和地区。
 
-用户反馈分散在App Store、Google Play、Reddit、YouTube、电商平台、骑行社区和客服工单中——数量庞大、多语言、碎片化。RidePulse AI旨在借助AI技术，实现用户反馈收集、分析、归类及洞察输出的智能化升级。
+用户反馈分散在App Store、Google Play、Reddit、电商平台、骑行社区和客服工单中——数量庞大、多语言、碎片化。RidePulse AI拟借助AI技术，实现用户反馈收集、分析、归类及洞察输出的智能化升级。
 
 ---
 
 ## 🎯 方案概述
 
-RidePulse AI是一套由6个Agent组成的流水线系统：
+**RidePulse AI** 拟实现一套Agent流水线系统，将碎片化用户声音转化为可追溯的需求证据卡：
 
 ```
 采集 → 治理 → 理解 → 发现 → 证据审校 → 交付闭环
@@ -35,16 +35,18 @@ RidePulse AI是一套由6个Agent组成的流水线系统：
 
 ---
 
-## 🏗️ 系统架构
+## 🏗️ 系统架构（方案设计阶段）
 
-| Agent | 职责 | 技术选型 |
+| Agent | 职责 | 技术选型（拟采用） |
 |-------|------|---------|
-| ① 采集Agent | 连接20+全球数据源，保留URL/时间/SKU/版本 | Python + API/HTML解析 |
+| ① 采集Agent | 连接多平台数据源，保留URL/时间/SKU/版本 | Python + API/HTML解析 |
 | ② 治理Agent | MinHash去重 + BGE-M3语义去重 + 语言识别 + 垃圾过滤 | MinHash + BGE-M3 + langID |
 | ③ 理解Agent | 轻量模型 + JSON Schema → 情感/主题/场景/严重度/JTBD | 豆包/通义（模型可替换） |
 | ④ 发现Agent | BGE-M3向量 + HDBSCAN聚类 + 版本/时间异常检测 | BGE-M3 + UMAP + HDBSCAN |
 | ⑤ 证据审校Agent | 六维加权评分 + 高推理模型生成证据卡（强制引用ID） | Claude/GPT（仅处理高分簇） |
 | ⑥ 交付Agent | 飞书多维表格自动写入 → 待办/实验/验证回流 | 飞书开放API |
+
+> ⚠️ **阶段声明**：上述架构为方案设计。当前仓库仅包含确定性基线MVP（无LLM调用），用于验证证据合约、分组逻辑、评分基线和人工复核门控。
 
 ---
 
@@ -55,11 +57,12 @@ RidePulse AI是一套由6个Agent组成的流水线系统：
 | **证据链** | 每条洞察引用原文ID/URL/时间，不可回链自动作废 | 大模型幻觉 |
 | **跨平台校正** | 电商/应用市场/内容平台/垂直社区/客服分层计权 | 单一热帖偏差 |
 | **沉默需求发现** | 严重度×可行动性×购买影响独立于频次评分 | 只看声量 |
+| **双模型复判+人工仲裁** | 独立复判与首轮分类冲突时触发人工仲裁，不自动输出确定结论 | 单模型黑箱 |
 | **实验闭环** | 证据卡→飞书待办→实验→结果回流优化模型 | 一次性报告 |
 
 ---
 
-## 📊 MVP试点目标
+## 📊 试点目标（拟在试点阶段验证）
 
 | 指标 | 目标值 | 测量方法 |
 |------|--------|---------|
@@ -69,7 +72,7 @@ RidePulse AI是一套由6个Agent组成的流水线系统：
 | 可追溯率 | 100%洞察可回链 | 自动校验 |
 | 行动转化 | 30天内进入PRD ≥30% | 飞书状态字段 |
 
-> ⚠️ 以上均为MVP试点目标值，非已实现结果。
+> ⚠️ 以上均为试点目标值，非已实现结果。数值须取得迈金现有VOC流程基线后校准。
 
 ---
 
@@ -77,29 +80,54 @@ RidePulse AI是一套由6个Agent组成的流水线系统：
 
 ```
 ridepulse-ai/
-├── README.md                         # 本文件
+├── README.md                              # 本文件
 ├── LICENSE
 ├── docs/
-│   ├── 01_problem_analysis.md        # 命题分析与行业洞察
-│   ├── 02_solution_design.md         # 技术方案设计
-│   └── 04_references.md              # 参考资料清单
+│   ├── 01_problem_analysis.md             # 命题分析与行业洞察
+│   ├── 02_solution_design.md              # 技术方案设计
+│   └── 04_references.txt                  # 参考资料清单
 ├── data/
-│   └── classification_schema.json    # 分类JSON Schema v1.0
+│   ├── classification_schema.json         # 分类JSON Schema v1.0
+│   └── verified_evidence_sample.json      # 已验证的样例证据数据
 ├── agents/
 │   ├── understander/
-│   │   └── classification_prompt.md  # 理解Agent Prompt
+│   │   └── classification_prompt.md       # 理解Agent Prompt模板
 │   ├── reviewer/
-│   │   └── evidence_card_template.md # 证据审校Agent Prompt
+│   │   └── evidence_card_template.md      # 证据审校Agent Prompt模板
 │   └── governor/
-│       └── translation_prompt.md     # 翻译Agent Prompt
-└── images/                            # 图片资源（计划制作）
-    ├── architecture.png               # 总体架构图（待制作）
-    ├── data_flow.png                  # 数据流程图（待制作）
-    └── evidence_card_demo.png         # 证据卡Demo截图（待制作）
+│       └── translation_prompt.md          # 翻译Agent Prompt模板
+├── scripts/
+│   ├── __init__.py
+│   └── run_mvp.py                         # 确定性基线MVP（无LLM）
+├── tests/
+│   └── test_run_mvp.py                    # MVP基线测试
+├── output/
+│   └── evidence_cards.md                  # MVP基线输出示例
+└── images/
+    └── README.md                          # 图片资源说明（待制作）
 ```
 
-> 📌 本仓库公开展示方案架构、分类体系和Prompt设计方法。
-> 竞品研究数据、样例分析结果等见团队Notion页面（链接见报名表）。
+> 📌 本仓库公开展示方案架构、分类体系和Prompt设计方法。完整数据（41条反馈样本、来源台账、双人标注记录）见团队参赛提交的配套CSV文件。
+
+---
+
+## 🧪 快速开始
+
+### 环境要求
+
+```bash
+# Python 3.10+
+pip install -r requirements.txt  # 拟在正式试点阶段提供
+```
+
+### 运行确定性基线MVP
+
+```bash
+# 对样例证据数据运行确定性基线（无LLM/Embedding调用）
+python scripts/run_mvp.py --input data/verified_evidence_sample.json --output output/evidence_cards.md
+```
+
+> 当前基线MVP为确定性规则引擎——**不使用LLM，不使用Embedding模型**。它证明的是证据合约、分组逻辑、评分公式和人工复核门控的正确性。完整的多Agent流水线（含双模型复判、跨语言聚类、证据卡自动生成）为方案设计，拟在试点阶段实现。
 
 ---
 
@@ -111,19 +139,24 @@ ridepulse-ai/
 | 骑行与商业 | 李昂 | 澳门科技大学 · 工商管理 | 多年骑行经验、产品商业化、竞品研究 |
 | 数据负责人 | 冯敬琴 | 四川师范大学 · 地理信息科学 | GIS、Python数据分析、可视化 |
 
+三人背景构成"行业判断—数据验证—产品落地"的闭环：队长深度AI架构→骑行负责人垂直骑行领域→数据负责人严谨分析验证。
+
 ---
 
 ## 📚 参考资料
 
-详见 [`docs/04_references.md`](docs/04_references.md)
+详见 [`docs/04_references.txt`](docs/04_references.txt)
 
 核心来源：
 - PeopleForBikes — 2024 U.S. Bicycling Participation Study
 - Strava — Year In Sport: Trend Report 2025
-- Zwift — SPINBACK 2025
 - road.cc — Garmin "Blue Triangle of Death" (Jan 2025)
 - The Verge — Strava API Debacle (Nov 2024)
+- ResearchAndMarkets — Cycle Computer Market Report 2025
+- BGE-M3: BAAI (2024)
 - 迈金科技官网 — magene.cn
+
+完整来源台账（含20条来源的原文摘录、结论边界和访问日期）见参赛提交文件《来源与证据台账.csv》。
 
 ---
 

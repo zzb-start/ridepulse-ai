@@ -1,0 +1,178 @@
+{
+  "$schema": "https://ridepulse.ai/schemas/data-contract-v1.json",
+  "contract_name": "RidePulse AI Data Contract",
+  "contract_version": "v1",
+  "frozen_date": "2026-08-02",
+  "frozen_by": "张中宝（队长）",
+  "status": "FROZEN",
+  "pilot_scope": {
+    "pilot_products": ["骑行码表 (C506/C606/C706)", "OnelapFit App"],
+    "focus_problems": ["同步可靠性", "App/固件稳定性", "导航可靠性"],
+    "languages": ["zh", "en"],
+    "collection_methods": ["标准CSV导入", "至少一个合规公开应用商店连接器 (App Store RSS/JSON)"],
+    "system_outputs": ["需求簇", "优先级", "证据卡", "人工复核", "飞书待办"],
+    "not_in_scope": [
+      "全球全平台实时爬虫",
+      "企业内部系统直连",
+      "生产级实时告警",
+      "自动根因定论"
+    ]
+  },
+  "id_rules": {
+    "feedback_id": "F0001 (四位数字)",
+    "source_record_id": "同一来源页面中的同一条用户发言唯一; 同一发言拆成多个问题时共享",
+    "cluster_id": "CL-0001 (四位数字)",
+    "card_id": "EC-2026-0001 (年份-四位数字)",
+    "run_id": "RUN-YYYYMMDD-HHMMSS",
+    "ingest_batch_id": "由导入批次生成，如 BATCH-20260802-120000"
+  },
+  "enums": {
+    "source_type": ["app_store", "ecommerce", "forum", "social", "support", "news", "other"],
+    "source_permalink_level": ["exact_record", "page_only", "archive_only", "unverified"],
+    "source_date_precision": ["day", "month", "year", "unknown"],
+    "language": ["zh", "en", "de", "ja", "fr", "es", "it", "other (ISO 639-1)"],
+    "text_provenance": ["verbatim", "paraphrased", "unverified"],
+    "translation_method": ["not_needed", "human", "ai", "unverified"],
+    "evidence_status": ["verified", "partially_verified", "unverified", "rejected"],
+    "sentiment": [1, 2, 3, 4, 5],
+    "theme_primary": ["connectivity", "firmware", "navigation", "data_accuracy", "hardware", "display_ux", "after_sales", "price_value", "compatibility", "feature_request", "packaging", "other"],
+    "theme_secondary": ["同 theme_primary，可多选"],
+    "need_type": ["real_need", "feature_request", "operation_misunderstanding", "incidental_failure", "emotional_complaint", "unknown"],
+    "scenario": ["training", "commuting", "racing", "leisure", "indoor", "maintenance", "unknown"],
+    "user_type": ["beginner", "enthusiast", "competitive", "casual", "unknown"],
+    "severity": ["S1", "S2", "S3", "S4", "S5"],
+    "purchase_impact": ["blocker", "influence", "no_impact", "unknown"],
+    "review_status": ["agreed", "conflict", "failed"],
+    "human_review_status": ["pending", "approved", "corrected", "rejected"]
+  },
+  "severity_definition": {
+    "S1": "安全关键（导航失效致迷路、健康风险、夜间灯光失效）",
+    "S2": "核心功能不可用（无法开机、无法记录数据、App无法启动）",
+    "S3": "功能严重受损（数据丢失、单次骑行≥3次断连、循环重启可恢复）",
+    "S4": "使用体验下降（屏幕不可读、触控延迟、续航不足）",
+    "S5": "轻度不便（功能建议、美观、非核心功能）"
+  },
+  "models": {
+    "FeedbackRecord": {
+      "description": "单条用户反馈的结构化记录，全系统统一数据契约",
+      "required_fields": [
+        "feedback_id", "source_record_id", "ingest_batch_id", "source_platform",
+        "source_type", "source_url", "source_permalink_level", "source_date_precision",
+        "accessed_at", "language", "brand", "original_text", "text_provenance",
+        "translation_method", "evidence_status"
+      ],
+      "optional_fields": [
+        "source_date", "source_date_raw", "market", "product_model", "firmware_version",
+        "app_version", "translated_text", "archive_path", "archive_sha256", "verification_note"
+      ],
+      "properties": {
+        "feedback_id": {"type": "string", "required": true, "description": "唯一反馈ID，格式 F0001"},
+        "source_record_id": {"type": "string", "required": true, "description": "同一原帖拆分的多条反馈共享此ID"},
+        "ingest_batch_id": {"type": "string", "required": true, "description": "导入批次"},
+        "source_platform": {"type": "string", "required": true, "description": "来源平台名称（App Store/Google Play/京东/知乎/B站等）"},
+        "source_type": {"type": "enum", "required": true, "enum": "source_type", "description": "来源渠道类型"},
+        "source_url": {"type": "string(https)", "required": true, "description": "最接近原始内容的URL，必须HTTPS"},
+        "source_permalink_level": {"type": "enum", "required": true, "enum": "source_permalink_level", "description": "链接精度"},
+        "source_date": {"type": "date|null", "required": false, "description": "原始日期 YYYY-MM-DD，无法确定则null"},
+        "source_date_raw": {"type": "string|null", "required": false, "description": "页面原始日期文本"},
+        "source_date_precision": {"type": "enum", "required": true, "enum": "source_date_precision", "description": "日期精度"},
+        "accessed_at": {"type": "date", "required": true, "description": "核验/访问日期"},
+        "language": {"type": "string", "required": true, "description": "ISO 639-1，如 zh/en/de/ja"},
+        "market": {"type": "string", "required": false, "description": "国家或地区，未知填 unknown"},
+        "brand": {"type": "string", "required": true, "description": "品牌（Magene/Garmin/Wahoo等）"},
+        "product_model": {"type": "string|null", "required": false, "description": "产品型号，未出现则null"},
+        "firmware_version": {"type": "string|null", "required": false, "description": "固件版本，未出现则null"},
+        "app_version": {"type": "string|null", "required": false, "description": "App版本，未出现则null"},
+        "original_text": {"type": "string", "required": true, "description": "逐字原文，不得修改"},
+        "translated_text": {"type": "string|null", "required": false, "description": "中文译文，不覆盖原文"},
+        "text_provenance": {"type": "enum", "required": true, "enum": "text_provenance", "description": "原文是否逐字"},
+        "translation_method": {"type": "enum", "required": true, "enum": "translation_method", "description": "翻译方式"},
+        "archive_path": {"type": "string|null", "required": false, "description": "截图/存档相对路径"},
+        "archive_sha256": {"type": "string|null", "required": false, "description": "存档SHA-256"},
+        "evidence_status": {"type": "enum", "required": true, "enum": "evidence_status", "description": "证据核验状态"},
+        "verification_note": {"type": "string|null", "required": false, "description": "核验说明与边界"}
+      }
+    },
+    "ClassificationResult": {
+      "description": "第一轮AI分类输出",
+      "properties": {
+        "feedback_id": {"type": "string", "required": true, "description": "关联反馈ID"},
+        "sentiment": {"type": "enum", "required": true, "enum": "sentiment", "description": "1=强烈负面 2=负面 3=中性 4=正面 5=强烈正面"},
+        "theme_primary": {"type": "enum", "required": true, "enum": "theme_primary", "description": "一级主题"},
+        "theme_secondary": {"type": "array", "required": false, "enum": "theme_secondary", "description": "二级主题可多选"},
+        "need_type": {"type": "enum", "required": true, "enum": "need_type", "description": "需求五分类"},
+        "scenario": {"type": "enum", "required": false, "enum": "scenario", "description": "使用场景"},
+        "user_type": {"type": "enum", "required": false, "enum": "user_type", "description": "用户类型，不猜"},
+        "severity": {"type": "enum", "required": true, "enum": "severity", "description": "严重度"},
+        "purchase_impact": {"type": "enum", "required": false, "enum": "purchase_impact", "description": "购买影响，无明确证据则unknown"},
+        "jtbd": {"type": "string", "required": true, "description": "用户希望[动作]以达成[目标]，minLength 10"},
+        "root_cause_hypotheses": {"type": "array<string>", "required": false, "maxItems": 3, "description": "根因假设，待验证"},
+        "is_actionable": {"type": "boolean", "required": true, "description": "是否可行动"},
+        "is_constructive": {"type": "boolean", "required": true, "description": "是否建设性"},
+        "confidence": {"type": "number(0-1)", "required": true, "description": "置信度"},
+        "rationale": {"type": "string", "required": true, "maxLength": 200, "description": "分类理由"},
+        "model_name": {"type": "string", "required": true, "description": "模型名"},
+        "prompt_version": {"type": "string", "required": true, "description": "Prompt版本"}
+      }
+    },
+    "ReviewResult": {
+      "description": "独立第二轮复判输出",
+      "properties": {
+        "feedback_id": {"type": "string", "required": true, "description": "关联反馈ID"},
+        "review_sentiment": {"type": "enum", "required": true, "enum": "sentiment"},
+        "review_theme_primary": {"type": "enum", "required": true, "enum": "theme_primary"},
+        "review_need_type": {"type": "enum", "required": true, "enum": "need_type"},
+        "review_severity": {"type": "enum", "required": true, "enum": "severity"},
+        "review_purchase_impact": {"type": "enum", "required": true, "enum": "purchase_impact"},
+        "review_jtbd": {"type": "string", "required": true},
+        "review_confidence": {"type": "number(0-1)", "required": true},
+        "conflict_fields": {"type": "array<string>", "required": false, "description": "冲突字段名列表"},
+        "review_status": {"type": "enum", "required": true, "enum": "review_status"},
+        "human_review_required": {"type": "boolean", "required": true},
+        "model_name": {"type": "string", "required": true},
+        "prompt_version": {"type": "string", "required": true}
+      }
+    },
+    "EvidenceCard": {
+      "description": "需求证据卡",
+      "properties": {
+        "card_id": {"type": "string", "required": true, "description": "EC-2026-0001"},
+        "cluster_id": {"type": "string", "required": true, "description": "关联需求簇CL-0001"},
+        "title": {"type": "string", "required": true, "description": "具体问题标题"},
+        "problem_statement": {"type": "string", "required": true, "description": "只描述证据支持的问题"},
+        "priority_score": {"type": "integer(0-100)", "required": true, "description": "代码计算"},
+        "priority_level": {"type": "string", "required": true, "description": "P0>=80 P1=65-79 P2=45-64 P3<45"},
+        "confidence_level": {"type": "string", "required": true, "description": "high/medium/low"},
+        "evidence_ids": {"type": "array<string>", "required": true, "minItems": 1, "description": "引用反馈ID"},
+        "platforms": {"type": "array<string>", "required": false},
+        "brands": {"type": "array<string>", "required": false},
+        "languages": {"type": "array<string>", "required": false},
+        "root_cause_hypotheses": {"type": "array<string>", "required": false, "description": "待验证假设"},
+        "counter_evidence": {"type": "string|null", "required": false},
+        "recommended_actions": {"type": "array<object>", "required": false},
+        "suggested_owner": {"type": "string|null", "required": false},
+        "human_review_status": {"type": "enum", "required": false, "enum": "human_review_status", "description": "默认pending"}
+      }
+    },
+    "AnnotationRecord": {
+      "description": "双人独立标注记录（李昂/冯敬琴使用）",
+      "properties": {
+        "feedback_id": {"type": "string", "required": true, "description": "正式ID F0001"},
+        "annotator_id": {"type": "string", "required": true, "description": "liang 或 feng"},
+        "sentiment": {"type": "enum", "required": true, "enum": "sentiment"},
+        "theme_primary": {"type": "enum", "required": true, "enum": "theme_primary"},
+        "need_type": {"type": "enum", "required": true, "enum": "need_type"},
+        "severity": {"type": "enum", "required": true, "enum": "severity"},
+        "purchase_impact": {"type": "enum", "required": true, "enum": "purchase_impact"},
+        "jtbd": {"type": "string", "required": true},
+        "annotation_note": {"type": "string|null", "required": false, "description": "标注说明"},
+        "annotated_at": {"type": "datetime", "required": true}
+      }
+    }
+  },
+  "annotation_fields": {
+    "blind_batch_visible_fields": ["feedback_id", "original_text", "source_platform", "source_date", "language", "brand", "product_model"],
+    "forbidden_in_blind_batch": ["任何人的标签结果"]
+  },
+  "change_rule": "M1冻结后不得随意修改字段。确需修改时必须同时通知李昂和冯敬琴。"
+}
