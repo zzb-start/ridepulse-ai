@@ -174,6 +174,13 @@ class Pipeline:
             records = [self._row_to_record(row) for row in rows]
             summary.valid_count = len(records)
             summary.total_input = len(records)
+            # resume 不重跑去重阶段，去重数从 DB 的 duplicate_group_id 统计：
+            # 每组代表 1 条 + 未分组记录
+            grouped = {row["duplicate_group_id"] for row in rows
+                       if row["duplicate_group_id"]}
+            summary.deduped_count = len(grouped) + sum(
+                1 for row in rows if not row["duplicate_group_id"]
+            )
 
             classifications = self._load_classifications()
             reviews = self._load_reviews()

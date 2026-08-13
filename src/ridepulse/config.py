@@ -15,6 +15,36 @@ def _require(name: str) -> str:
     return value
 
 
+# 字符串字段 -> (环境变量名, 类默认值)。
+# dataclass 默认值在 import 时固化，.env 加载晚于 import，
+# 因此字段值为类默认值时，须在实例化时重新从环境变量（含 .env 注入的）读取。
+_STR_ENV_KEYS = {
+    "env": ("RIDEPULSE_ENV", "development"),
+    "db_path": ("RIDEPULSE_DB_PATH", "data/ridepulse.db"),
+    "output_dir": ("RIDEPULSE_OUTPUT_DIR", "output"),
+    "llm_base_url": ("LLM_BASE_URL", ""),
+    "llm_api_key": ("LLM_API_KEY", ""),
+    "llm_primary_model": ("LLM_PRIMARY_MODEL", ""),
+    "llm_review_model": ("LLM_REVIEW_MODEL", ""),
+    "llm_evidence_model": ("LLM_EVIDENCE_MODEL", ""),
+    "embedding_mode": ("EMBEDDING_MODE", "api"),
+    "embedding_model": ("EMBEDDING_MODEL", ""),
+    "feishu_app_id": ("FEISHU_APP_ID", ""),
+    "feishu_app_secret": ("FEISHU_APP_SECRET", ""),
+    "feishu_bitable_app_token": ("FEISHU_BITABLE_APP_TOKEN", ""),
+    "feishu_feedback_table_id": ("FEISHU_FEEDBACK_TABLE_ID", ""),
+    "feishu_evidence_table_id": ("FEISHU_EVIDENCE_TABLE_ID", ""),
+    "feishu_review_table_id": ("FEISHU_REVIEW_TABLE_ID", ""),
+    "feishu_experiment_table_id": ("FEISHU_EXPERIMENT_TABLE_ID", ""),
+}
+
+_INT_ENV_KEYS = {
+    "llm_timeout_seconds": "LLM_TIMEOUT_SECONDS",
+    "llm_max_retries": "LLM_MAX_RETRIES",
+    "embedding_dimension": "EMBEDDING_DIMENSION",
+}
+
+
 @dataclass
 class Config:
     """RidePulse 全局配置。
@@ -79,6 +109,16 @@ class Config:
         )
 
     def __post_init__(self) -> None:
+        # 字段值仍是类默认值时，从环境变量回读（覆盖 .env 加载晚于 import 的问题）；
+        # 显式传入的非默认值优先，不被覆盖。
+        for attr, (env_key, default) in _STR_ENV_KEYS.items():
+            value = os.getenv(env_key)
+            if value is not None and getattr(self, attr) == default:
+                setattr(self, attr, value)
+        for attr, env_key in _INT_ENV_KEYS.items():
+            value = os.getenv(env_key)
+            if value is not None:
+                setattr(self, attr, int(value))
         self.db_path = Path(self.db_path)
         self.output_dir = Path(self.output_dir)
 

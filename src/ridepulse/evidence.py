@@ -186,15 +186,33 @@ def _llm_card(cluster: ClusterInfo, members: list[FeedbackRecord],
             "你是一个需求分析助手。只依据给定证据生成证据卡内容，"
             "不得编造任何原文中不存在的根因或数字。只输出 JSON，键包括："
             "title, problem_statement, root_cause_hypotheses, recommended_actions, "
-            "suggested_owner, counter_evidence。",
+            "suggested_owner, counter_evidence。"
+            "recommended_actions 必须是对象数组，每个对象含 action 与 owner 两个字符串键。",
             f"{stats}\n\n证据原文（仅簇内成员）：\n{member_texts}",
         )
+        # 字段级兜底 + 类型规范化（模型输出不可靠，必须防 None/字符串数组）
+        title = str(raw.get("title", "")).strip()
+        problem_statement = str(raw.get("problem_statement", "")).strip()
+        fallback = _deterministic_card(cluster, members, classifications, score)
+        if not title:
+            title = fallback["title"]
+        if not problem_statement:
+            problem_statement = fallback["problem_statement"]
+        actions: list[dict[str, str]] = []
+        for item in list(raw.get("recommended_actions", []))[:5]:
+            if isinstance(item, dict):
+                actions.append({
+                    "action": str(item.get("action", "")).strip(),
+                    "owner": str(item.get("owner", "")).strip() or str(item.get("action", "")).strip(),
+                })
+            else:
+                actions.append({"action": str(item).strip(), "owner": ""})
         return {
-            "title": str(raw.get("title", "")).strip() or None,
-            "problem_statement": str(raw.get("problem_statement", "")).strip() or None,
-            "root_cause_hypotheses": list(raw.get("root_cause_hypotheses", []))[:3],
-            "recommended_actions": list(raw.get("recommended_actions", []))[:5],
-            "suggested_owner": str(raw.get("suggested_owner", "")).strip() or None,
+            "title": title,
+            "problem_statement": problem_statement,
+            "root_cause_hypotheses": [str(h) for h in list(raw.get("root_cause_hypotheses", []))[:3] if h],
+            "recommended_actions": [a for a in actions if a["action"]],
+            "suggested_owner": str(raw.get("suggested_owner", "")).strip() or fallback["suggested_owner"],
             "counter_evidence": str(raw.get("counter_evidence", "")).strip() or None,
         }
     except Exception as exc:  # noqa: BLE001 — 模型失败回退确定性模板

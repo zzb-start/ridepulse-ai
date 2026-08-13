@@ -127,13 +127,16 @@ class BaseLLMClient:
                     raise LLMClientError("LLM 响应格式异常") from exc
                 self._log_success(start, attempts, usage)
                 return content, usage
-            except httpx.TimeoutException as exc:
+            except (httpx.TimeoutException, httpx.RequestError) as exc:
+                # 超时与连接中断（含 Server disconnected）都按临时故障重试
                 if attempts <= self.max_retries:
                     self._backoff(attempts)
                     continue
-                self._log_failure(start, attempts, "timeout")
-                raise LLMClientError(f"LLM 调用超时（{self.timeout_seconds}s）") from exc
-            except httpx.RequestError as exc:
+                if isinstance(exc, httpx.TimeoutException):
+                    self._log_failure(start, attempts, "timeout")
+                    raise LLMClientError(
+                        f"LLM 调用超时（{self.timeout_seconds}s）"
+                    ) from exc
                 self._log_failure(start, attempts, "connection_error")
                 raise LLMClientError(f"LLM 连接失败: {exc}") from exc
             except LLMClientError:

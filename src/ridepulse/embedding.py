@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import os
 import random
 from typing import Any
 
@@ -139,6 +140,11 @@ class LocalEmbedder:
 
     def _load(self) -> Any:
         if self._encoder is None:
+            # 必须在 import torch 之前设置（Windows 上缺失会卡死在 OpenMP 初始化）
+            os.environ.setdefault("OMP_NUM_THREADS", "1")
+            os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
+            # 模型已在本地缓存时离线加载，避免直连 huggingface.co 超时
+            os.environ.setdefault("HF_HUB_OFFLINE", "1")
             try:
                 from sentence_transformers import SentenceTransformer
             except ImportError as exc:
