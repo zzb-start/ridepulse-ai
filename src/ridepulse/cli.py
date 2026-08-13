@@ -14,12 +14,32 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
 from ridepulse.config import get_config
 from ridepulse.database import Database
 from ridepulse.ingest import load_csv
+
+
+def _load_dotenv(path: str | None = None) -> None:
+    """加载项目根目录 .env（纯标准库，不覆盖已存在的环境变量）。
+
+    .env 已在 .gitignore 中，凭证绝不入库。
+    """
+    target = Path(path) if path else (Path(__file__).resolve().parent.parent.parent / ".env")
+    if not target.exists():
+        return
+    for line in target.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip().strip("'\"")
+        if key and key not in os.environ:
+            os.environ[key] = value
 
 
 def _cmd_validate(args: argparse.Namespace) -> int:
@@ -145,6 +165,7 @@ def _cmd_push_feishu(args: argparse.Namespace) -> int:
 
 
 def main() -> int:
+    _load_dotenv()
     parser = argparse.ArgumentParser(prog="ridepulse", description="RidePulse AI CLI")
     sub = parser.add_subparsers(dest="command", required=True)
 
