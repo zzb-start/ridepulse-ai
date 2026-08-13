@@ -93,6 +93,7 @@ class Pipeline:
         self.state = PipelineState.CREATED
         self.run_dir = self.config.output_dir / self.run_id
         self._raw_rows: dict[str, dict] = {}  # feedback_id -> CSV 原始行（离线标注来源）
+        self.embedding_mode_used: str = ""  # 实际使用的 embedding 模式（可能因未配置密钥回退）
 
     # ------------------------------------------------------------
     # 主入口
@@ -475,12 +476,13 @@ class Pipeline:
         )
 
     def _step_embedding(self, records: list, classifications: list[ClassificationResult]) -> dict:
-        """Embedding：正式模式 api，未配置时回退 fake（在 run_report 标注）。"""
+        """Embedding：正式模式 api，未配置时回退 fake（在 run_report 如实标注）。"""
         by_id = {c.feedback_id: c for c in classifications}
         mode = self.config.embedding_mode
         if mode == "api" and not (self.config.llm_base_url and self.config.llm_api_key):
             mode = "fake"
             logger.warning("Embedding api 模式未配置密钥，回退 fake（不可用于比赛指标）")
+        self.embedding_mode_used = mode
         return embed_records(
             records, by_id, mode=mode, model=self.config.embedding_model,
             dimension=self.config.embedding_dimension or 64,
@@ -766,7 +768,8 @@ class Pipeline:
             f"- run_id: `{summary.run_id}`",
             f"- 状态: `{summary.state.value}`",
             f"- 分类来源: {'离线基线（数据标注列，非 LLM）' if self.offline_mode else 'LLM'}",
-            f"- Embedding 模式: `{self.config.embedding_mode}`",
+            f"- Embedding 模式: `{self.embedding_mode_used or self.config.embedding_mode}`"
+            + ("（⚠️ 未配置密钥回退 fake，语义聚类仅演示）" if self.embedding_mode_used == "fake" else ""),
             f"- 输入/有效/去重后: {summary.total_input} / {summary.valid_count} / {summary.deduped_count}",
             f"- 已分类: {summary.classified_count}",
             f"- 冲突/待人工复核: {summary.conflict_count} / {summary.human_review_count}",
