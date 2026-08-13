@@ -467,6 +467,10 @@ class ValidationReport(BaseModel):
     invalid_urls: list[str] = Field(default_factory=list)
     unverified_evidence_count: int = 0
     warnings: list[str] = Field(default_factory=list)
+    valid_records: list[FeedbackRecord] = Field(
+        default_factory=list,
+        description="通过校验的反馈记录（无效行不得进入后续模型调用）",
+    )
 
 
 # ============================================================
