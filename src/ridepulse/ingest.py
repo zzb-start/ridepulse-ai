@@ -166,6 +166,7 @@ def load_csv(path: str, *, out_dir: str | None = None) -> ValidationReport:
 
         report.valid_rows += 1
         report.valid_records.append(record)
+        report.valid_raw_rows.append(raw)
         valid_rows.append(raw)
         if record.evidence_status != EvidenceStatus.VERIFIED:
             report.unverified_evidence_count += 1

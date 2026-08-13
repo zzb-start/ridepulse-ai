@@ -284,8 +284,8 @@ class Database:
 
     @staticmethod
     def _dumps(value: object) -> str:
-        """JSON 序列化（用于存储 list/dict 字段）。"""
-        return json.dumps(value, ensure_ascii=False)
+        """JSON 序列化（用于存储 list/dict 字段，datetime 等转字符串）。"""
+        return json.dumps(value, ensure_ascii=False, default=str)
 
     @staticmethod
     def _loads(value: str | None) -> object:
@@ -406,6 +406,16 @@ class Database:
         )
         self.conn.commit()
 
+    def update_feedback_derived(self, feedback_id: str, *, normalized_text: str,
+                                content_sha256: str, duplicate_group_id: str | None) -> None:
+        """写入派生字段：规范化文本、内容指纹与重复组。"""
+        self.conn.execute(
+            """UPDATE feedback SET normalized_text=?, content_sha256=?,
+               duplicate_group_id=?, updated_at=? WHERE feedback_id=?""",
+            (normalized_text, content_sha256, duplicate_group_id, _now(), feedback_id),
+        )
+        self.conn.commit()
+
     # ------------------------------------------------------------
     # classifications / reviews / human_reviews
     # ------------------------------------------------------------
@@ -483,6 +493,29 @@ class Database:
         return self.conn.execute(
             "SELECT * FROM human_reviews WHERE run_id=?", (run_id,)
         ).fetchall()
+
+    def insert_human_review_pending(self, run_id: str, feedback_id: str, *,
+                                    primary_json: dict | None = None,
+                                    review_json: dict | None = None,
+                                    conflict_fields: list[str] | None = None) -> None:
+        """插入待人工复核记录（已存在则忽略，避免重复）。"""
+        now = _now()
+        self.conn.execute(
+            """INSERT OR IGNORE INTO human_reviews
+               (run_id, feedback_id, primary_json, review_json, conflict_fields,
+                review_status, created_at, updated_at)
+               VALUES (?, ?, ?, ?, ?, 'pending', ?, ?)""",
+            (
+                run_id,
+                feedback_id,
+                self._dumps(primary_json) if primary_json is not None else None,
+                self._dumps(review_json) if review_json is not None else None,
+                self._dumps(conflict_fields or []),
+                now,
+                now,
+            ),
+        )
+        self.conn.commit()
 
     def update_human_review(
         self,

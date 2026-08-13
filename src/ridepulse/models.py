@@ -471,6 +471,10 @@ class ValidationReport(BaseModel):
         default_factory=list,
         description="通过校验的反馈记录（无效行不得进入后续模型调用）",
     )
+    valid_raw_rows: list[dict] = Field(
+        default_factory=list,
+        description="通过校验行的原始 CSV 行（保留标注列等模型外字段，离线基线读取用）",
+    )
 
 
 # ============================================================
