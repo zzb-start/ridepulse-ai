@@ -1,0 +1,21 @@
+﻿feedback_id,sentiment,theme_primary,severity,purchase_impact,need_type,jtbd,arbitration_status,arbitration_result_raw,arbitration_note,dataset_version
+F0001,1,connectivity,S2,influence,real_need,用户希望骑行数据从码表上传后能在App中正确显示以查看训练记录,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0002,1,connectivity,S3,influence,real_need,用户希望包含心率和踏频字段的完整数据同步至Strava,completed_for_legacy_fields; need_type_single_annotator,theme_primary=connectivity;severity=S3,仲裁：核心问题是同步链路中的字段丢失，根因在同步模块而非传感器数据采集。归类为connectivity/S3,DATASET-v1.0-feng-20260806
+F0004,1,firmware,S4,influence,real_need,用户希望App更新后不丢失已有语言选项,completed_for_legacy_fields; need_type_single_annotator,S4,仲裁：语言消失影响使用但不影响核心骑行功能，归S4,DATASET-v1.0-feng-20260806
+F0006,1,connectivity,S2,blocker,real_need,用户希望骑行活动自动同步至Strava/TrainingPeaks无需手动操作,completed_for_legacy_fields; need_type_single_annotator,S2,仲裁：用户有手动导出.FIT的替代方案，非完全无法获取数据，归S2,DATASET-v1.0-feng-20260806
+F0007,2,connectivity,S3,influence,real_need,用户希望码表数据能稳定上传至App不因时间/周期产生延迟,completed_for_legacy_fields; need_type_single_annotator,2/S3,仲裁：规律性故障仍然影响正常使用，维持负面/S3,DATASET-v1.0-feng-20260806
+F0008,1,hardware,S2,blocker,incidental_failure,用户希望码表电源键每次按压都能正常响应,completed_for_legacy_fields; need_type_single_annotator,1/S2,仲裁：无法开机直接影响使用，维持强烈负面/S2,DATASET-v1.0-feng-20260806
+F0011,1,data_accuracy,S3,influence,real_need,用户希望爬坡检测功能提供准确的坡度数据,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0014,1,navigation,S2,blocker,feature_request,用户希望在码表上直接创建路线并在偏航时自动重新规划,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0017,1,navigation,S1,blocker,real_need,用户希望在导航长路线时地图不会冻结或白屏,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0018,1,navigation,S1,blocker,incidental_failure,用户希望在偏航触发重规划时设备不会崩溃重启丢失数据,completed_for_legacy_fields; need_type_single_annotator,navigation/S1,仲裁：触发条件是导航偏航重规划，表现为系统级崩溃，双重标签均可,DATASET-v1.0-feng-20260806
+F0019,1,firmware,S2,blocker,incidental_failure,用户希望固件更新不会引入新的崩溃问题,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0024,1,hardware,S3,influence,incidental_failure,用户希望骑行台在高功率低踏频时不产生异常震动,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0025,1,data_accuracy,S3,influence,real_need,用户希望骑行台功率读数在停止踩踏后立即归零,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0027,1,hardware,S2,blocker,incidental_failure,用户希望骑行台不会因静电放电导致传感器损坏,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0030,1,data_accuracy,S2,blocker,real_need,用户希望骑行台功率数据与其他功率计一致,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0031,1,compatibility,S2,blocker,real_need,用户希望平台API变更前提供充分通知,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0033,1,firmware,S2,blocker,incidental_failure,用户希望码表在标定功率计时不会死机,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0036,1,data_accuracy,S3,influence,real_need,用户希望功率读数在停止踩踏后立即归零,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0038,1,firmware,S2,blocker,incidental_failure,用户希望旗舰码表在低温环境下也能稳定运行,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
+F0040,1,connectivity,S3,blocker,real_need,用户希望Magene码表数据能自动上传至TrainerRoad,completed_for_legacy_fields; need_type_single_annotator,,,DATASET-v1.0-feng-20260806
