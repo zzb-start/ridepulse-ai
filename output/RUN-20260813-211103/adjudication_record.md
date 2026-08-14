@@ -1,0 +1,37 @@
+# 人工复核裁决记录(12 条 pending)
+
+> run_id: `RUN-20260813-211103` | 裁决: 队长代执行 | 日期: 2026-08-14
+> 原则: ①有 gold 的条目以 gold 为准;②无 gold 冲突字段以复判模型+原始证据严重度为准,
+>  severity 参考主模型系统性高估一档的已知限制;③未冲突字段保持流水线输出。
+
+| feedback_id | 字段 | 原值 | 终值 | 依据 |
+|---|---|---|---|---|
+| F0002 | sentiment | 2 | 1 | gold |
+| F0002 | theme_primary | connectivity | connectivity | gold,与主模型一致 |
+| F0002 | purchase_impact | unknown | influence | gold |
+| F0003 | severity | S3 | S2 | 复判 S2;白屏可杀App恢复,无数据丢失;参考系统性高估提示 |
+| F0005 | need_type | unknown | real_need | 复判 real_need;上传失败为真实缺陷报告,unknown 不合理 |
+| F0010 | need_type | feature_request | real_need | 复判 real_need;开发团队投诉非功能需求 |
+| F0010 | purchase_impact | influence | influence | 主模型 influence;论坛劝退影响购买决策 |
+| F0013 | severity | S4 | S4 | 原始证据严重度 S4(evidence_cards EC-0001 F0013),主模型一致 |
+| F0014 | need_type | feature_request | feature_request | gold |
+| F0014 | severity | S3 | S2 | gold |
+| F0014 | purchase_impact | unknown | blocker | gold |
+| F0014 | sentiment | 2 | 1 | gold |
+| F0015 | theme_primary | feature_request | feature_request | 功能限制(无法直连Strava下载路线),主模型一致 |
+| F0015 | need_type | feature_request | feature_request | 主模型 feature_request;复判 real_need 不贴切 |
+| F0015 | severity | S4 | S4 | 原始证据严重度 S4(EC-0011 F0015),主模型一致 |
+| F0016 | need_type | feature_request | real_need | 复判 real_need;屏幕反光是现有产品缺陷而非新功能请求 |
+| F0032 | severity | S2 | S2 | 复判 S2;行业 API 政策新闻,非直接产品缺陷 |
+| F0036 | severity | S3 | S3 | gold,与主模型一致 |
+| F0036 | sentiment | 2 | 1 | gold |
+| F0036 | purchase_impact | unknown | influence | gold |
+| F0038 | sentiment | 2 | 1 | gold |
+| F0038 | theme_primary | hardware | firmware | gold,与复判一致 |
+| F0038 | need_type | real_need | incidental_failure | gold;故障致换机,非持续需求 |
+| F0038 | severity | S3 | S2 | gold |
+| F0040 | severity | S4 | S3 | gold,与复判一致 |
+| F0040 | sentiment | 2 | 1 | gold |
+| F0040 | purchase_impact | unknown | blocker | gold |
+
+共裁决 12 条,27 处字段变更。变更明细同时见 `adjudication_record.csv`。

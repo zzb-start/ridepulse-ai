@@ -4,11 +4,11 @@
 
 ## 方案概述
 
-RidePulse AI是一套由6个Agent组成的全球骑行用户需求雷达系统。它将碎片化用户声音转化为可追溯、可排序、可进入产品待办的需求证据卡。架构从第一天起按多语言、多地区设计——首轮MVP以中国平台24条真实数据验证全链路可行性。
+RidePulse AI是一套由6个Agent组成的全球骑行用户需求雷达系统。它将碎片化用户声音转化为可追溯、可排序、可进入产品待办的需求证据卡。架构从第一天起按多语言、多地区设计——首轮MVP以37条真实反馈（DATASET v1，覆盖Garmin Forum/Google Play/App Store/Chinertown/Zwift等多平台中英文原声）验证全链路可行性。
 
 ## 六Agent流水线
 
-1. **采集Agent** — 连接20+全球数据源，保留URL/时间/SKU/版本
+1. **采集Agent** — 连接12+平台/24来源页，保留URL/时间/SKU/版本
 2. **治理Agent** — MinHash+BGE-M3双重去重，语言识别，垃圾过滤
 3. **理解Agent** — 轻量模型+JSON Schema → 分类标签
 4. **发现Agent** — BGE-M3+HDBSCAN聚类+异常检测

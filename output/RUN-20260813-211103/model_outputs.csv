@@ -1,0 +1,38 @@
+﻿feedback_id,sentiment,theme_primary,theme_secondary,need_type,scenario,user_type,severity,purchase_impact,jtbd,is_actionable,confidence,model_name,prompt_version
+F0001,2,connectivity,data_accuracy,real_need,unknown,unknown,S2,unknown,用户希望上传成功后活动能出现在App中以达成可靠地查看和管理骑行记录,True,0.6,deepseek-v4-flash,classify_v1
+F0002,2,connectivity,data_accuracy,real_need,unknown,unknown,S3,unknown,用户希望将码表记录的心率数据同步到Strava以在Strava中查看完整的骑行数据,True,0.6,deepseek-v4-flash,classify_v1
+F0003,2,display_ux,,real_need,unknown,unknown,S3,unknown,用户希望配对页和地图入口正常显示以完成设备配对和查看地图,True,0.6,deepseek-v4-flash,classify_v1
+F0004,2,display_ux,,real_need,unknown,unknown,S4,unknown,用户希望恢复中文语言选项以使用母语界面操作应用,True,0.6,deepseek-v4-flash,classify_v1
+F0005,2,connectivity,,unknown,unknown,unknown,S2,unknown,用户希望成功连接设备以正常使用App功能,True,0.6,deepseek-v4-flash,classify_v1
+F0006,2,connectivity,compatibility;feature_request,real_need,training,unknown,S3,unknown,用户希望自动上传功能正常工作以达成训练数据自动同步到 Strava 和 TrainingPeaks,True,0.6,deepseek-v4-flash,classify_v1
+F0007,2,connectivity,,real_need,training,unknown,S3,unknown,用户希望上传功能在每月初保持正常以达成训练数据及时同步和完整追踪,True,0.6,deepseek-v4-flash,classify_v1
+F0008,2,hardware,hardware,real_need,unknown,unknown,S4,unknown,用户希望开机键可靠响应以顺利启动设备,True,0.6,deepseek-v4-flash,classify_v1
+F0009,2,connectivity,price_value,real_need,unknown,unknown,S3,unknown,用户希望配套App能稳定配对并保持连接以充分发挥码表价值,True,0.6,deepseek-v4-flash,classify_v1
+F0010,2,firmware,,feature_request,unknown,unknown,S4,influence,用户希望定期获得固件更新以保持设备功能完善和可靠,True,0.6,deepseek-v4-flash,classify_v1
+F0011,2,data_accuracy,navigation,real_need,unknown,unknown,S3,unknown,用户希望准确提供爬坡数据以在骑行中正确了解前方爬坡情况,True,0.6,deepseek-v4-flash,classify_v1
+F0012,2,hardware,,real_need,unknown,unknown,S4,unknown,用户希望电池续航表现符合预期以达成长时间骑行不必中途充电的目标,True,0.6,deepseek-v4-flash,classify_v1
+F0013,2,connectivity,display_ux,real_need,unknown,unknown,S4,unknown,用户希望智能通知在App与设备间可靠同步以在骑行中稳定接收手机通知,True,0.6,deepseek-v4-flash,classify_v1
+F0014,2,navigation,feature_request;display_ux,feature_request,unknown,unknown,S3,unknown,用户希望能在设备端直接创建路线并获得自动重新规划和详细地图，以在骑行中获得可靠导航,True,0.6,deepseek-v4-flash,classify_v1
+F0015,2,feature_request,connectivity,feature_request,leisure,unknown,S4,unknown,用户希望直接从Strava下载路线并支持更长路线以规划长途骑行,True,0.6,deepseek-v4-flash,classify_v1
+F0016,2,display_ux,,feature_request,unknown,unknown,S4,unknown,用户希望在阳光下也能清晰阅读屏幕以方便导航或查看数据,True,0.6,deepseek-v4-flash,classify_v1
+F0017,1,navigation,display_ux,real_need,unknown,unknown,S2,unknown,用户希望导航地图在骑行过程中保持流畅和稳定以顺利完成路线骑行不迷路,True,0.82,deepseek-v4-flash,classify_v1
+F0018,2,navigation,firmware,real_need,unknown,unknown,S2,unknown,用户希望在地图偏移并重算路线时设备保持稳定且不丢失轨迹数据，以顺利完成骑行导航,True,0.8,deepseek-v4-flash,classify_v1
+F0019,2,firmware,navigation,real_need,unknown,unknown,S3,unknown,用户希望设备在骑行中稳定运行以避免崩溃重启和内存不足从而完成骑行并记录数据,True,0.85,deepseek-v4-flash,classify_v1
+F0020,1,firmware,,real_need,unknown,unknown,S2,unknown,用户希望避免GPS缓存文件导致设备变砖，以维持设备正常可用,True,0.8,deepseek-v4-flash,classify_v1
+F0021,2,firmware,navigation;hardware,real_need,unknown,unknown,S2,unknown,用户希望GPS固件更新能可靠完成以保障导航和骑行数据记录功能正常,True,0.8,deepseek-v4-flash,classify_v1
+F0022,2,firmware,display_ux,real_need,unknown,unknown,S4,unknown,用户希望修复固件更新导致的界面卡顿以恢复正常设备操作体验,True,0.85,deepseek-v4-flash,classify_v1
+F0023,2,firmware,,real_need,unknown,unknown,S2,unknown,用户希望快速获得修复使GPS缓存文件损坏的设备恢复正常骑行和手表使用,True,0.7,deepseek-v4-flash,classify_v1
+F0024,2,hardware,,real_need,indoor,enthusiast,S4,unknown,用户希望消除骑行台在低踏频高功率下的异响和振动，以达成平稳舒适的室内训练体验,True,0.8,deepseek-v4-flash,classify_v1
+F0025,2,data_accuracy,firmware,real_need,indoor,competitive,S3,unknown,用户希望功率读数在滑行时归零以获得准确数据和执行supertucks动作,True,0.8,deepseek-v4-flash,classify_v1
+F0026,2,data_accuracy,hardware,real_need,training,enthusiast,S3,unknown,用户希望功率读数准确以信任训练数据,True,0.8,deepseek-v4-flash,classify_v1
+F0027,2,hardware,connectivity;data_accuracy,real_need,indoor,unknown,S2,unknown,用户希望骑行台在蓝牙连接后正常输出功率和骑行阻力以完成室内训练,True,0.8,deepseek-v4-flash,classify_v1
+F0028,2,hardware,,real_need,indoor,enthusiast,S4,unknown,用户希望消除Kickr Core在特定踏频/功率组合下的低频振动以避免打扰邻居并获得安静训练体验,True,0.8,deepseek-v4-flash,classify_v1
+F0029,2,hardware,after_sales,real_need,indoor,unknown,S4,unknown,用户希望骑行台在高速运转时保持安静以达成不受干扰的训练体验,True,0.75,deepseek-v4-flash,classify_v1
+F0032,2,compatibility,connectivity;data_accuracy,real_need,unknown,unknown,S2,unknown,用户希望通过Strava API访问和同步数据以达成第三方应用的数据整合与留存,True,0.78,deepseek-v4-flash,classify_v1
+F0033,2,firmware,hardware;display_ux,real_need,unknown,unknown,S2,unknown,用户希望设备在校准功率计和雨天操作时保持稳定以避免系统崩溃和数据丢失,True,0.6,deepseek-v4-flash,classify_v1
+F0034,2,display_ux,,real_need,unknown,unknown,S4,unknown,用户希望在阳光下清晰读取屏幕并戴手套操作触摸屏，以在骑行中方便地查看导航和数据,True,0.6,deepseek-v4-flash,classify_v1
+F0035,2,connectivity,feature_request;navigation;compatibility,real_need,unknown,unknown,S4,unknown,用户希望设备在第三方配件兼容性和自由骑行场景下支持完整功能，以获得无缝的骑行数据体验,True,0.6,deepseek-v4-flash,classify_v1
+F0036,2,data_accuracy,display_ux;feature_request,real_need,training,unknown,S3,unknown,用户希望功率和温度数据准确且导航操作简洁以达成有效训练和高效使用,True,0.6,deepseek-v4-flash,classify_v1
+F0037,2,firmware,,emotional_complaint,unknown,unknown,S5,unknown,用户希望软件更新能稳定提升质量以维持设备长期可靠性,False,0.6,deepseek-v4-flash,classify_v1
+F0038,2,hardware,,real_need,unknown,unknown,S3,blocker,用户希望设备在寒冷天气下活动期间不重启以可靠记录骑行数据,True,0.75,deepseek-v4-flash,classify_v1
+F0040,2,connectivity,feature_request,real_need,training,unknown,S4,unknown,用户希望自动上传骑行数据到第三方平台（TrainerRoad、Strava、TrainingPeaks）以避免每次手动分享.FIT文件,True,0.8,deepseek-v4-flash,classify_v1

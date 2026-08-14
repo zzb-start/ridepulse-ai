@@ -1,0 +1,21 @@
+{
+  "paired_count": 18,
+  "theme_primary": {
+    "accuracy": 0.888889,
+    "macro_f1": 0.753968
+  },
+  "need_type": {
+    "accuracy": 0.611111,
+    "macro_f1": 0.580247
+  },
+  "severity": {
+    "accuracy": 0.5,
+    "macro_f1": 0.371635
+  },
+  "purchase_impact": {
+    "accuracy": 0.055556,
+    "macro_f1": 0.060606
+  },
+  "severity_weighted_kappa": 0.375,
+  "review_rate": 0.555556
+}
