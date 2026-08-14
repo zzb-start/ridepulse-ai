@@ -62,8 +62,7 @@ def _cmd_collect(args: argparse.Namespace) -> int:
         print(f"未知连接器: {args.connector}（当前支持 app_store_rss）", file=sys.stderr)
         return 2
     from ridepulse.collectors.app_store_rss import AppStoreRSSConnector
-    connector = AppStoreRSSConnector(app_id=args.app_id, storefront=args.storefront,
-                                     country=args.country)
+    connector = AppStoreRSSConnector(app_id=args.app_id, storefront=args.storefront)
     reviews = connector.fetch(limit=args.limit, out_dir=args.out_dir)
     print(f"采集完成: {len(reviews)} 条评论，原始响应保存在 {args.out_dir or 'output/collects/'}")
     return 0
@@ -176,7 +175,6 @@ def main() -> int:
     p_collect.add_argument("--connector", default="app_store_rss", help="连接器名")
     p_collect.add_argument("--app-id", required=True, help="App Store App ID")
     p_collect.add_argument("--storefront", default="us", help="地区（us/cn 等）")
-    p_collect.add_argument("--country", default="us", help="评论国家代码")
     p_collect.add_argument("--limit", type=int, default=50, help="最多采集条数")
     p_collect.add_argument("--out-dir", default=None, help="原始响应保存目录")
 
