@@ -9,125 +9,144 @@
 
 ---
 
+## 📌 项目状态：完整流水线已跑通
+
+系统已完成端到端验证（正式运行 `RUN-20260813-211103`，2026-08-13），不是概念演示：
+
+| 环节 | 结果 |
+|---|---|
+| 输入 | 37 条真实反馈（DATASET v1，2026-08-13 冻结；12 平台 / 24 来源页；中文 5 条 / 英文 32 条） |
+| 分类 | LLM 首轮分类 37/37（deepseek-v4-flash），JSON Schema 约束输出 |
+| 独立复判 | 第二模型全量复判 37/37（deepseek-v4-pro）；完全一致 21 条，字段级冲突 16 条 |
+| 人工仲裁 | 12 条冲突全部人工裁决，逐条依据留档（`adjudication_record.csv`） |
+| 语义聚类 | 21 个需求簇，覆盖全部样本，跨平台/跨语言合并 |
+| 证据卡 | 21 张（EC-2026-0001 ~ EC-2026-0021），含问题陈述/根因假设/建议动作/证据 URL |
+| 评测 | 与双人标注 gold 配对 18/20：theme_primary 准确率 88.9% / macro-F1 75.4% |
+| 测试 | **192 项自动化测试全部通过** |
+
+完整结果、指标口径与已知限制见 [`03_system_results_m4.md`](03_system_results_m4.md) 与 `output/RUN-20260813-211103/`（模型输出、复判、裁决记录、聚类、优先级、证据卡、评测报告与图表，均已随仓库提交）。
+
+---
+
 ## 📖 项目背景
 
-迈金科技（Magene）是中国领先的智能骑行科技企业，旗下包含Magene、Onelap（顽鹿）、EXAR等品牌，产品覆盖GPS智能码表、功率计、智能骑行台和传感器，服务全球100多个国家和地区。
+迈金科技（Magene）是中国领先的智能骑行科技企业，旗下包含 Magene、Onelap（顽鹿）、EXAR 等品牌，产品覆盖 GPS 智能码表、功率计、智能骑行台和传感器（据迈金官方公开资料，服务全球 100 多个国家和地区）。
 
-用户反馈分散在App Store、Google Play、Reddit、电商平台、骑行社区和客服工单中——数量庞大、多语言、碎片化。RidePulse AI拟借助AI技术，实现用户反馈收集、分析、归类及洞察输出的智能化升级。
+用户反馈分散在 App Store、Google Play、论坛、社交媒体与客服工单中——海量、多语言、碎片化。企业不缺数据，缺的是把碎片化声音从"结果语言"转化为"根因假设"、形成可追溯产品决策证据的能力。2025 年 Garmin 缓存文件缺陷致数千台 Edge 设备变砖、2024 年 Strava API 限令破坏第三方应用集成——行业标杆同样在"用户声音失察"上付出代价，这正是 RidePulse AI 要解决的问题。
 
 ---
 
-## 🎯 方案概述
-
-**RidePulse AI** 拟实现一套Agent流水线系统，将碎片化用户声音转化为可追溯的需求证据卡：
+## 🏗️ 系统架构（已实现）
 
 ```
-采集 → 治理 → 理解 → 发现 → 证据审校 → 交付闭环
+采集 → 标准化 → 分类 → 独立复判 → 人工仲裁 → 聚类 → 优先级评分 → 证据卡
 ```
 
-### 核心理念
+| 阶段 | 实现 | 说明 |
+|------|------|------|
+| 采集 | ✅ | 公开合规渠道（应用商店 RSS / 论坛 / 媒体），保留 URL / 时间 / 平台 / 语言 |
+| 标准化 | ✅ | 字段校验、脱敏、翻译、来源台账，非法记录拒收 |
+| 分类 | ✅ | LLM 首轮分类：情感 / 主题 / 场景 / 严重度 / 需求五分类 / JTBD / 购买影响等，低置信度字段标记待复核 |
+| 独立复判 | ✅ | 第二模型全量复判，字段级冲突检测；冲突进人工队列，**不自动输出确定结论** |
+| 人工仲裁 | ✅ | 冲突逐条裁决并留档，可审计 |
+| 聚类 | ✅ | 多语言向量嵌入（本地 paraphrase-multilingual-MiniLM，384 维）+ 主题分桶 + 确定性凝聚聚类（cosine） |
+| 优先级评分 | ✅ | 纯代码六维加权（证据 15 + 复现 20 + 频率 15 + 严重度 20 + 可执行 15 + 购买 15），**模型不参与评分** |
+| 证据卡 | ✅ | LLM 生成 + 代码校验；强制引用原文 ID / URL / 时间，不可回链自动作废 |
 
-- ❌ 不是"评论情绪摘要"
-- ❌ 不是"把数据丢给ChatGPT"
-- ✅ **证据链驱动**：每条洞察强制引用原文ID + URL + 时间
-- ✅ **模型分层**：代码能确定的不用模型，统计能聚类的不用推理
-- ✅ **实验闭环**：从用户声音到产品待办，再到结果验证回流
+### 核心设计原则
 
----
-
-## 🏗️ 系统架构（方案设计阶段）
-
-| Agent | 职责 | 技术选型（拟采用） |
-|-------|------|---------|
-| ① 采集Agent | 连接多平台数据源，保留URL/时间/SKU/版本 | Python + API/HTML解析 |
-| ② 治理Agent | MinHash去重 + BGE-M3语义去重 + 语言识别 + 垃圾过滤 | MinHash + BGE-M3 + langID |
-| ③ 理解Agent | 轻量模型 + JSON Schema → 情感/主题/场景/严重度/JTBD | 豆包/通义（模型可替换） |
-| ④ 发现Agent | BGE-M3向量 + HDBSCAN聚类 + 版本/时间异常检测 | BGE-M3 + UMAP + HDBSCAN |
-| ⑤ 证据审校Agent | 六维加权评分 + 高推理模型生成证据卡（强制引用ID） | Claude/GPT（仅处理高分簇） |
-| ⑥ 交付Agent | 飞书多维表格自动写入 → 待办/实验/验证回流 | 飞书开放API |
-
-> ⚠️ **阶段声明**：上述架构为方案设计。当前仓库仅包含确定性基线MVP（无LLM调用），用于验证证据合约、分组逻辑、评分基线和人工复核门控。
-
----
-
-## 🚀 核心创新点
-
-| 创新点 | 说明 | 区别于 |
-|--------|------|--------|
-| **证据链** | 每条洞察引用原文ID/URL/时间，不可回链自动作废 | 大模型幻觉 |
-| **跨平台校正** | 电商/应用市场/内容平台/垂直社区/客服分层计权 | 单一热帖偏差 |
-| **沉默需求发现** | 严重度×可行动性×购买影响独立于频次评分 | 只看声量 |
-| **双模型复判+人工仲裁** | 独立复判与首轮分类冲突时触发人工仲裁，不自动输出确定结论 | 单模型黑箱 |
-| **实验闭环** | 证据卡→飞书待办→实验→结果回流优化模型 | 一次性报告 |
-
----
-
-## 📊 试点目标（拟在试点阶段验证）
-
-| 指标 | 目标值 | 测量方法 |
-|------|--------|---------|
-| 处理效率 | 单千条工时减少 ≥70% | 人工vs. AI A/B对照 |
-| 发现时延 | 批处理 <4h，高风险 <15min | 系统日志 |
-| 采纳率 | Top-20 被PM采纳 ≥70% | 双人盲审 |
-| 可追溯率 | 100%洞察可回链 | 自动校验 |
-| 行动转化 | 30天内进入PRD ≥30% | 飞书状态字段 |
-
-> ⚠️ 以上均为试点目标值，非已实现结果。数值须取得迈金现有VOC流程基线后校准。
-
----
-
-## 📁 仓库目录
-
-```
-ridepulse-ai/
-├── README.md                              # 本文件
-├── LICENSE
-├── docs/
-│   ├── 01_problem_analysis.md             # 命题分析与行业洞察
-│   ├── 02_solution_design.md              # 技术方案设计
-│   └── 04_references.txt                  # 参考资料清单
-├── data/
-│   ├── classification_schema.json         # 分类JSON Schema v1.0
-│   └── verified_evidence_sample.json      # 已验证的样例证据数据
-├── agents/
-│   ├── understander/
-│   │   └── classification_prompt.md       # 理解Agent Prompt模板
-│   ├── reviewer/
-│   │   └── evidence_card_template.md      # 证据审校Agent Prompt模板
-│   └── governor/
-│       └── translation_prompt.md          # 翻译Agent Prompt模板
-├── scripts/
-│   ├── __init__.py
-│   └── run_mvp.py                         # 确定性基线MVP（无LLM）
-├── tests/
-│   └── test_run_mvp.py                    # MVP基线测试
-├── output/
-│   └── evidence_cards.md                  # MVP基线输出示例
-└── images/
-    └── README.md                          # 图片资源说明（待制作）
-```
-
-> 📌 本仓库公开展示方案架构、分类体系和Prompt设计方法。完整数据（41条反馈样本、来源台账、双人标注记录）见团队参赛提交的配套CSV文件。
+- ✅ **证据链驱动**：每条洞察强制引用原文 ID + URL + 时间，不可回链自动作废
+- ✅ **模型分层**：代码能确定的不用模型，统计能聚类的不用推理；评分公式 100% 代码化
+- ✅ **双模型复判 + 人工仲裁**：首轮与复判冲突不自动采信，进人工队列
+- ✅ **根因假设而非定论**：模型只提假设，不替代产品经理确认
+- ✅ **模型无关架构**：分类 / 复判 / 证据卡均不绑定特定模型供应商，可灵活替换（Embedding 支持本地 / API 双模式，可切换 BGE-M3 等）
 
 ---
 
 ## 🧪 快速开始
 
-### 环境要求
-
 ```bash
-# Python 3.10+
-pip install -r requirements.txt  # 拟在正式试点阶段提供
+# 安装
+pip install -e .
+
+# 环境变量（.env，不提交）：LLM_BASE_URL / LLM_API_KEY / LLM_PRIMARY_MODEL / LLM_REVIEW_MODEL / EMBEDDING_MODE=local
+
+# 运行完整流水线（需配置 LLM；无密钥可用 --offline 演示基线）
+python -m ridepulse.cli run --input data/verified/feedback_verified.csv
+
+# 评测复现（与 gold 标注比对，复现 metrics.json）
+python -m ridepulse.cli evaluate --run-id RUN-20260813-211103 --gold data/verified/annotation_gold.csv
+
+# Streamlit 工作台（运行概览 / 需求簇 / 证据卡 / 评测 / 人工复核 5 个页面）
+streamlit run app.py
+
+# 全量测试
+pytest   # 192 passed
 ```
 
-### 运行确定性基线MVP
+> 正式运行产物已随仓库提交：`output/RUN-20260813-211103/`（`model_outputs.csv` / `review_outputs.csv` / `human_final_outputs.csv` / `cluster_results.csv` / `priority_scores.csv` / `evidence_cards.json` / `metrics.json` / `error_cases.csv` / `charts/` 等）。
 
-```bash
-# 对样例证据数据运行确定性基线（无LLM/Embedding调用）
-python scripts/run_mvp.py --input data/verified_evidence_sample.json --output output/evidence_cards.md
+---
+
+## 📁 仓库结构
+
+```
+ridepulse-ai/
+├── README.md                              # 本文件
+├── 03_system_results_m4.md                # M4 系统结果交付说明（配置/统计/评测/限制）
+├── DATA_CONTRACT_v1.md / .json            # 分类标签体系与字段级数据契约
+├── src/ridepulse/                         # 核心包
+│   ├── pipeline.py                        # 全链路编排
+│   ├── classify.py / review.py            # 双模型分类与独立复判
+│   ├── clustering.py / embedding.py       # 主题分桶聚类与多语言向量嵌入
+│   ├── scoring.py                         # 六维优先级评分（纯代码）
+│   ├── evidence.py                        # 证据卡生成与校验
+│   ├── evaluation.py                      # 评测指标（Accuracy/F1/Kappa）
+│   ├── dedup.py / normalize.py / ingest.py / validation.py
+│   ├── database.py / delivery.py / feishu_client.py
+│   ├── collectors/                        # 公开连接器（App Store RSS 等）
+│   ├── llm_client.py / config.py / models.py
+│   └── cli.py                             # validate / collect / run / resume / evaluate / push-feishu
+├── app.py                                 # Streamlit 工作台（5 个页面）
+├── data/
+│   ├── classification_schema.json         # 分类 JSON Schema v1.0
+│   └── verified/                          # DATASET v1（已冻结）
+│       ├── feedback_verified.csv          # 37 条正式反馈（脱敏）
+│       ├── source_ledger_verified.csv     # 来源台账（URL 可回链）
+│       ├── annotation_gold.csv            # 双人标注 gold（评测用）
+│       ├── DATASET_V1_FROZEN.md           # 冻结说明
+│       ├── dataset_summary.md             # 数据统计
+│       └── data_quality_report.md         # 数据质量报告
+├── prompts/
+│   ├── classify_v1.md                     # 分类 Prompt
+│   └── review_v1.md                       # 复判 Prompt
+├── docs/
+│   ├── 01_problem_analysis.md             # 命题分析与行业洞察
+│   ├── 02_solution_design.md              # 技术方案设计
+│   └── 04_references.txt                  # 参考资料清单
+├── scripts/                               # 评测落盘 / 裁决回填 / PDF 构建 / Excel 导出
+├── tests/                                 # 192 项测试
+├── output/RUN-20260813-211103/            # M4 正式运行全部产物
+└── team_outputs/liang/                    # 业务盲审与事实核验交付（M5）
 ```
 
-> 当前基线MVP为确定性规则引擎——**不使用LLM，不使用Embedding模型**。它证明的是证据合约、分组逻辑、评分公式和人工复核门控的正确性。完整的多Agent流水线（含双模型复判、跨语言聚类、证据卡自动生成）为方案设计，拟在试点阶段实现。
+---
+
+## 📊 评测与已知限制（诚实披露）
+
+与 20 条双人标注 gold 比对（配对 18/20，`F0030`/`F0031` 属数据集版本差异）：
+
+| 指标 | 值 |
+|---|---|
+| theme_primary accuracy / macro-F1 | 88.9% / 75.4% |
+| need_type accuracy | 61.1% |
+| severity accuracy | 50.0%（加权 Kappa 0.375） |
+| purchase_impact accuracy | 5.6%（标注口径差异，见下） |
+| 人工复核率 | 55.6%（低置信度与冲突字段进入人工队列） |
+
+- **severity 系统性高估一档**：9/9 错误均为模型比 gold 高一级，无低估——已写入人工复核规则，对严重度建议下调一档复核
+- **purchase_impact 口径差异**：gold 仅含 `influence`/`blocker` 两级，模型输出含 `unknown`——是标注口径不一致而非随机错误，数据治理需统一定义
+- **复核率 55.6% 是门控机制在设计上生效**：双模型复判 + 人工仲裁保证"不确定即送审"，不追求"低复核率"的表面指标
 
 ---
 
@@ -135,34 +154,26 @@ python scripts/run_mvp.py --input data/verified_evidence_sample.json --output ou
 
 | 角色 | 姓名 | 学校 | 核心能力 |
 |------|------|------|---------|
-| 队长/AI架构师 | 张中宝 | 山东外国语职业技术大学 · 软件工程技术 | Claude/GPT/Codex、数学建模、软件项目 |
-| 骑行与商业 | 李昂 | 澳门科技大学 · 工商管理 | 多年骑行经验、产品商业化、竞品研究 |
-| 数据负责人 | 冯敬琴 | 四川师范大学 · 地理信息科学 | GIS、Python数据分析、可视化 |
+| 队长 / 系统与总集成 | 张中宝 | 山东外国语职业技术大学 · 软件工程技术 | AI 架构、数学建模、软件项目 |
+| 来源核验与业务审查 | 李昂 | 澳门科技大学 · 工商管理 | 多年骑行经验、产品商业化、竞品研究 |
+| 数据治理与评测 | 冯敬琴 | 四川师范大学 · 地理信息科学 | GIS、Python 数据分析、可视化 |
 
-三人背景构成"行业判断—数据验证—产品落地"的闭环：队长深度AI架构→骑行负责人垂直骑行领域→数据负责人严谨分析验证。
+三人背景构成"行业判断—数据验证—产品落地"的闭环：队长负责系统架构与总集成，骑行负责人提供垂直领域的真实体感与业务审查，数据负责人保证标注质量与评测严谨性。
 
 ---
 
 ## 📚 参考资料
 
-详见 [`docs/04_references.txt`](docs/04_references.txt)
-
-核心来源：
-- PeopleForBikes — 2024 U.S. Bicycling Participation Study
-- Strava — Year In Sport: Trend Report 2025
-- road.cc — Garmin "Blue Triangle of Death" (Jan 2025)
-- The Verge — Strava API Debacle (Nov 2024)
-- ResearchAndMarkets — Cycle Computer Market Report 2025
-- BGE-M3: BAAI (2024)
-- 迈金科技官网 — magene.cn
-
-完整来源台账（含20条来源的原文摘录、结论边界和访问日期）见参赛提交文件《来源与证据台账.csv》。
+- [`docs/01_problem_analysis.md`](docs/01_problem_analysis.md) — 命题分析与行业洞察
+- [`docs/02_solution_design.md`](docs/02_solution_design.md) — 技术方案设计
+- [`docs/04_references.txt`](docs/04_references.txt) — 完整参考资料清单（PeopleForBikes / road.cc / The Verge / BGE-M3 论文等）
+- 完整来源台账（S01-S20，含原文摘录与访问日期）见 `data/verified/source_ledger_verified.csv`
 
 ---
 
-## 📄 许可证
+## 📄 许可证与竞赛说明
 
-本项目为2026 AI先锋未来人才大赛参赛作品。代码部分采用MIT许可证。
+本项目为 2026 AI先锋未来人才大赛参赛作品（迈金科技命题）。代码部分采用 MIT 许可证。原始敏感数据（`data/raw/`）与密钥（`.env`）不提交；DATASET v1 正式数据已脱敏并随仓库提供。
 
 ---
 

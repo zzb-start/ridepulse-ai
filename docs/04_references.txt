@@ -39,7 +39,7 @@
 | 19 | App Store — OnelapFit | App Store | 2026-07-19 |
 | 20 | Google Play — OnelapFit | Google Play | 2026-07-19 |
 
-## 24条样例数据来源
+## 早期样例数据来源（2026-07 调研阶段；正式数据 DATASET v1 的 37 条来源台账见 data/verified/source_ledger_verified.csv）
 
 | # | 平台 | URL | 访问日期 |
 |---|------|-----|---------|

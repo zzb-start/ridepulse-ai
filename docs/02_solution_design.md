@@ -9,9 +9,9 @@ RidePulse AI是一套由6个Agent组成的全球骑行用户需求雷达系统�
 ## 六Agent流水线
 
 1. **采集Agent** — 连接12+平台/24来源页，保留URL/时间/SKU/版本
-2. **治理Agent** — MinHash+BGE-M3双重去重，语言识别，垃圾过滤
+2. **治理Agent** — MinHash+字符3-gram TF-IDF语义去重，语言识别，垃圾过滤
 3. **理解Agent** — 轻量模型+JSON Schema → 分类标签
-4. **发现Agent** — BGE-M3+HDBSCAN聚类+异常检测
+4. **发现Agent** — 多语言向量嵌入+主题分桶凝聚聚类+异常检测（设计支持BGE-M3/HDBSCAN切换）
 5. **证据审校Agent** — 六维评分+高推理模型生成证据卡
 6. **交付Agent** — 飞书多维表格+待办+实验闭环
 
