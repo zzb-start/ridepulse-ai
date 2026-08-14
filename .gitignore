@@ -37,3 +37,6 @@ data/raw/*
 # Output（运行产物不提交）
 output/
 logs/
+
+# 内部核验报告(含修改前事实错误记录,不进公开仓库)
+team_outputs/liang/claims_review.md

@@ -100,6 +100,16 @@ def main() -> None:
         st.subheader("字段级错误案例(error_cases.csv)")
         errors = load_csv("error_cases.csv")
         st.dataframe(errors, use_container_width=True, hide_index=True)
+        st.subheader("评测图表")
+        charts_dir = RUN_DIR / "charts"
+        if charts_dir.exists():
+            col_a, col_b = st.columns(2)
+            with col_a:
+                st.image(str(charts_dir / "acc_f1.png"),
+                         caption="Model vs Gold (paired=18)")
+            with col_b:
+                st.image(str(charts_dir / "severity_confusion.png"),
+                         caption="Severity confusion (model vs gold)")
 
     with tab_review:
         st.subheader("人工复核状态(12 条冲突已裁决,adjudication_record.csv)")

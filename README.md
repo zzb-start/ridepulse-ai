@@ -127,7 +127,7 @@ ridepulse-ai/
 ├── scripts/                               # 评测落盘 / 裁决回填 / PDF 构建 / Excel 导出
 ├── tests/                                 # 192 项测试
 ├── output/RUN-20260813-211103/            # M4 正式运行全部产物
-└── team_outputs/liang/                    # 业务盲审与事实核验交付（M5）
+└── team_outputs/liang/                    # 业务盲审交付（M5：业务审查表 + 文案审查报告）
 ```
 
 ---
