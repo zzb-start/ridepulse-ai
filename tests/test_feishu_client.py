@@ -1,4 +1,4 @@
-"""feishu_client 模块测试 — 规格来源：文档15 §9。
+"""feishu_client 模块测试。
 
 要求：
 1. token 获取并缓存，过期刷新

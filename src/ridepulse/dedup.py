@@ -1,6 +1,6 @@
 """去重模块 — 两层去重。
 
-实现要求（文档15 §7.6）：
+实现要求：
 第一层: SHA-256 精确指纹 (normalized_text + brand + product_model)
 第二层: 字符 3-gram TF-IDF 余弦相似度，阈值默认 0.92
 - 只标记 duplicate_group_id，不自动删除

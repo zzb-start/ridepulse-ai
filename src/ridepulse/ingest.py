@@ -1,6 +1,6 @@
 """数据导入模块 — CSV 读取与 FeedbackRecord 构造。
 
-实现要求（文档15 §7.5）：
+实现要求：
 1. UTF-8-SIG 读取，失败时报明确编码错误
 2. 表头检查
 3. 逐行构造 FeedbackRecord

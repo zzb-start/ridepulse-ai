@@ -1,4 +1,4 @@
-"""normalize 模块测试 — 规格来源：文档15 §7.6。
+"""normalize 模块测试。
 
 要求：
 1. Unicode NFKC 规范化

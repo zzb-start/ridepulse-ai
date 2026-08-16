@@ -1,6 +1,6 @@
 """数据校验模块 — FeedbackRecord 字段级校验。
 
-实现要求（文档15 §7.5）：
+实现要求：
 - 校验报告: total_rows / valid_rows / invalid_rows / duplicate_ids /
   missing_fields / invalid_urls / unverified_evidence_count / warnings
 - 给出坏 CSV 时指出具体行和字段
@@ -23,7 +23,7 @@ def validate_row(raw: dict[str, Any]) -> tuple[FeedbackRecord | None, dict[str, 
     """单行字段级校验：返回 (记录, 错误字典)。
 
     - 空 feedback_id 视为缺失
-    - 错误字典 {字段: 消息}，字段级定位（文档15 §7.5 验收要求）
+    - 错误字典 {字段: 消息}，字段级定位（验收要求）
     """
     values = _coerce_row(raw)
     feedback_id = values.get("feedback_id", "")

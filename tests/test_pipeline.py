@@ -1,4 +1,4 @@
-"""pipeline 模块测试 — 规格来源：文档15 §7.15。
+"""pipeline 模块测试。
 
 要求：
 1. 状态流: CREATED -> ... -> COMPLETED；失败保留前序结果（FAILED）

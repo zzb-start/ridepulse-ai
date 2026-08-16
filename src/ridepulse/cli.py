@@ -1,6 +1,6 @@
 """命令行入口。
 
-命令（文档15 §7.16）：
+命令：
 python -m ridepulse.cli validate --input data/verified/feedback_verified.csv
 python -m ridepulse.cli collect --connector app_store_rss --app-id 1555629744 --storefront us --limit 50
 python -m ridepulse.cli run --input data/verified/feedback_verified.csv [--offline] [--run-id RUN-...]

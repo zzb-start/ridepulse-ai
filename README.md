@@ -132,7 +132,7 @@ ridepulse-ai/
 ├── .github/workflows/weekly-pipeline.yml  # 周更自动流水线（定时 + push 触发）
 ├── tests/                                 # 197 项测试
 ├── output/RUN-20260813-211103/            # M4 正式运行全部产物
-└── team_outputs/liang/                    # 业务审查交付（审查框架与模板：李昂；21 卡逐卡执行：队长代执行）
+└── team_outputs/liang/                    # 业务审查交付（审查框架与模板：李昂；逐卡执行：队长）
 ```
 
 ---

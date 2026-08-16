@@ -1,7 +1,7 @@
 # classify_v1 — 第一轮 AI 分类 Prompt
 
 > 版本：classify_v1（2026-08-06）
-> 来源：由"理解Agent Prompt"迁移，按文档15 §7.8 修复六项问题
+> 来源：由"理解Agent Prompt"迁移，按验收要求修订
 > 用途：对单条用户反馈做第一轮结构化分类。输出经 Pydantic 校验。
 
 ## System Prompt

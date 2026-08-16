@@ -4,8 +4,7 @@
 任何模块不得另建一套字段命名。
 
 字段定义依据:
-  - 15_40强完整方案与系统落地执行手册.md §5
-  - 16_三人并行任务执行文档_最终简化版.md §5
+  - DATA_CONTRACT_v1.md（仓库内数据契约）
 """
 
 from __future__ import annotations
@@ -226,7 +225,7 @@ HttpsUrl = Annotated[str, StringConstraints(min_length=1)]
 class FeedbackRecord(BaseModel):
     """单条用户反馈的结构化记录——全系统统一数据契约。
 
-    对应文档15 §5.1 和文档16 §5.1。
+    对应 DATA_CONTRACT_v1.md 字段定义。
     """
 
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
@@ -295,7 +294,7 @@ class FeedbackRecord(BaseModel):
 class ClassificationResult(BaseModel):
     """第一轮AI分类结果。
 
-    对应文档15 §5.2 和文档16 §5.2。
+    对应 DATA_CONTRACT_v1.md 字段定义。
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -327,7 +326,7 @@ class ClassificationResult(BaseModel):
 class ReviewResult(BaseModel):
     """独立第二轮复判结果。
 
-    对应文档15 §5.3 和文档16 §5.3。
+    对应 DATA_CONTRACT_v1.md 字段定义。
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -372,7 +371,7 @@ class HumanReview(BaseModel):
 class EvidenceCard(BaseModel):
     """需求证据卡。
 
-    对应文档15 §5.4 和文档16 §5.4。
+    对应 DATA_CONTRACT_v1.md 字段定义。
     """
 
     model_config = ConfigDict(extra="forbid")

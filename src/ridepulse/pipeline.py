@@ -1,6 +1,6 @@
 """Pipeline 编排模块 — 每次运行按固定状态推进。
 
-状态流（文档15 §7.15）：
+状态流：
 CREATED -> COLLECTED_OR_IMPORTED -> VALIDATED -> DEDUPED -> CLASSIFIED
 -> REVIEWED -> WAITING_HUMAN_REVIEW 或 CLUSTERED -> SCORED
 -> CARDS_GENERATED -> WAITING_CARD_APPROVAL -> DELIVERED -> COMPLETED
@@ -791,7 +791,7 @@ class Pipeline:
         lines += [
             "## 说明",
             "",
-            "- 分数完全由代码计算（文档15 §7.13），模型不参与评分。",
+            "- 分数完全由代码计算，模型不参与评分。",
             "- 证据卡 URL 由系统从数据附加，模型不生成 URL。",
             "- 人工复核队列见 `human_final_outputs.csv` 与数据库 human_reviews 表。",
             "",

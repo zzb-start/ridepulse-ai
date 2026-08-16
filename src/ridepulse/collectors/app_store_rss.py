@@ -1,6 +1,6 @@
 """App Store 公开评论连接器 — Apple 公开评论 JSON 接口。
 
-实现要求（文档15 §7.4）：
+实现要求：
 1. 只访问无需登录的公开接口
 2. 请求设置 User-Agent、超时、最多 3 次重试
 3. 保存原始 JSON 快照到 output/<run_id>/raw/

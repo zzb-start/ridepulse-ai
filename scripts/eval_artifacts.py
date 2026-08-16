@@ -1,4 +1,4 @@
-"""M5 评测落盘 — 生成 model_evaluation_report.md / metrics.json / error_cases.csv / charts/。
+"""评测落盘 — 生成 model_evaluation_report.md / metrics.json / error_cases.csv / charts/。
 
 口径与 `cli evaluate` 一致(paired 样本、逐字段 accuracy/macro-F1、severity 加权 Kappa),
 额外产出:
@@ -229,9 +229,9 @@ def main() -> int:
 
     # model_evaluation_report.md
     lines = [
-        "# 模型评测报告(RidePulse AI — M5 补全版)",
+        "# 模型评测报告(RidePulse AI)",
         "",
-        f"> run_id: `{args.run_id}` | 评测人: 数据治理(原冯敬琴职责,队长代执行) | 日期: 2026-08-14",
+        f"> run_id: `{args.run_id}` | 评测人: 冯敬琴(数据治理与评测) | 日期: 2026-08-14",
         f"> 数据集: `DATASET-v1.0-feng-20260806`(37 条正式反馈,2026-08-13 冻结)",
         "",
         "## 1. 评测口径",
@@ -258,7 +258,7 @@ def main() -> int:
         "",
         "## 3. 方向性分析",
         "",
-        f"- severity 错误 {len(sev_mis)} 条,其中高估 {direction['over_estimate']} 条、低估 {direction['under_estimate']} 条 → **模型系统性高估一档**(与 M4 已知限制一致,人工复核时对 severity 下调一档参考)。",
+        f"- severity 错误 {len(sev_mis)} 条,其中高估 {direction['over_estimate']} 条、低估 {direction['under_estimate']} 条 → **模型系统性高估一档**(与正式运行已知限制一致,人工复核时对 severity 下调一档参考)。",
         "- purchase_impact 口径差异:gold 仅含 `influence`/`blocker` 两级,模型输出大量 `unknown`(37 条中 35 条),accuracy 5.6% 反映标注口径不一致而非模型随机(数据治理需统一定义)。",
         "",
         "## 4. 错误案例",

@@ -1,6 +1,6 @@
 """独立第二轮复判模块。
 
-实现要求（文档15 §7.9 / §7.10）：
+实现要求：
 - 复判输入只能包含原始反馈和必要元数据，不能把第一轮结果告诉复判模型
 - 对比字段: sentiment / theme_primary / need_type / severity / purchase_impact
 - 冲突规则：

@@ -1,7 +1,7 @@
 """SQLite 数据库层 — 全系统状态持久化。
 
 使用 Python 标准库 sqlite3，不依赖 ORM。
-表结构定义对应文档15 §7.3：
+表结构定义：
 runs / raw_sources / connector_state / feedback / classifications / reviews /
 human_reviews / clusters / cluster_members / evidence_cards / deliveries / audit_events
 """

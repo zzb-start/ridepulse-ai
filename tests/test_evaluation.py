@@ -1,4 +1,4 @@
-"""evaluation 模块测试 — 规格来源：文档15 §10。
+"""evaluation 模块测试。
 
 指标：Cohen's Kappa / 加权 Kappa / 每字段 accuracy 与 Macro F1 / severity 加权 Kappa。
 """

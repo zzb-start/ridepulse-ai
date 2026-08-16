@@ -1,6 +1,6 @@
 """Embedding 模块 — 三种模式。
 
-实现要求（文档15 §7.11）：
+实现要求：
 1. api: 正式模式（OpenAI 兼容 Embedding API）
 2. local: 备用（多语言 sentence-transformers）
 3. fake: 仅测试（按文本哈希生成确定性向量，不得用于比赛指标）

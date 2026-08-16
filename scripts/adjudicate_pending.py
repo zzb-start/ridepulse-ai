@@ -1,9 +1,9 @@
-"""M4 遗留 12 条 pending 人工复核裁决 — 回填 human_final_outputs.csv 并生成裁决记录。
+"""12 条 pending 人工复核裁决 — 回填 human_final_outputs.csv 并生成裁决记录。
 
-裁决原则(2026-08-14,队长代执行):
+裁决原则(2026-08-14):
 1. 有 gold 配对的条目(F0002/F0014/F0036/F0038/F0040):最终值以 gold 为准(gold 为双人仲裁标准答案);
 2. 无 gold 的冲突字段:以复判模型与原始证据严重度为准;
-   severity 参考 M4 已知限制(主模型系统性高估一档,9/9);
+   severity 参考已知限制(主模型系统性高估一档,9/9);
 3. 未冲突字段保持流水线输出,不擅改。
 
 用法: python scripts/adjudicate_pending.py --run-id RUN-20260813-211103
@@ -115,11 +115,11 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(records)
 
-    # 裁决记录 markdown(供队长/评审复核)
+    # 裁决记录 markdown(留档供复核)
     md = [
         "# 人工复核裁决记录(12 条 pending)",
         "",
-        f"> run_id: `{args.run_id}` | 裁决: 队长代执行 | 日期: 2026-08-14",
+        f"> run_id: `{args.run_id}` | 裁决: 人工复核 | 日期: 2026-08-14",
         "> 原则: ①有 gold 的条目以 gold 为准;②无 gold 冲突字段以复判模型+原始证据严重度为准,",
         ">  severity 参考主模型系统性高估一档的已知限制;③未冲突字段保持流水线输出。",
         "",

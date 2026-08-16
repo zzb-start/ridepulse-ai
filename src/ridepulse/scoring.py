@@ -1,6 +1,6 @@
 """确定性优先级评分模块 — 分数完全由代码计算，模型不参与。
 
-评分维度（文档15 §7.13，总分100）：
+评分维度（总分100）：
 证据质量15 + 独立复现20 + 频次15 + 严重度20 + 可行动性15 + 购买影响15
 含惩罚项与 P0-P3 / high-medium-low 判定。
 """
@@ -115,7 +115,7 @@ def score_cluster(cluster: ClusterInfo, *, members: list[dict],
     raw_score = evidence_quality + reproduction + frequency + severity + actionability + purchase
     priority_score = max(0, min(100, raw_score - penalties))
 
-    # 优先级等级（文档15 §7.13）
+    # 优先级等级
     if priority_score >= 80:
         priority_level = "P0"
     elif priority_score >= 65:

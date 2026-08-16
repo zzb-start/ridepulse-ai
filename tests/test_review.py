@@ -1,4 +1,4 @@
-"""review 模块测试 — 规格来源：文档15 §7.9 / §7.10。
+"""review 模块测试。
 
 7.9 对比字段: sentiment / theme_primary / need_type / severity / purchase_impact
 冲突规则：

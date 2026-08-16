@@ -1,6 +1,5 @@
 """BaseLLMClient 测试 — 使用 httpx.MockTransport 模拟 HTTP 层，不消耗真实 API。
 
-规格来源：文档15 §7.7
 - 温度默认 0；超时；最多重试 max_retries 次，只对超时/429/5xx 重试
 - 结构化 JSON 输出；解析失败只允许一次修复调用
 - 第二次仍失败必须抛错（上层进入人工队列），不得生成猜测结果

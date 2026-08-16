@@ -1,4 +1,4 @@
-"""dedup 模块测试 — 规格来源：文档15 §7.6。
+"""dedup 模块测试。
 
 第一层：SHA-256 精确指纹 (normalized_text + brand + product_model)
 第二层：字符 3-gram TF-IDF 余弦相似度，阈值默认 0.92
