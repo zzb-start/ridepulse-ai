@@ -275,7 +275,7 @@ def main() -> int:
         "## 6. 已知限制与披露",
         "",
         "- 双人标注样本 20 条,低于 50 条计划目标,已披露(数据量约束,非流程缺漏)。",
-        "- 处理耗时与成本见 `usage_log.json`(逐次 LLM 调用 tokens/duration);总成本取决于网关计费,未在 metrics.json 固化。",
+        "- 处理耗时与成本见 `usage_log.json`(逐次 LLM 调用 tokens/duration);总成本取决于所选 LLM 供应商计费,未在 metrics.json 固化。",
         "- 评测基于第一轮分类;12 条冲突裁决回填后如需复评,重跑本脚本即可(paired 口径不变)。",
         "",
     ]

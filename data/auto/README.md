@@ -1,6 +1,6 @@
 # data/auto — 周更自动流水线的数据区
 
-> 让系统长期自动运转,人工只做一件事:裁决双模型冲突。
+> 让系统长期自动运转,人工只做两件事:裁决双模型冲突 + 抽查新数据。
 
 ## 文件说明
 
@@ -14,8 +14,8 @@
 
 ## 运转流程
 
-1. GitHub Actions 每周一北京时间 02:37 自动触发(或 Actions 页手动 Run workflow)
-2. `scripts/auto_weekly.py` 四步:API 自检 → 增量采集 → 全链路运行 → 冲突报告
+1. GitHub Actions 每周一北京时间 02:37 定时触发;代码推送到 main 分支也自动运行;或 Actions 页手动 Run workflow
+2. `scripts/auto_weekly.py` 四步:API 自检 → 增量采集 → 全链路运行 → 冲突报告;单条模型输出校验失败自动降级为待人工复核,不中断整轮运行
 3. 新运行产物自动 commit,push 后在线工作台自动重建,侧边栏可切换查看
 4. 有冲突时自动开 issue(标签 `ridepulse-auto`);任何步骤失败,工作流亮红并自动开告警 issue
 

@@ -22,7 +22,8 @@
 | 语义聚类 | 21 个需求簇，覆盖全部样本，跨平台/跨语言合并 |
 | 证据卡 | 21 张（EC-2026-0001 ~ EC-2026-0021），含问题陈述/根因假设/建议动作/证据 URL |
 | 评测 | 与双人标注 gold 配对 18/20：theme_primary 准确率 88.9% / macro-F1 75.4% |
-| 测试 | **192 项自动化测试全部通过** |
+| 测试 | **197 项自动化测试全部通过** |
+| 长期运转 | 周更自动流水线(GitHub Actions)已上线:每周一 02:37 自动采集→分类→复判→聚类→评分→证据卡,代码推送即运行,冲突自动开 issue,失败自动告警(见 `data/auto/README.md`) |
 
 完整结果、指标口径与已知限制见 [`03_system_results_m4.md`](03_system_results_m4.md) 与 `output/RUN-20260813-211103/`（模型输出、复判、裁决记录、聚类、优先级、证据卡、评测报告与图表，均已随仓库提交）。
 
@@ -77,11 +78,11 @@ python -m ridepulse.cli run --input data/verified/feedback_verified.csv
 # 评测复现（与 gold 标注比对，复现 metrics.json）
 python -m ridepulse.cli evaluate --run-id RUN-20260813-211103 --gold data/verified/annotation_gold.csv
 
-# Streamlit 工作台（运行概览 / 需求簇 / 证据卡 / 评测 / 人工复核 5 个页面）
+# Streamlit 工作台（证据卡 / 运行概览 / 需求簇 / 评测 / 人工复核 5 个页面；侧边栏可切换数据版本）
 streamlit run app.py
 
 # 全量测试
-pytest   # 192 passed
+pytest   # 197 passed
 ```
 
 > 正式运行产物已随仓库提交：`output/RUN-20260813-211103/`（`model_outputs.csv` / `review_outputs.csv` / `human_final_outputs.csv` / `cluster_results.csv` / `priority_scores.csv` / `evidence_cards.json` / `metrics.json` / `error_cases.csv` / `charts/` 等）。
@@ -110,22 +111,25 @@ ridepulse-ai/
 ├── app.py                                 # Streamlit 工作台（5 个页面）
 ├── data/
 │   ├── classification_schema.json         # 分类 JSON Schema v1.0
-│   └── verified/                          # DATASET v1（已冻结）
-│       ├── feedback_verified.csv          # 37 条正式反馈（脱敏）
-│       ├── source_ledger_verified.csv     # 来源台账（URL 可回链）
-│       ├── annotation_gold.csv            # 双人标注 gold（评测用）
-│       ├── DATASET_V1_FROZEN.md           # 冻结说明
-│       ├── dataset_summary.md             # 数据统计
-│       └── data_quality_report.md         # 数据质量报告
+│   ├── verified/                          # DATASET v1（已冻结）
+│   │   ├── feedback_verified.csv          # 37 条正式反馈（脱敏）
+│   │   ├── source_ledger_verified.csv     # 来源台账（URL 可回链）
+│   │   ├── annotation_gold.csv            # 双人标注 gold（评测用）
+│   │   ├── DATASET_V1_FROZEN.md           # 冻结说明
+│   │   ├── dataset_summary.md             # 数据统计
+│   │   └── data_quality_report.md         # 数据质量报告
+│   └── auto/                              # 周更自动流水线数据区（反馈池/游标/人工裁决）
 ├── prompts/
 │   ├── classify_v1.md                     # 分类 Prompt
 │   └── review_v1.md                       # 复判 Prompt
+├── agents/                                # 提示词模板（understander / reviewer / governor）
 ├── docs/
 │   ├── 01_problem_analysis.md             # 命题分析与行业洞察
 │   ├── 02_solution_design.md              # 技术方案设计
 │   └── 04_references.txt                  # 参考资料清单
-├── scripts/                               # 评测落盘 / 裁决回填 / PDF 构建 / Excel 导出
-├── tests/                                 # 192 项测试
+├── scripts/                               # 周更编排 / 评测落盘 / 裁决回填 / PDF 构建 / Excel 导出
+├── .github/workflows/weekly-pipeline.yml  # 周更自动流水线（定时 + push 触发）
+├── tests/                                 # 197 项测试
 ├── output/RUN-20260813-211103/            # M4 正式运行全部产物
 └── team_outputs/liang/                    # 业务审查交付（审查框架与模板：李昂；21 卡逐卡执行：队长代执行）
 ```

@@ -40,3 +40,5 @@ logs/
 
 # 内部核验报告(含修改前事实错误记录,不进公开仓库)
 team_outputs/liang/claims_review.md
+# 李昂业务文案审核归档(内部审核记录,不进公开仓库)
+team_outputs/liang/business_copy_review_final.md

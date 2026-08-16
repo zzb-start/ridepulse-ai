@@ -345,7 +345,7 @@ def main() -> None:
                 st.dataframe(adjud, width="stretch", hide_index=True)
 
     st.divider()
-    st.caption(f"数据与代码:{GITHUB_URL} · 192 项自动化测试全部通过 · 本页不调用 LLM · "
+    st.caption(f"数据与代码:{GITHUB_URL} · 197 项自动化测试全部通过 · 本页不调用 LLM · "
                "仓库内置 GitHub Actions 周更自动流水线")
 
 

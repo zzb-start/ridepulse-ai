@@ -201,7 +201,7 @@ def _build_api_embedder(config: Config | None = None) -> ApiEmbedder:
     config = config or get_config()
     if not (config.llm_base_url and config.llm_api_key):
         raise EmbeddingError(
-            "api 模式需要 LLM_BASE_URL 与 LLM_API_KEY（Embedding 走同一 OpenAI 兼容网关）"
+            "api 模式需要 LLM_BASE_URL 与 LLM_API_KEY（Embedding 走同一 OpenAI 兼容接口）"
         )
     model = config.embedding_model or config.llm_primary_model
     if not model:
