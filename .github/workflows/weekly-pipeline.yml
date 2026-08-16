@@ -1,6 +1,8 @@
 name: RidePulse 周更自动流水线
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 每周日 18:37 UTC = 北京时间周一 02:37(避开整点高峰)
     - cron: '37 18 * * 0'
@@ -58,12 +60,16 @@ jobs:
         run: |
           git config user.name "ridepulse-bot"
           git config user.email "ridepulse-bot@users.noreply.github.com"
-          git add -f data/auto output/
+          # 只提交数据区与本轮运行目录(原始快照 output/auto_raw 不提交,同 data/raw 原则)
+          git add -f data/auto
+          RUN_ID=$(cat data/auto/latest_run.txt 2>/dev/null || true)
+          if [ -n "$RUN_ID" ]; then
+            git add -f "output/$RUN_ID"
+          fi
           if git diff --cached --quiet; then
             echo "无变更,跳过提交"
           else
-            RUN_ID=$(cat data/auto/latest_run.txt 2>/dev/null || echo "collect-only")
-            git commit -m "auto: 周更运行 ${RUN_ID}"
+            git commit -m "auto: 周更运行 ${RUN_ID:-collect-only}"
             git push
           fi
 
