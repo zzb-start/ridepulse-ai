@@ -1,0 +1,29 @@
+﻿cluster_id,priority_score,priority_level,confidence_level,breakdown,penalties,penalty_notes
+CL-0001,59,P2,medium,"{""evidence_quality"": 2, ""reproduction"": 20, ""frequency"": 15, ""severity"": 16, ""actionability"": 13, ""purchase_impact"": 8}",15,未核验证据 14 条;未解决冲突 14 个
+CL-0002,57,P2,high,"{""evidence_quality"": 10, ""reproduction"": 12, ""frequency"": 9, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 0}",0,
+CL-0003,36,P3,medium,"{""evidence_quality"": 4, ""reproduction"": 8, ""frequency"": 6, ""severity"": 16, ""actionability"": 15, ""purchase_impact"": 0}",13,单一平台证据;未核验证据 1 条;未解决冲突 2 个
+CL-0004,18,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0005,26,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 0}",15,单一平台证据;噪声点
+CL-0006,18,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0007,47,P2,medium,"{""evidence_quality"": 4, ""reproduction"": 8, ""frequency"": 6, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 8}",5,未核验证据 1 条;未解决冲突 1 个
+CL-0008,57,P2,medium,"{""evidence_quality"": 2, ""reproduction"": 20, ""frequency"": 15, ""severity"": 20, ""actionability"": 15, ""purchase_impact"": 0}",15,未核验证据 4 条;未解决冲突 3 个
+CL-0009,29,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 8}",15,单一平台证据;噪声点
+CL-0010,18,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0011,14,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 2, ""actionability"": 15, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0012,43,P3,medium,"{""evidence_quality"": 8, ""reproduction"": 8, ""frequency"": 6, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 0}",0,
+CL-0013,68,P1,medium,"{""evidence_quality"": 15, ""reproduction"": 8, ""frequency"": 6, ""severity"": 20, ""actionability"": 15, ""purchase_impact"": 15}",11,单一平台证据;未解决冲突 2 个
+CL-0014,68,P1,high,"{""evidence_quality"": 14, ""reproduction"": 20, ""frequency"": 15, ""severity"": 16, ""actionability"": 12, ""purchase_impact"": 0}",9,未解决冲突 4 个
+CL-0015,59,P2,high,"{""evidence_quality"": 15, ""reproduction"": 12, ""frequency"": 9, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 0}",3,未解决冲突 1 个
+CL-0016,51,P2,medium,"{""evidence_quality"": 11, ""reproduction"": 8, ""frequency"": 6, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 0}",0,
+CL-0017,30,P3,low,"{""evidence_quality"": 15, ""reproduction"": 4, ""frequency"": 3, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0018,53,P2,low,"{""evidence_quality"": 15, ""reproduction"": 4, ""frequency"": 3, ""severity"": 16, ""actionability"": 15, ""purchase_impact"": 15}",15,单一平台证据;噪声点
+CL-0019,15,P3,low,"{""evidence_quality"": 15, ""reproduction"": 4, ""frequency"": 3, ""severity"": 11, ""actionability"": 0, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0020,31,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 16, ""actionability"": 15, ""purchase_impact"": 0}",15,单一平台证据;噪声点
+CL-0021,23,P3,low,"{""evidence_quality"": 8, ""reproduction"": 4, ""frequency"": 3, ""severity"": 11, ""actionability"": 15, ""purchase_impact"": 0}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0022,50,P2,low,"{""evidence_quality"": 15, ""reproduction"": 4, ""frequency"": 3, ""severity"": 16, ""actionability"": 15, ""purchase_impact"": 15}",18,单一平台证据;噪声点;未解决冲突 1 个
+CL-0023,33,P3,medium,"{""evidence_quality"": 0, ""reproduction"": 20, ""frequency"": 15, ""severity"": 16, ""actionability"": 2, ""purchase_impact"": 0}",20,单一平台证据;未核验证据 9 条;未解决冲突 5 个
+CL-0024,43,P3,medium,"{""evidence_quality"": 0, ""reproduction"": 20, ""frequency"": 15, ""severity"": 6, ""actionability"": 14, ""purchase_impact"": 8}",20,单一平台证据;未核验证据 10 条;未解决冲突 7 个
+CL-0025,27,P3,medium,"{""evidence_quality"": 0, ""reproduction"": 8, ""frequency"": 6, ""severity"": 2, ""actionability"": 15, ""purchase_impact"": 8}",12,单一平台证据;未核验证据 2 条;未解决冲突 1 个
+CL-0026,20,P3,medium,"{""evidence_quality"": 0, ""reproduction"": 8, ""frequency"": 6, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 0}",15,单一平台证据;未核验证据 2 条;未解决冲突 2 个
+CL-0027,46,P2,medium,"{""evidence_quality"": 0, ""reproduction"": 20, ""frequency"": 15, ""severity"": 11, ""actionability"": 12, ""purchase_impact"": 8}",20,单一平台证据;未核验证据 6 条;未解决冲突 3 个
+CL-0028,26,P3,low,"{""evidence_quality"": 0, ""reproduction"": 4, ""frequency"": 3, ""severity"": 6, ""actionability"": 15, ""purchase_impact"": 8}",10,单一平台证据;未核验证据 1 条;未解决冲突 1 个

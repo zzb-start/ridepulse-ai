@@ -1,0 +1,1622 @@
+[
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1392,
+    "completion_tokens": 207,
+    "total_tokens": 1599,
+    "duration_ms": 3607,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1405,
+    "completion_tokens": 202,
+    "total_tokens": 1607,
+    "duration_ms": 4033,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1387,
+    "completion_tokens": 175,
+    "total_tokens": 1562,
+    "duration_ms": 3583,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1380,
+    "completion_tokens": 169,
+    "total_tokens": 1549,
+    "duration_ms": 2069,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1372,
+    "completion_tokens": 183,
+    "total_tokens": 1555,
+    "duration_ms": 3312,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1379,
+    "completion_tokens": 225,
+    "total_tokens": 1604,
+    "duration_ms": 2244,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1384,
+    "completion_tokens": 209,
+    "total_tokens": 1593,
+    "duration_ms": 2141,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1392,
+    "completion_tokens": 198,
+    "total_tokens": 1590,
+    "duration_ms": 3791,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1404,
+    "completion_tokens": 201,
+    "total_tokens": 1605,
+    "duration_ms": 4766,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1386,
+    "completion_tokens": 194,
+    "total_tokens": 1580,
+    "duration_ms": 3208,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1387,
+    "completion_tokens": 206,
+    "total_tokens": 1593,
+    "duration_ms": 3694,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1391,
+    "completion_tokens": 225,
+    "total_tokens": 1616,
+    "duration_ms": 6429,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1374,
+    "completion_tokens": 210,
+    "total_tokens": 1584,
+    "duration_ms": 3244,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1385,
+    "completion_tokens": 207,
+    "total_tokens": 1592,
+    "duration_ms": 3128,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1382,
+    "completion_tokens": 202,
+    "total_tokens": 1584,
+    "duration_ms": 3146,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1379,
+    "completion_tokens": 151,
+    "total_tokens": 1530,
+    "duration_ms": 3100,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1396,
+    "completion_tokens": 243,
+    "total_tokens": 1639,
+    "duration_ms": 2983,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1385,
+    "completion_tokens": 193,
+    "total_tokens": 1578,
+    "duration_ms": 3400,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1394,
+    "completion_tokens": 214,
+    "total_tokens": 1608,
+    "duration_ms": 3746,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1387,
+    "completion_tokens": 176,
+    "total_tokens": 1563,
+    "duration_ms": 5904,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1394,
+    "completion_tokens": 210,
+    "total_tokens": 1604,
+    "duration_ms": 2054,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1392,
+    "completion_tokens": 179,
+    "total_tokens": 1571,
+    "duration_ms": 3702,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1392,
+    "completion_tokens": 204,
+    "total_tokens": 1596,
+    "duration_ms": 3545,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1391,
+    "completion_tokens": 220,
+    "total_tokens": 1611,
+    "duration_ms": 2222,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1390,
+    "completion_tokens": 228,
+    "total_tokens": 1618,
+    "duration_ms": 4961,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1395,
+    "completion_tokens": 198,
+    "total_tokens": 1593,
+    "duration_ms": 3593,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1386,
+    "completion_tokens": 190,
+    "total_tokens": 1576,
+    "duration_ms": 6847,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1383,
+    "completion_tokens": 183,
+    "total_tokens": 1566,
+    "duration_ms": 2681,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1390,
+    "completion_tokens": 217,
+    "total_tokens": 1607,
+    "duration_ms": 2415,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1386,
+    "completion_tokens": 196,
+    "total_tokens": 1582,
+    "duration_ms": 4091,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1389,
+    "completion_tokens": 246,
+    "total_tokens": 1635,
+    "duration_ms": 2434,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1383,
+    "completion_tokens": 155,
+    "total_tokens": 1538,
+    "duration_ms": 2809,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1391,
+    "completion_tokens": 224,
+    "total_tokens": 1615,
+    "duration_ms": 5105,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1397,
+    "completion_tokens": 204,
+    "total_tokens": 1601,
+    "duration_ms": 4507,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1396,
+    "completion_tokens": 216,
+    "total_tokens": 1612,
+    "duration_ms": 2396,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 741,
+    "completion_tokens": 241,
+    "total_tokens": 982,
+    "duration_ms": 3394,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1406,
+    "completion_tokens": 196,
+    "total_tokens": 1602,
+    "duration_ms": 2704,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1394,
+    "completion_tokens": 225,
+    "total_tokens": 1619,
+    "duration_ms": 4268,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1365,
+    "completion_tokens": 166,
+    "total_tokens": 1531,
+    "duration_ms": 2602,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1356,
+    "completion_tokens": 153,
+    "total_tokens": 1509,
+    "duration_ms": 3658,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1378,
+    "completion_tokens": 185,
+    "total_tokens": 1563,
+    "duration_ms": 2183,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1380,
+    "completion_tokens": 219,
+    "total_tokens": 1599,
+    "duration_ms": 3355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1413,
+    "completion_tokens": 158,
+    "total_tokens": 1571,
+    "duration_ms": 1996,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1359,
+    "completion_tokens": 138,
+    "total_tokens": 1497,
+    "duration_ms": 2671,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1363,
+    "completion_tokens": 178,
+    "total_tokens": 1541,
+    "duration_ms": 2135,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1362,
+    "completion_tokens": 167,
+    "total_tokens": 1529,
+    "duration_ms": 2721,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1380,
+    "completion_tokens": 188,
+    "total_tokens": 1568,
+    "duration_ms": 4211,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1364,
+    "completion_tokens": 159,
+    "total_tokens": 1523,
+    "duration_ms": 3825,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1356,
+    "completion_tokens": 119,
+    "total_tokens": 1475,
+    "duration_ms": 3032,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1384,
+    "completion_tokens": 223,
+    "total_tokens": 1607,
+    "duration_ms": 3398,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1364,
+    "completion_tokens": 167,
+    "total_tokens": 1531,
+    "duration_ms": 2752,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1362,
+    "completion_tokens": 190,
+    "total_tokens": 1552,
+    "duration_ms": 3139,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1400,
+    "completion_tokens": 228,
+    "total_tokens": 1628,
+    "duration_ms": 5303,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1355,
+    "completion_tokens": 143,
+    "total_tokens": 1498,
+    "duration_ms": 1724,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1364,
+    "completion_tokens": 166,
+    "total_tokens": 1530,
+    "duration_ms": 2046,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1366,
+    "completion_tokens": 170,
+    "total_tokens": 1536,
+    "duration_ms": 3245,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1449,
+    "completion_tokens": 208,
+    "total_tokens": 1657,
+    "duration_ms": 9178,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1371,
+    "completion_tokens": 232,
+    "total_tokens": 1603,
+    "duration_ms": 3287,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1360,
+    "completion_tokens": 159,
+    "total_tokens": 1519,
+    "duration_ms": 7236,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1396,
+    "completion_tokens": 227,
+    "total_tokens": 1623,
+    "duration_ms": 3206,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1359,
+    "completion_tokens": 208,
+    "total_tokens": 1567,
+    "duration_ms": 2842,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1357,
+    "completion_tokens": 140,
+    "total_tokens": 1497,
+    "duration_ms": 2005,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1364,
+    "completion_tokens": 179,
+    "total_tokens": 1543,
+    "duration_ms": 2930,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1385,
+    "completion_tokens": 185,
+    "total_tokens": 1570,
+    "duration_ms": 2504,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 711,
+    "completion_tokens": 232,
+    "total_tokens": 943,
+    "duration_ms": 1905,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1363,
+    "completion_tokens": 224,
+    "total_tokens": 1587,
+    "duration_ms": 3421,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 726,
+    "completion_tokens": 241,
+    "total_tokens": 967,
+    "duration_ms": 2419,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1371,
+    "completion_tokens": 212,
+    "total_tokens": 1583,
+    "duration_ms": 3494,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1377,
+    "completion_tokens": 176,
+    "total_tokens": 1553,
+    "duration_ms": 2876,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 696,
+    "completion_tokens": 252,
+    "total_tokens": 948,
+    "duration_ms": 3574,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1355,
+    "completion_tokens": 134,
+    "total_tokens": 1489,
+    "duration_ms": 2688,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1361,
+    "completion_tokens": 161,
+    "total_tokens": 1522,
+    "duration_ms": 1858,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1360,
+    "completion_tokens": 201,
+    "total_tokens": 1561,
+    "duration_ms": 3704,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1359,
+    "completion_tokens": 148,
+    "total_tokens": 1507,
+    "duration_ms": 2866,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1355,
+    "completion_tokens": 133,
+    "total_tokens": 1488,
+    "duration_ms": 3901,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1364,
+    "completion_tokens": 329,
+    "total_tokens": 1693,
+    "duration_ms": 2979,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 521,
+    "completion_tokens": 163,
+    "total_tokens": 684,
+    "duration_ms": 1931,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1369,
+    "completion_tokens": 169,
+    "total_tokens": 1538,
+    "duration_ms": 4205,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1363,
+    "completion_tokens": 188,
+    "total_tokens": 1551,
+    "duration_ms": 2208,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1355,
+    "completion_tokens": 148,
+    "total_tokens": 1503,
+    "duration_ms": 1786,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1369,
+    "completion_tokens": 170,
+    "total_tokens": 1539,
+    "duration_ms": 3121,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1365,
+    "completion_tokens": 201,
+    "total_tokens": 1566,
+    "duration_ms": 4415,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 753,
+    "completion_tokens": 255,
+    "total_tokens": 1008,
+    "duration_ms": 4036,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1375,
+    "completion_tokens": 200,
+    "total_tokens": 1575,
+    "duration_ms": 12831,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1368,
+    "completion_tokens": 211,
+    "total_tokens": 1579,
+    "duration_ms": 2304,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1363,
+    "completion_tokens": 154,
+    "total_tokens": 1517,
+    "duration_ms": 3077,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1362,
+    "completion_tokens": 150,
+    "total_tokens": 1512,
+    "duration_ms": 2565,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1355,
+    "completion_tokens": 151,
+    "total_tokens": 1506,
+    "duration_ms": 2371,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1361,
+    "completion_tokens": 167,
+    "total_tokens": 1528,
+    "duration_ms": 2511,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1355,
+    "completion_tokens": 145,
+    "total_tokens": 1500,
+    "duration_ms": 1784,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1365,
+    "completion_tokens": 191,
+    "total_tokens": 1556,
+    "duration_ms": 2530,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1369,
+    "completion_tokens": 202,
+    "total_tokens": 1571,
+    "duration_ms": 2794,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 1362,
+    "completion_tokens": 184,
+    "total_tokens": 1546,
+    "duration_ms": 4377,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 919,
+    "completion_tokens": 84,
+    "total_tokens": 1003,
+    "duration_ms": 2909,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 932,
+    "completion_tokens": 93,
+    "total_tokens": 1025,
+    "duration_ms": 20496,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 914,
+    "completion_tokens": 73,
+    "total_tokens": 987,
+    "duration_ms": 2240,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 907,
+    "completion_tokens": 74,
+    "total_tokens": 981,
+    "duration_ms": 2686,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 899,
+    "completion_tokens": 91,
+    "total_tokens": 990,
+    "duration_ms": 1434,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 906,
+    "completion_tokens": 75,
+    "total_tokens": 981,
+    "duration_ms": 1714,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 911,
+    "completion_tokens": 71,
+    "total_tokens": 982,
+    "duration_ms": 3376,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 919,
+    "completion_tokens": 69,
+    "total_tokens": 988,
+    "duration_ms": 7449,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 931,
+    "completion_tokens": 83,
+    "total_tokens": 1014,
+    "duration_ms": 2037,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 913,
+    "completion_tokens": 72,
+    "total_tokens": 985,
+    "duration_ms": 1576,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 914,
+    "completion_tokens": 75,
+    "total_tokens": 989,
+    "duration_ms": 1570,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 918,
+    "completion_tokens": 90,
+    "total_tokens": 1008,
+    "duration_ms": 2365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 901,
+    "completion_tokens": 85,
+    "total_tokens": 986,
+    "duration_ms": 3727,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 912,
+    "completion_tokens": 72,
+    "total_tokens": 984,
+    "duration_ms": 1606,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 909,
+    "completion_tokens": 92,
+    "total_tokens": 1001,
+    "duration_ms": 1512,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 906,
+    "completion_tokens": 94,
+    "total_tokens": 1000,
+    "duration_ms": 2281,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 923,
+    "completion_tokens": 71,
+    "total_tokens": 994,
+    "duration_ms": 2638,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 912,
+    "completion_tokens": 101,
+    "total_tokens": 1013,
+    "duration_ms": 1913,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 921,
+    "completion_tokens": 72,
+    "total_tokens": 993,
+    "duration_ms": 3345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 914,
+    "completion_tokens": 84,
+    "total_tokens": 998,
+    "duration_ms": 2083,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 921,
+    "completion_tokens": 86,
+    "total_tokens": 1007,
+    "duration_ms": 2061,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 919,
+    "completion_tokens": 83,
+    "total_tokens": 1002,
+    "duration_ms": 1976,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 919,
+    "completion_tokens": 80,
+    "total_tokens": 999,
+    "duration_ms": 1872,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 918,
+    "completion_tokens": 76,
+    "total_tokens": 994,
+    "duration_ms": 2247,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 917,
+    "completion_tokens": 77,
+    "total_tokens": 994,
+    "duration_ms": 1528,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 922,
+    "completion_tokens": 75,
+    "total_tokens": 997,
+    "duration_ms": 2153,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 913,
+    "completion_tokens": 88,
+    "total_tokens": 1001,
+    "duration_ms": 76491,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 910,
+    "completion_tokens": 92,
+    "total_tokens": 1002,
+    "duration_ms": 2710,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 917,
+    "completion_tokens": 89,
+    "total_tokens": 1006,
+    "duration_ms": 1581,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 913,
+    "completion_tokens": 90,
+    "total_tokens": 1003,
+    "duration_ms": 1875,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 916,
+    "completion_tokens": 90,
+    "total_tokens": 1006,
+    "duration_ms": 4267,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 910,
+    "completion_tokens": 80,
+    "total_tokens": 990,
+    "duration_ms": 2481,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 918,
+    "completion_tokens": 76,
+    "total_tokens": 994,
+    "duration_ms": 1971,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 924,
+    "completion_tokens": 87,
+    "total_tokens": 1011,
+    "duration_ms": 1977,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 923,
+    "completion_tokens": 81,
+    "total_tokens": 1004,
+    "duration_ms": 2109,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 933,
+    "completion_tokens": 83,
+    "total_tokens": 1016,
+    "duration_ms": 1844,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 921,
+    "completion_tokens": 90,
+    "total_tokens": 1011,
+    "duration_ms": 2008,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 892,
+    "completion_tokens": 66,
+    "total_tokens": 958,
+    "duration_ms": 2121,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 883,
+    "completion_tokens": 64,
+    "total_tokens": 947,
+    "duration_ms": 1575,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 905,
+    "completion_tokens": 89,
+    "total_tokens": 994,
+    "duration_ms": 2588,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 907,
+    "completion_tokens": 80,
+    "total_tokens": 987,
+    "duration_ms": 2113,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 940,
+    "completion_tokens": 88,
+    "total_tokens": 1028,
+    "duration_ms": 1533,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 886,
+    "completion_tokens": 71,
+    "total_tokens": 957,
+    "duration_ms": 1902,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 890,
+    "completion_tokens": 68,
+    "total_tokens": 958,
+    "duration_ms": 22048,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 889,
+    "completion_tokens": 79,
+    "total_tokens": 968,
+    "duration_ms": 1685,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 907,
+    "completion_tokens": 78,
+    "total_tokens": 985,
+    "duration_ms": 1606,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 891,
+    "completion_tokens": 65,
+    "total_tokens": 956,
+    "duration_ms": 1563,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 883,
+    "completion_tokens": 54,
+    "total_tokens": 937,
+    "duration_ms": 2732,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 911,
+    "completion_tokens": 72,
+    "total_tokens": 983,
+    "duration_ms": 2091,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 891,
+    "completion_tokens": 69,
+    "total_tokens": 960,
+    "duration_ms": 1712,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 889,
+    "completion_tokens": 84,
+    "total_tokens": 973,
+    "duration_ms": 3440,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 927,
+    "completion_tokens": 70,
+    "total_tokens": 997,
+    "duration_ms": 1973,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 882,
+    "completion_tokens": 58,
+    "total_tokens": 940,
+    "duration_ms": 1304,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 891,
+    "completion_tokens": 75,
+    "total_tokens": 966,
+    "duration_ms": 5461,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 893,
+    "completion_tokens": 72,
+    "total_tokens": 965,
+    "duration_ms": 1808,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 976,
+    "completion_tokens": 91,
+    "total_tokens": 1067,
+    "duration_ms": 2333,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 898,
+    "completion_tokens": 70,
+    "total_tokens": 968,
+    "duration_ms": 2034,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 887,
+    "completion_tokens": 67,
+    "total_tokens": 954,
+    "duration_ms": 1701,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 923,
+    "completion_tokens": 78,
+    "total_tokens": 1001,
+    "duration_ms": 1669,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 886,
+    "completion_tokens": 86,
+    "total_tokens": 972,
+    "duration_ms": 1560,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 884,
+    "completion_tokens": 73,
+    "total_tokens": 957,
+    "duration_ms": 1765,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 891,
+    "completion_tokens": 86,
+    "total_tokens": 977,
+    "duration_ms": 1829,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 912,
+    "completion_tokens": 79,
+    "total_tokens": 991,
+    "duration_ms": 1484,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 890,
+    "completion_tokens": 75,
+    "total_tokens": 965,
+    "duration_ms": 1392,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 898,
+    "completion_tokens": 73,
+    "total_tokens": 971,
+    "duration_ms": 1650,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 904,
+    "completion_tokens": 76,
+    "total_tokens": 980,
+    "duration_ms": 2130,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 882,
+    "completion_tokens": 56,
+    "total_tokens": 938,
+    "duration_ms": 2044,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 888,
+    "completion_tokens": 85,
+    "total_tokens": 973,
+    "duration_ms": 1414,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 887,
+    "completion_tokens": 75,
+    "total_tokens": 962,
+    "duration_ms": 1997,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 886,
+    "completion_tokens": 67,
+    "total_tokens": 953,
+    "duration_ms": 1859,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 882,
+    "completion_tokens": 56,
+    "total_tokens": 938,
+    "duration_ms": 1306,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 891,
+    "completion_tokens": 69,
+    "total_tokens": 960,
+    "duration_ms": 1927,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 896,
+    "completion_tokens": 65,
+    "total_tokens": 961,
+    "duration_ms": 2006,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 890,
+    "completion_tokens": 70,
+    "total_tokens": 960,
+    "duration_ms": 3199,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 882,
+    "completion_tokens": 73,
+    "total_tokens": 955,
+    "duration_ms": 2641,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 896,
+    "completion_tokens": 70,
+    "total_tokens": 966,
+    "duration_ms": 1696,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 892,
+    "completion_tokens": 52,
+    "total_tokens": 944,
+    "duration_ms": 3052,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 902,
+    "completion_tokens": 71,
+    "total_tokens": 973,
+    "duration_ms": 1930,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 895,
+    "completion_tokens": 73,
+    "total_tokens": 968,
+    "duration_ms": 2811,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 890,
+    "completion_tokens": 67,
+    "total_tokens": 957,
+    "duration_ms": 2036,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 889,
+    "completion_tokens": 76,
+    "total_tokens": 965,
+    "duration_ms": 2247,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 882,
+    "completion_tokens": 58,
+    "total_tokens": 940,
+    "duration_ms": 1699,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 888,
+    "completion_tokens": 74,
+    "total_tokens": 962,
+    "duration_ms": 1665,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 882,
+    "completion_tokens": 57,
+    "total_tokens": 939,
+    "duration_ms": 1548,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 892,
+    "completion_tokens": 91,
+    "total_tokens": 983,
+    "duration_ms": 2022,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 896,
+    "completion_tokens": 91,
+    "total_tokens": 987,
+    "duration_ms": 1945,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "success",
+    "prompt_tokens": 889,
+    "completion_tokens": 75,
+    "total_tokens": 964,
+    "duration_ms": 2054,
+    "attempts": 1
+  }
+]
