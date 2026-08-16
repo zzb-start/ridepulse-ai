@@ -59,7 +59,7 @@ def load_model_outputs(path: Path) -> list[ClassificationResult]:
                     is_constructive=str(raw.get("is_constructive", "true")).lower() in ("true", "1"),
                     confidence=float(raw.get("confidence", 0.6)),
                     rationale=raw.get("rationale", "由 model_outputs.csv 生成,评测仅使用分类字段"),
-                    model_name=raw.get("model_name", "deepseek-v4-flash"),
+                    model_name=raw.get("model_name", "unknown"),
                     prompt_version=raw.get("prompt_version", "classify_v1"),
                 )
             )
@@ -236,7 +236,7 @@ def main() -> int:
         "",
         "## 1. 评测口径",
         "",
-        "- 系统最终分类(`model_outputs.csv`,deepseek-v4-flash 第一轮)与 `annotation_gold.csv`(20 条 gold)按 feedback_id 配对。",
+        "- 系统最终分类(`model_outputs.csv`,第一轮)与 `annotation_gold.csv`(20 条 gold)按 feedback_id 配对。",
         f"- 配对 **{len(paired)}/20**(F0030/F0031 在 gold 中但未入选 DATASET v1 正式 37 条,属数据集版本差异,已核对原标注交付一致)。",
         "- 指标:逐字段 Accuracy / Macro F1 / 逐类 P-R-F1 / severity 加权 Kappa(线性权)/ 人工复核率(confidence<0.65 口径)。",
         "",

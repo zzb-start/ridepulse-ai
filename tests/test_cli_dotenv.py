@@ -13,7 +13,7 @@ def test_load_dotenv_sets_and_skips_existing(tmp_path):
         "LLM_BASE_URL=http://example.com/v1\n"
         "LLM_API_KEY=sk-secret\n"
         "# 注释行不生效\n"
-        "LLM_PRIMARY_MODEL=\"deepseek-v4-flash\"\n",
+        "LLM_PRIMARY_MODEL=\"example-primary-model\"\n",
         encoding="utf-8",
     )
     os.environ["LLM_API_KEY"] = "already-set"
@@ -21,7 +21,7 @@ def test_load_dotenv_sets_and_skips_existing(tmp_path):
         _load_dotenv(str(env_file))
         assert os.environ["LLM_BASE_URL"] == "http://example.com/v1"
         assert os.environ["LLM_API_KEY"] == "already-set"  # 不覆盖
-        assert os.environ["LLM_PRIMARY_MODEL"] == "deepseek-v4-flash"  # 去引号
+        assert os.environ["LLM_PRIMARY_MODEL"] == "example-primary-model"  # 去引号
     finally:
         os.environ.pop("LLM_BASE_URL", None)
         os.environ.pop("LLM_API_KEY", None)

@@ -16,8 +16,8 @@
 | 环节 | 结果 |
 |---|---|
 | 输入 | 37 条真实反馈（DATASET v1，2026-08-13 冻结；12 平台 / 24 来源页；中文 5 条 / 英文 32 条） |
-| 分类 | LLM 首轮分类 37/37（deepseek-v4-flash），JSON Schema 约束输出 |
-| 独立复判 | 第二模型全量复判 37/37（deepseek-v4-pro）；完全一致 21 条，字段级冲突 16 条 |
+| 分类 | LLM 首轮分类 37/37，JSON Schema 约束输出 |
+| 独立复判 | 第二模型全量复判 37/37（与首轮不同模型，双模型独立）；完全一致 21 条，字段级冲突 16 条 |
 | 人工仲裁 | 12 条冲突全部人工裁决，逐条依据留档（`adjudication_record.csv`） |
 | 语义聚类 | 21 个需求簇，覆盖全部样本，跨平台/跨语言合并 |
 | 证据卡 | 21 张（EC-2026-0001 ~ EC-2026-0021），含问题陈述/根因假设/建议动作/证据 URL |
@@ -70,7 +70,8 @@
 # 安装
 pip install -e .
 
-# 环境变量（.env，不提交）：LLM_BASE_URL / LLM_API_KEY / LLM_PRIMARY_MODEL / LLM_REVIEW_MODEL / EMBEDDING_MODE=local
+# 环境变量（.env，不提交）：LLM_BASE_URL / LLM_API_KEY / LLM_PRIMARY_MODEL / LLM_REVIEW_MODEL
+#   （任一 OpenAI 兼容 API 即可，如 MiniMax M3 官方；双模型填两个不同模型名）/ EMBEDDING_MODE=local
 
 # 运行完整流水线（需配置 LLM；无密钥可用 --offline 演示基线）
 python -m ridepulse.cli run --input data/verified/feedback_verified.csv
