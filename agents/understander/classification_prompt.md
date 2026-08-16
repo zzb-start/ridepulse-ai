@@ -1,6 +1,6 @@
 # 理解Agent — System Prompt v1.0
 
-> 此Prompt用于理解Agent（分类任务）。完整设计文档见团队内部文件 `09_Agent_Prompt设计文档.md`。
+> 此Prompt用于理解Agent（分类任务）：对单条用户反馈做第一轮结构化分类，输出经 Pydantic 校验。
 
 ---
 
