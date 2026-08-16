@@ -25,6 +25,40 @@ st.set_page_config(page_title="RidePulse AI", page_icon="🚴", layout="wide")
 RUN_DIR = Path("output") / "RUN-20260813-211103"
 GITHUB_URL = "https://github.com/zzb-start/ridepulse-ai"
 
+# 品牌/平台中文对照(仅注释,不改数据):帮助评委理解来源
+BRAND_ZH = {
+    "Magene": "迈金(我方品牌)",
+    "iGPSPORT": "迹驰(竞品)",
+    "Garmin": "佳明(竞品)",
+    "Wahoo": "Wahoo(竞品)",
+    "Strava": "Strava(第三方平台)",
+}
+PLATFORM_ZH = {
+    "App Store": "苹果 App Store",
+    "Google Play": "Google Play",
+    "Chinertown": "Chinertown 论坛",
+    "Chinertown iGPSPORT": "Chinertown 论坛(iGPSPORT 版块)",
+    "Garmin Forum": "佳明官方论坛",
+    "Garmin Forum Edge 1040": "佳明官方论坛(Edge 1040 版块)",
+    "Garmin Forum Edge 1050": "佳明官方论坛(Edge 1050 版块)",
+    "road.cc": "road.cc 骑行媒体",
+    "The Verge": "The Verge 科技媒体",
+    "TrainerRoad": "TrainerRoad(训练平台)",
+    "TrainerRoad Forum": "TrainerRoad 论坛",
+    "Wahoo Forum": "Wahoo 官方论坛",
+    "Zwift Forum": "Zwift 官方论坛",
+}
+LANG_ZH = {"en": "英文", "zh": "中文"}
+CONF_ZH = {"high": "高", "medium": "中", "low": "低"}
+OUR_BRANDS = {"Magene", "迈金"}
+
+
+def fmt_list(vals, mapping=None) -> str:
+    """列表值转中文逗号分隔;有对照表时追加中文注释。"""
+    mapping = mapping or {}
+    parts = [f"{v}({mapping[v]})" if v in mapping else str(v) for v in vals]
+    return "、".join(parts)
+
 st.title("RidePulse AI — 全球骑行用户需求雷达")
 st.caption("正式运行 RUN-20260813-211103 · DATASET v1(37 条真实反馈,2026-08-13 冻结,"
            "12 平台 / 24 来源页,中英双语)· 双模型复判(flash 主分类 + pro 复判)")
@@ -36,8 +70,9 @@ with st.expander("📖 怎么看这个工作台(30 秒导读)", expanded=False):
         "- **流水线**:采集 → 标准化 → LLM 分类 → 第二模型独立复判 → 人工仲裁 → "
         "语义聚类 → 纯代码六维评分 → 证据卡。\n"
         "- **五个页签**:运行概览=总体数字;需求簇=21 个问题簇;证据卡=可交给产品经理的"
-        "问题陈述+根因假设(标\"待验证\")+建议动作;评测=与双人标注 gold 比对的结果;"
-        "人工复核=双模型冲突的逐条裁决记录。\n"
+        "问题陈述+根因假设(标\"待验证\")+建议动作,分「我方产品(迈金/顽鹿)」与"
+        "「竞品洞察(佳明/Wahoo/迹驰等,不进入我方 backlog)」两类;评测=与双人标注 gold "
+        "比对的结果;人工复核=双模型冲突的逐条裁决记录。\n"
         "- **全部数据与代码**随 GitHub 仓库公开,评测可运行 `python -m ridepulse.cli "
         "evaluate --run-id RUN-20260813-211103 --gold data/verified/annotation_gold.csv` 复现。"
     )
@@ -169,37 +204,51 @@ def main() -> None:
         st.subheader("21 张需求证据卡(按优先级排序)")
         st.caption("每张卡包含:问题陈述 / 根因假设(一律标\"待验证\",不下定论)/ "
                    "建议动作(带责任团队)/ 证据 URL(不可回链的卡会被代码校验自动作废)。"
-                   "业务审查结论见仓库 team_outputs/liang/business_review.csv。")
+                   "卡片分两类——【我方】品牌为迈金 Magene 的产品问题,是进入 backlog 的候选"
+                   "(业务审查结论:8 张进入,见仓库 team_outputs/liang/business_review.csv);"
+                   "【竞品】品牌为佳明 Garmin / Wahoo / 迹驰 iGPSPORT / Strava 等真实厂商的"
+                   "公开反馈,用于行业对标与外部风险预判,不进入我方 backlog。")
         cards = load_cards()
         if cards:
             cards = sorted(cards, key=lambda c: -(c.get("priority_score") or 0))
-            for card in cards:
-                with st.expander(
-                    f"{card['card_id']} {card['title']} — P{card.get('priority_level', '-')} "
-                    f"({card.get('priority_score', 0)}分)",
-                    expanded=False,
-                ):
-                    st.write(f"**置信度**: {card.get('confidence_level', '-')} | "
-                             f"**平台**: {card.get('platforms', '')} | **品牌**: {card.get('brands', '')} | "
-                             f"**语言**: {card.get('languages', '')}")
-                    st.write("**问题陈述**")
-                    st.write(card.get("problem_statement", ""))
-                    st.write("**根因假设(待验证)**")
-                    for h in card.get("root_cause_hypotheses", []):
-                        st.markdown(f"- {h}")
-                    st.write("**建议动作**")
-                    for a in card.get("recommended_actions", []):
-                        act = a.get("action", a) if isinstance(a, dict) else a
-                        owner = a.get("owner", "—") if isinstance(a, dict) else "—"
-                        st.markdown(f"- {act}(owner: {owner})")
-                    st.write("**证据(点击可回链原文)**")
-                    for e in card.get("evidence", []):
-                        url = e.get("source_url", e.get("url", ""))
-                        sev = e.get("severity")
-                        label = e.get("feedback_id", "")
-                        if sev:
-                            label += f" · 严重度 {sev}"
-                        st.markdown(f"- [{label}]({url})")
+            ours = [c for c in cards if any(b in OUR_BRANDS for b in c.get("brands", []))]
+            comps = [c for c in cards if not any(b in OUR_BRANDS for b in c.get("brands", []))]
+            groups = [
+                ("我方产品问题(进入 backlog 候选)", "我方", ours),
+                ("竞品与行业洞察(不进入我方 backlog)", "竞品", comps),
+            ]
+            for label, badge, group in groups:
+                st.markdown(f"##### {label}({len(group)} 张)")
+                for card in group:
+                    with st.expander(
+                        f"[{badge}] {card['card_id']} {card['title']} — "
+                        f"P{card.get('priority_level', '-')}({card.get('priority_score', 0)}分)",
+                        expanded=False,
+                    ):
+                        conf = card.get("confidence_level", "-")
+                        conf = CONF_ZH.get(conf, conf)
+                        st.write(f"**置信度**: {conf} | "
+                                 f"**品牌**: {fmt_list(card.get('brands', []), BRAND_ZH)} | "
+                                 f"**平台**: {fmt_list(card.get('platforms', []), PLATFORM_ZH)} | "
+                                 f"**语言**: {fmt_list(card.get('languages', []), LANG_ZH)}")
+                        st.write("**问题陈述**")
+                        st.write(card.get("problem_statement", ""))
+                        st.write("**根因假设(待验证)**")
+                        for h in card.get("root_cause_hypotheses", []):
+                            st.markdown(f"- {h}")
+                        st.write("**建议动作**")
+                        for a in card.get("recommended_actions", []):
+                            act = a.get("action", a) if isinstance(a, dict) else a
+                            owner = a.get("owner", "—") if isinstance(a, dict) else "—"
+                            st.markdown(f"- {act}(owner: {owner})")
+                        st.write("**证据(点击可回链原文)**")
+                        for e in card.get("evidence", []):
+                            url = e.get("source_url", e.get("url", ""))
+                            sev = e.get("severity")
+                            label = e.get("feedback_id", "")
+                            if sev:
+                                label += f" · 严重度 {sev}"
+                            st.markdown(f"- [{label}]({url})")
         else:
             st.info("evidence_cards.json 未随运行产物提交。")
 
