@@ -60,8 +60,6 @@ def fmt_list(vals, mapping=None) -> str:
     return "、".join(parts)
 
 st.title("RidePulse AI — 全球骑行用户需求雷达")
-st.caption("正式运行 RUN-20260813-211103 · DATASET v1(37 条真实反馈,2026-08-13 冻结,"
-           "12 平台 / 24 来源页,中英双语)· 双模型复判(flash 主分类 + pro 复判)")
 
 with st.expander("📖 怎么看这个工作台(30 秒导读)", expanded=False):
     st.markdown(
