@@ -153,6 +153,17 @@ class TestJsonParsing:
         client, _ = make_client(sequential(completion_response(fenced)))
         assert client.complete_json("s", "u")["feedback_id"] == "F0001"
 
+    def test_strips_think_block_prefix_before_parsing(self):
+        # 部分模型（如 MiniMax M3 自适应思考模式）会在正文前输出 <think>…</think>
+        with_think = "<think>用户要求输出JSON，先分析字段含义…</think>\n\n" + VALID_JSON
+        client, _ = make_client(sequential(completion_response(with_think)))
+        assert client.complete_json("s", "u")["feedback_id"] == "F0001"
+
+    def test_extracts_json_from_surrounding_text(self):
+        noisy = "好的，以下是分类结果：\n" + VALID_JSON + "\n希望以上信息对你有帮助"
+        client, _ = make_client(sequential(completion_response(noisy)))
+        assert client.complete_json("s", "u")["feedback_id"] == "F0001"
+
     def test_parse_failure_triggers_one_repair_call(self):
         client, calls = make_client(
             sequential(

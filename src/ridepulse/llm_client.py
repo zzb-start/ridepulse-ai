@@ -149,15 +149,30 @@ class BaseLLMClient:
 
     @staticmethod
     def _parse_json(content: str) -> dict[str, Any]:
-        """解析模型输出的 JSON，容忍 Markdown 代码块包裹。"""
+        """解析模型输出的 JSON，容忍 Markdown 代码块与思考块前缀。
+
+        部分模型（如 MiniMax M3 自适应思考模式）会在正文前输出
+        <think>...</think>；残余的前后缀文本也一并兜底剥离。
+        """
         text = content.strip()
+        # 去掉思考块前缀（<think>…</think>，可能跨行）
+        text = re.sub(r"<think>.*?</think>\s*", "", text, flags=re.DOTALL)
         if text.startswith("```"):
             text = re.sub(r"^```(?:json)?\s*", "", text)
             text = re.sub(r"\s*```$", "", text)
-        parsed = json.loads(text)
-        if not isinstance(parsed, dict):
-            raise ValueError("JSON 顶层不是对象")
-        return parsed
+        try:
+            parsed = json.loads(text)
+            if isinstance(parsed, dict):
+                return parsed
+        except ValueError:
+            pass
+        # 兜底：截取首个 { 到末个 } 之间的 JSON 片段（容忍残余前后缀文本）
+        start, end = text.find("{"), text.rfind("}")
+        if start != -1 and end > start:
+            parsed = json.loads(text[start:end + 1])
+            if isinstance(parsed, dict):
+                return parsed
+        raise ValueError("JSON 顶层不是对象")
 
     def _log_success(self, start: float, attempts: int, usage: dict) -> None:
         """记录成功调用（不含任何 Secret）。"""

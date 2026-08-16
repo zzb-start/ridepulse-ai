@@ -1,0 +1,100 @@
+name: RidePulse 周更自动流水线
+
+on:
+  schedule:
+    # 每周日 18:37 UTC = 北京时间周一 02:37(避开整点高峰)
+    - cron: '37 18 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ridepulse-weekly
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  PYTHONIOENCODING: utf-8
+  EMBEDDING_MODE: local
+  EMBEDDING_MODEL: paraphrase-multilingual-MiniLM-L12-v2
+  # CI 首次运行需联网下载嵌入模型(~470MB),后续由 cache 命中;本地离线模式不受影响
+  HF_HUB_OFFLINE: '0'
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_PRIMARY_MODEL: ${{ secrets.LLM_PRIMARY_MODEL }}
+      LLM_REVIEW_MODEL: ${{ secrets.LLM_REVIEW_MODEL }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt sentence-transformers
+
+      - name: 缓存嵌入模型
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-minilm-v1
+
+      - name: 自检并运行周更流水线
+        id: weekly
+        run: python scripts/auto_weekly.py
+
+      - name: 提交本轮产物
+        if: success()
+        run: |
+          git config user.name "ridepulse-bot"
+          git config user.email "ridepulse-bot@users.noreply.github.com"
+          git add -f data/auto output/
+          if git diff --cached --quiet; then
+            echo "无变更,跳过提交"
+          else
+            RUN_ID=$(cat data/auto/latest_run.txt 2>/dev/null || echo "collect-only")
+            git commit -m "auto: 周更运行 ${RUN_ID}"
+            git push
+          fi
+
+      - name: 冲突挂单(人工裁决提醒)
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create ridepulse-auto --force 2>/dev/null || true
+          RUN_ID=$(cat data/auto/latest_run.txt 2>/dev/null || echo "")
+          CONFLICTS="output/${RUN_ID}/auto_conflicts.md"
+          if [ -n "$RUN_ID" ] && [ -f "$CONFLICTS" ]; then
+            N=$(grep -c '^| F' "$CONFLICTS" || true)
+            if [ "$N" -gt 0 ]; then
+              OPEN=$(gh issue list --state open --label ridepulse-auto --json number --jq length)
+              if [ "$OPEN" -eq 0 ]; then
+                gh issue create \
+                  --title "自动流水线人工复核: ${RUN_ID}(${N} 条冲突)" \
+                  --body-file "$CONFLICTS" \
+                  --label ridepulse-auto
+              fi
+            fi
+          fi
+
+      - name: 失败告警
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create ridepulse-auto --force 2>/dev/null || true
+          gh issue create \
+            --title "自动流水线运行失败,请检查" \
+            --body "RidePulse 周更流水线失败,详见日志: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label ridepulse-auto

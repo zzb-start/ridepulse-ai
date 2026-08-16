@@ -1,19 +1,21 @@
 """RidePulse AI — Streamlit 体验入口(M4 成果展示工作台)。
 
 页面:
-1. 运行概览(统计卡 + 评测指标 + 优先级分布)
-2. 需求簇(21 个需求簇明细)
-3. 证据卡(21 张,含根因假设/建议动作/证据 URL)
+1. 证据卡(21 张,含根因假设/建议动作/证据 URL,分我方/竞品两类)
+2. 运行概览(统计卡 + 评测指标 + 优先级分布)
+3. 需求簇(21 个需求簇明细)
 4. 评测(指标表 + 字段级错误案例 + 图表)
-5. 人工复核(双模型复判 + 12 条裁决记录)
+5. 人工复核(双模型复判 + 裁决记录)
+
+侧边栏可切换数据版本:默认展示正式运行 RUN-20260813-211103(与参赛材料一致);
+周更自动流水线(GitHub Actions)产生的新运行可切换查看。
 
 运行: streamlit run app.py
-本页面只读展示仓库内已提交的正式运行产物,不调用任何 LLM、不依赖密钥。
+本页面只读展示仓库内已提交的运行产物,不调用任何 LLM、不依赖密钥。
 """
 
 from __future__ import annotations
 
-import csv
 import json
 from pathlib import Path
 
@@ -22,7 +24,7 @@ import streamlit as st
 
 st.set_page_config(page_title="RidePulse AI", page_icon="🚴", layout="wide")
 
-RUN_DIR = Path("output") / "RUN-20260813-211103"
+OFFICIAL_RUN = "RUN-20260813-211103"
 GITHUB_URL = "https://github.com/zzb-start/ridepulse-ai"
 
 # 品牌/平台中文对照(仅注释,不改数据):帮助评委理解来源
@@ -59,43 +61,39 @@ def fmt_list(vals, mapping=None) -> str:
     parts = [f"{v}({mapping[v]})" if v in mapping else str(v) for v in vals]
     return "、".join(parts)
 
-st.title("RidePulse AI — 全球骑行用户需求雷达")
 
-with st.expander("📖 怎么看这个工作台(30 秒导读)", expanded=False):
-    st.markdown(
-        "- **数据从哪来**:37 条真实公开用户反馈(App Store / Google Play / 论坛 / 媒体),"
-        "每条含原文、来源 URL、时间,可回链,无虚构数据。\n"
-        "- **流水线**:采集 → 标准化 → LLM 分类 → 第二模型独立复判 → 人工仲裁 → "
-        "语义聚类 → 纯代码六维评分 → 证据卡。\n"
-        "- **五个页签**:证据卡=可交给产品经理的问题陈述+根因假设(标\"待验证\")"
-        "+建议动作,分「我方产品(迈金/顽鹿)」与「竞品洞察(佳明/Wahoo/迹驰等,不进入我方 "
-        "backlog)」两类;运行概览=总体数字;需求簇=21 个问题簇;评测=与双人标注 gold 比对"
-        "的结果;人工复核=双模型冲突的逐条裁决记录。\n"
-        "- **全部数据与代码**随 GitHub 仓库公开,评测可运行 `python -m ridepulse.cli "
-        "evaluate --run-id RUN-20260813-211103 --gold data/verified/annotation_gold.csv` 复现。"
-    )
+def list_run_dirs() -> list[str]:
+    """仓库内已提交的运行目录(含 metrics.json 才视为完整运行),新→旧排序。"""
+    out = Path("output")
+    if not out.is_dir():
+        return []
+    dirs = []
+    for p in out.iterdir():
+        if p.is_dir() and p.name.startswith("RUN-") and (p / "metrics.json").exists():
+            dirs.append(p.name)
+    return sorted(dirs, reverse=True)
 
 
 @st.cache_data
-def load_csv_opt(name: str) -> pd.DataFrame | None:
+def load_csv_opt(run_dir: str, name: str) -> pd.DataFrame | None:
     """读取运行产物 CSV;文件不存在时返回 None(页面降级显示,不崩溃)。"""
-    p = RUN_DIR / name
+    p = Path("output") / run_dir / name
     if not p.exists():
         return None
     return pd.read_csv(p, encoding="utf-8-sig")
 
 
 @st.cache_data
-def load_json_opt(name: str):
-    p = RUN_DIR / name
+def load_json_opt(run_dir: str, name: str):
+    p = Path("output") / run_dir / name
     if not p.exists():
         return None
     return json.loads(p.read_text(encoding="utf-8"))
 
 
 @st.cache_data
-def load_cards() -> list[dict] | None:
-    p = RUN_DIR / "evidence_cards.json"
+def load_cards(run_dir: str) -> list[dict] | None:
+    p = Path("output") / run_dir / "evidence_cards.json"
     if not p.exists():
         return None
     return json.loads(p.read_text(encoding="utf-8"))
@@ -130,76 +128,50 @@ def show_metrics_table(metrics: dict) -> None:
         )
 
 
+st.title("RidePulse AI — 全球骑行用户需求雷达")
+
+with st.expander("📖 怎么看这个工作台(30 秒导读)", expanded=False):
+    st.markdown(
+        "- **数据从哪来**:37 条真实公开用户反馈(App Store / Google Play / 论坛 / 媒体),"
+        "每条含原文、来源 URL、时间,可回链,无虚构数据。\n"
+        "- **流水线**:采集 → 标准化 → LLM 分类 → 第二模型独立复判 → 人工仲裁 → "
+        "语义聚类 → 纯代码六维评分 → 证据卡。\n"
+        "- **五个页签**:证据卡=可交给产品经理的问题陈述+根因假设(标\"待验证\")"
+        "+建议动作,分「我方产品(迈金/顽鹿)」与「竞品洞察(佳明/Wahoo/迹驰等,不进入我方 "
+        "backlog)」两类;运行概览=总体数字;需求簇=21 个问题簇;评测=与双人标注 gold 比对"
+        "的结果;人工复核=双模型冲突的逐条裁决记录。\n"
+        "- **全部数据与代码**随 GitHub 仓库公开,评测可运行 `python -m ridepulse.cli "
+        "evaluate --run-id RUN-20260813-211103 --gold data/verified/annotation_gold.csv` 复现。\n"
+        "- **长期自动运转**:仓库内置周更自动流水线(GitHub Actions,每周一自动采集→分类→"
+        "复判→聚类→评分→证据卡,冲突自动开 issue 提醒人工裁决);侧边栏可切换查看各期数据。"
+    )
+
+
 def main() -> None:
-    metrics = load_json_opt("metrics.json")
+    # ---- 数据版本切换(默认=参赛正式运行) ----
+    run_dirs = list_run_dirs()
+    with st.sidebar:
+        st.markdown("### 数据版本")
+        if run_dirs:
+            default_idx = run_dirs.index(OFFICIAL_RUN) if OFFICIAL_RUN in run_dirs else 0
+            run_dir = st.selectbox("选择运行", run_dirs, index=default_idx)
+            if run_dir == OFFICIAL_RUN:
+                st.caption("正式运行(与参赛材料一致)")
+            else:
+                st.caption("周更自动流水线产生的运行")
+        else:
+            run_dir = OFFICIAL_RUN
+            st.warning("仓库中未找到运行产物")
+
+    metrics = load_json_opt(run_dir, "metrics.json")
 
     tab_cards, tab_overview, tab_clusters, tab_eval, tab_review = st.tabs(
         ["证据卡", "运行概览", "需求簇", "评测", "人工复核"]
     )
 
-    # ---------- 1. 运行概览 ----------
-    with tab_overview:
-        st.subheader("总体结果")
-        if metrics:
-            c1, c2, c3, c4, c5 = st.columns(5)
-            c1.metric("正式反馈", "37", "DATASET v1")
-            c2.metric("需求簇", "21", "覆盖全部样本")
-            c3.metric("证据卡", "21", "EC-2026-0001~0021")
-            tp = metrics.get("theme_primary") or {}
-            c4.metric("一级主题准确率", f"{tp.get('accuracy', 0):.1%}",
-                      f"macro-F1 {tp.get('macro_f1', 0):.1%}")
-            c5.metric("严重度加权 Kappa", f"{metrics.get('severity_weighted_kappa', 0):.3f}", "线性加权")
-            st.caption("评测口径:系统分类与双人标注 gold 按 feedback_id 配对(18/20);"
-                       "Kappa 低与系统性高估一档有关,已在评测页与仓库文档如实披露。")
-        else:
-            st.info("metrics.json 未随运行产物提交,请检查仓库。")
-
-        st.subheader("评测指标")
-        if metrics:
-            show_metrics_table(metrics)
-        else:
-            st.info("暂无指标数据。")
-
-        st.subheader("优先级分布(纯代码六维评分,模型不参与)")
-        st.caption("六维权重:证据 15 + 复现 20 + 频率 15 + 严重度 20 + 可执行 15 + 购买 15;"
-                   "P1 最高,P3 最低。")
-        prio = load_csv_opt("priority_scores.csv")
-        if prio is not None:
-            cols = [c for c in ["cluster_id", "priority_score", "priority_level",
-                                "confidence_level", "penalties", "penalty_notes"] if c in prio.columns]
-            st.dataframe(prio[cols], width="stretch", hide_index=True)
-        else:
-            st.info("priority_scores.csv 未随运行产物提交。")
-
-    # ---------- 2. 需求簇 ----------
-    with tab_clusters:
-        st.subheader("21 个需求簇")
-        st.caption("聚类方式:多语言向量嵌入(本地 MiniLM,384 维)→ 主题分桶 → "
-                   "确定性凝聚聚类(cosine,阈值 0.5)。每行是一个问题簇,"
-                   "member_feedback_ids 是该簇包含的反馈编号,可回链到来源台账。")
-        clusters = load_csv_opt("cluster_results.csv")
-        if clusters is not None:
-            rename = {
-                "cluster_id": "簇编号",
-                "member_feedback_ids": "成员反馈",
-                "unique_source_record_count": "来源条数",
-                "unique_domain_count": "域名数",
-                "platform_count": "平台数",
-                "language_count": "语言数",
-                "brand_count": "品牌数",
-                "max_severity": "最高严重度",
-                "time_range_days": "时间跨度(天)",
-                "is_noise": "噪声标记",
-                "theme_primary": "一级主题",
-            }
-            clusters = clusters.rename(columns={k: v for k, v in rename.items() if k in clusters.columns})
-            st.dataframe(clusters, width="stretch", hide_index=True)
-        else:
-            st.info("cluster_results.csv 未随运行产物提交。")
-
-    # ---------- 3. 证据卡(核心产出) ----------
+    # ---------- 1. 证据卡(核心产出) ----------
     with tab_cards:
-        st.subheader("21 张需求证据卡(按优先级排序)")
+        st.subheader("需求证据卡(按优先级排序)")
         st.markdown(
             "**证据卡是本项目的核心产出**——把分散的全球用户反馈,转成产品团队可直接执行的"
             "问题陈述 + 根因假设 + 建议动作,解决三类问题:\n\n"
@@ -207,13 +179,13 @@ def main() -> None:
             "- **结论不越界**:根因一律标\"待验证\",不下定论,避免把用户猜测当事实\n"
             "- **动作可落地**:建议动作带责任团队与可测指标,经业务六点检查后直接进入 backlog"
         )
-        st.caption("每张卡包含:问题陈述 / 根因假设(一律标\"待验证\",不下定论)/ "
+        st.caption("每张卡包含:问题陈述 / 根因假设(一律标\"待验证\")/ "
                    "建议动作(带责任团队)/ 证据 URL(不可回链的卡会被代码校验自动作废)。"
                    "卡片分两类——【我方】品牌为迈金 Magene 的产品问题,是进入 backlog 的候选"
                    "(业务审查结论:8 张进入,见仓库 team_outputs/liang/business_review.csv);"
                    "【竞品】品牌为佳明 Garmin / Wahoo / 迹驰 iGPSPORT / Strava 等真实厂商的"
                    "公开反馈,用于行业对标与外部风险预判,不进入我方 backlog。")
-        cards = load_cards()
+        cards = load_cards(run_dir)
         if cards:
             cards = sorted(cards, key=lambda c: -(c.get("priority_score") or 0))
             ours = [c for c in cards if any(b in OUR_BRANDS for b in c.get("brands", []))]
@@ -255,7 +227,73 @@ def main() -> None:
                                 label += f" · 严重度 {sev}"
                             st.markdown(f"- [{label}]({url})")
         else:
-            st.info("evidence_cards.json 未随运行产物提交。")
+            st.info("该运行未包含 evidence_cards.json。")
+
+    # ---------- 2. 运行概览 ----------
+    with tab_overview:
+        st.subheader("总体结果")
+        if metrics:
+            finals = load_csv_opt(run_dir, "human_final_outputs.csv")
+            clusters_csv = load_csv_opt(run_dir, "cluster_results.csv")
+            cards = load_cards(run_dir)
+            n_feedback = len(finals) if finals is not None else "-"
+            n_clusters = len(clusters_csv) if clusters_csv is not None else "-"
+            n_cards = len(cards) if cards else "-"
+            c1, c2, c3, c4, c5 = st.columns(5)
+            c1.metric("反馈条数", n_feedback, "DATASET v1" if run_dir == OFFICIAL_RUN else "反馈池")
+            c2.metric("需求簇", n_clusters, "覆盖全部样本")
+            c3.metric("证据卡", n_cards, "按优先级排序")
+            tp = metrics.get("theme_primary") or {}
+            c4.metric("一级主题准确率", f"{tp.get('accuracy', 0):.1%}",
+                      f"macro-F1 {tp.get('macro_f1', 0):.1%}")
+            c5.metric("严重度加权 Kappa", f"{metrics.get('severity_weighted_kappa', 0):.3f}", "线性加权")
+            st.caption("评测口径:系统分类与双人标注 gold 按 feedback_id 配对(18/20);"
+                       "Kappa 低与系统性高估一档有关,已在评测页与仓库文档如实披露。")
+        else:
+            st.info("该运行未包含 metrics.json。")
+
+        st.subheader("评测指标")
+        if metrics:
+            show_metrics_table(metrics)
+        else:
+            st.info("暂无指标数据。")
+
+        st.subheader("优先级分布(纯代码六维评分,模型不参与)")
+        st.caption("六维权重:证据 15 + 复现 20 + 频率 15 + 严重度 20 + 可执行 15 + 购买 15;"
+                   "P1 最高,P3 最低。")
+        prio = load_csv_opt(run_dir, "priority_scores.csv")
+        if prio is not None:
+            cols = [c for c in ["cluster_id", "priority_score", "priority_level",
+                                "confidence_level", "penalties", "penalty_notes"] if c in prio.columns]
+            st.dataframe(prio[cols], width="stretch", hide_index=True)
+        else:
+            st.info("该运行未包含 priority_scores.csv。")
+
+    # ---------- 3. 需求簇 ----------
+    with tab_clusters:
+        st.subheader("需求簇")
+        st.caption("聚类方式:多语言向量嵌入(本地 MiniLM,384 维)→ 主题分桶 → "
+                   "确定性凝聚聚类(cosine,阈值 0.5)。每行是一个问题簇,"
+                   "member_feedback_ids 是该簇包含的反馈编号,可回链到来源台账。")
+        clusters = load_csv_opt(run_dir, "cluster_results.csv")
+        if clusters is not None:
+            rename = {
+                "cluster_id": "簇编号",
+                "member_feedback_ids": "成员反馈",
+                "unique_source_record_count": "来源条数",
+                "unique_domain_count": "域名数",
+                "platform_count": "平台数",
+                "language_count": "语言数",
+                "brand_count": "品牌数",
+                "max_severity": "最高严重度",
+                "time_range_days": "时间跨度(天)",
+                "is_noise": "噪声标记",
+                "theme_primary": "一级主题",
+            }
+            clusters = clusters.rename(columns={k: v for k, v in rename.items() if k in clusters.columns})
+            st.dataframe(clusters, width="stretch", hide_index=True)
+        else:
+            st.info("该运行未包含 cluster_results.csv。")
 
     # ---------- 4. 评测 ----------
     with tab_eval:
@@ -270,14 +308,14 @@ def main() -> None:
         st.subheader("字段级错误案例(error_cases.csv)")
         st.caption("模型与 gold 不一致的字段明细:severity 9 条错误全部为系统性高估一档,"
                    "已写入人工复核规则;购买影响差异源于标注口径不一致,已如实披露。")
-        errors = load_csv_opt("error_cases.csv")
+        errors = load_csv_opt(run_dir, "error_cases.csv")
         if errors is not None:
             st.dataframe(errors, width="stretch", hide_index=True)
         else:
-            st.info("error_cases.csv 未随运行产物提交。")
+            st.info("该运行未包含 error_cases.csv。")
 
         st.subheader("评测图表")
-        charts_dir = RUN_DIR / "charts"
+        charts_dir = Path("output") / run_dir / "charts"
         if charts_dir.exists():
             col_a, col_b = st.columns(2)
             p_a, p_b = charts_dir / "acc_f1.png", charts_dir / "severity_confusion.png"
@@ -293,21 +331,22 @@ def main() -> None:
     with tab_review:
         st.subheader("人工复核(双模型复判的冲突裁决)")
         st.caption("分类与复判字段级冲突不自动采信,进入人工队列;12 条冲突全部人工裁决,"
-                   "逐条依据留档,可审计。")
-        human = load_csv_opt("human_final_outputs.csv")
+                   "逐条依据留档,可审计。周更自动运行产生的冲突会在 GitHub 自动开 issue 提醒。")
+        human = load_csv_opt(run_dir, "human_final_outputs.csv")
         if human is not None:
             st.dataframe(human, width="stretch", hide_index=True)
         else:
-            st.info("human_final_outputs.csv 未随运行产物提交。")
-        rec = RUN_DIR / "adjudication_record.csv"
+            st.info("该运行未包含 human_final_outputs.csv。")
+        rec = Path("output") / run_dir / "adjudication_record.csv"
         if rec.exists():
             st.subheader("裁决记录(adjudication_record.csv)")
-            adjud = load_csv_opt("adjudication_record.csv")
+            adjud = load_csv_opt(run_dir, "adjudication_record.csv")
             if adjud is not None:
                 st.dataframe(adjud, width="stretch", hide_index=True)
 
     st.divider()
-    st.caption(f"数据与代码:{GITHUB_URL} · 192 项自动化测试全部通过 · 本页不调用 LLM")
+    st.caption(f"数据与代码:{GITHUB_URL} · 192 项自动化测试全部通过 · 本页不调用 LLM · "
+               "仓库内置 GitHub Actions 周更自动流水线")
 
 
 if __name__ == "__main__":
