@@ -63,14 +63,19 @@ def fmt_list(vals, mapping=None) -> str:
 
 
 def list_run_dirs() -> list[str]:
-    """仓库内已提交的运行目录(含 metrics.json 才视为完整运行),新→旧排序。"""
+    """仓库内已提交的运行目录,新→旧排序。
+
+    完整运行含 metrics.json(正式运行,带评测);周更自动运行无 gold 评测,
+    以 run_summary.json 为识别标志,页面按产物缺失情况降级显示。
+    """
     out = Path("output")
     if not out.is_dir():
         return []
     dirs = []
     for p in out.iterdir():
-        if p.is_dir() and p.name.startswith("RUN-") and (p / "metrics.json").exists():
-            dirs.append(p.name)
+        if p.is_dir() and p.name.startswith("RUN-"):
+            if (p / "metrics.json").exists() or (p / "run_summary.json").exists():
+                dirs.append(p.name)
     return sorted(dirs, reverse=True)
 
 
@@ -179,10 +184,14 @@ def main() -> None:
             "- **结论不越界**:根因一律标\"待验证\",不下定论,避免把用户猜测当事实\n"
             "- **动作可落地**:建议动作带责任团队与可测指标,经业务六点检查后直接进入 backlog"
         )
+        if run_dir == OFFICIAL_RUN:
+            biz_note = ("(业务审查结论:8 张进入,见仓库 team_outputs/liang/business_review.csv)")
+        else:
+            biz_note = "(业务审查覆盖正式运行;本运行卡片尚未人工业务审查)"
         st.caption("每张卡包含:问题陈述 / 根因假设(一律标\"待验证\")/ "
                    "建议动作(带责任团队)/ 证据 URL(不可回链的卡会被代码校验自动作废)。"
                    "卡片分两类——【我方】品牌为迈金 Magene 的产品问题,是进入 backlog 的候选"
-                   "(业务审查结论:8 张进入,见仓库 team_outputs/liang/business_review.csv);"
+                   f"{biz_note};"
                    "【竞品】品牌为佳明 Garmin / Wahoo / 迹驰 iGPSPORT / Strava 等真实厂商的"
                    "公开反馈,用于行业对标与外部风险预判,不进入我方 backlog。")
         cards = load_cards(run_dir)
@@ -330,8 +339,9 @@ def main() -> None:
     # ---------- 5. 人工复核 ----------
     with tab_review:
         st.subheader("人工复核(双模型复判的冲突裁决)")
-        st.caption("分类与复判字段级冲突不自动采信,进入人工队列;12 条冲突全部人工裁决,"
-                   "逐条依据留档,可审计。周更自动运行产生的冲突会在 GitHub 自动开 issue 提醒。")
+        st.caption("分类与复判字段级冲突不自动采信,进入人工队列,逐条依据留档、可审计"
+                   "(正式运行 12 条冲突已全部裁决)。周更自动运行产生的冲突会在 GitHub "
+                   "自动开 issue 提醒。")
         human = load_csv_opt(run_dir, "human_final_outputs.csv")
         if human is not None:
             st.dataframe(human, width="stretch", hide_index=True)
