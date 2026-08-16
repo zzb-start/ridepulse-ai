@@ -17,7 +17,7 @@ import pytest
 
 from ridepulse.classify import classify_batch
 from ridepulse.llm_client import FakeLLMClient, LLMClientError
-from ridepulse.models import ClassificationResult, EvidenceStatus
+from ridepulse.models import ClassificationResult, EvidenceStatus, Severity
 
 VALID_LLM_OUTPUT = {
     "sentiment": 2,
@@ -131,12 +131,33 @@ class TestConfidence:
 
 
 class TestValidationGate:
-    def test_missing_required_field_raises(self, valid_feedback_record):
-        client = make_client(lambda s, u: {"sentiment": 2})  # 缺 theme_primary 等
-        with pytest.raises(LLMClientError, match="F0001"):
-            classify_batch([valid_feedback_record], client, prompt_path="prompts/classify_v1.md")
+    """校验失败不再崩溃整条流水线：一次修复调用 -> 仍失败返回保守占位（进人工复核）。"""
 
-    def test_invalid_enum_value_raises(self, valid_feedback_record):
-        client = make_client(lambda s, u: {**VALID_LLM_OUTPUT, "severity": "S99"})
-        with pytest.raises(LLMClientError, match="F0001"):
-            classify_batch([valid_feedback_record], client, prompt_path="prompts/classify_v1.md")
+    def test_validation_failure_repairs_once_then_succeeds(self, valid_feedback_record):
+        calls: list[str] = []
+
+        def responder(system: str, user: str) -> dict:
+            calls.append(system)
+            return dict(VALID_LLM_OUTPUT) if len(calls) == 2 else {**VALID_LLM_OUTPUT, "severity": "unknown"}
+
+        client = make_client(responder)
+        results = classify_batch([valid_feedback_record], client, prompt_path="prompts/classify_v1.md")
+        assert len(calls) == 2  # 原始调用 + 一次修复调用
+        assert results[0].severity == Severity.S2
+
+    def test_repair_failure_returns_placeholder_not_raise(self, valid_feedback_record):
+        client = make_client(lambda s, u: {**VALID_LLM_OUTPUT, "severity": "unknown"})
+        results = classify_batch([valid_feedback_record], client, prompt_path="prompts/classify_v1.md")
+        result = results[0]
+        assert result.confidence == 0.0
+        assert result.severity == Severity.S5  # 保守哨兵，不猜测
+        assert "待人工复核" in result.rationale
+
+    def test_llm_error_returns_placeholder_not_raise(self, valid_feedback_record):
+        def responder(system: str, user: str) -> dict:
+            raise LLMClientError("LLM 调用失败")
+
+        client = make_client(responder)
+        results = classify_batch([valid_feedback_record], client, prompt_path="prompts/classify_v1.md")
+        assert results[0].feedback_id == "F0001"
+        assert results[0].confidence == 0.0

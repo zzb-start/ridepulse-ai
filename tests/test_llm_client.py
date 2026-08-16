@@ -110,6 +110,17 @@ class TestSuccessPath:
         client.complete_json("s", "u", temperature=0.7)
         assert json.loads(calls[0].content)["temperature"] == 0.7
 
+    def test_minimax_base_url_disables_thinking(self):
+        client, calls = make_client(sequential(completion_response(VALID_JSON)))
+        client.base_url = "https://api.minimaxi.com/v1"
+        client.complete_json("s", "u")
+        assert json.loads(calls[0].content)["thinking"] == {"type": "disabled"}
+
+    def test_non_minimax_base_url_has_no_thinking_field(self):
+        client, calls = make_client(sequential(completion_response(VALID_JSON)))
+        client.complete_json("s", "u")
+        assert "thinking" not in json.loads(calls[0].content)
+
 
 class TestRetry:
     def test_retries_on_5xx_then_succeeds(self):

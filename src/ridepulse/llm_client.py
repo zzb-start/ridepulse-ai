@@ -95,18 +95,23 @@ class BaseLLMClient:
         while True:
             attempts += 1
             try:
+                payload = {
+                    "model": self.model,
+                    "messages": [
+                        {"role": "system", "content": system},
+                        {"role": "user", "content": user},
+                    ],
+                    "temperature": temperature,
+                    "response_format": response_format,
+                }
+                if "minimax" in self.base_url:
+                    # MiniMax M 系列默认开自适应思考：响应慢且带 <think> 前缀
+                    # （2026-08-16 实测 10.5s vs 关闭后 2.2s）。其他供应商不受影响。
+                    payload["thinking"] = {"type": "disabled"}
                 resp = self._client.post(
                     "/chat/completions",
                     headers={"Authorization": f"Bearer {self.api_key}"},
-                    json={
-                        "model": self.model,
-                        "messages": [
-                            {"role": "system", "content": system},
-                            {"role": "user", "content": user},
-                        ],
-                        "temperature": temperature,
-                        "response_format": response_format,
-                    },
+                    json=payload,
                 )
                 status = resp.status_code
                 # 只对限流(429)和服务端错误(5xx)重试

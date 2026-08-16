@@ -23,6 +23,8 @@ env:
   EMBEDDING_MODEL: paraphrase-multilingual-MiniLM-L12-v2
   # CI 首次运行需联网下载嵌入模型(~470MB),后续由 cache 命中;本地离线模式不受影响
   HF_HUB_OFFLINE: '0'
+  # LLM 调用超时留足余量(修复调用是额外的一次请求)
+  LLM_TIMEOUT_SECONDS: '120'
 
 jobs:
   weekly:
