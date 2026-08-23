@@ -1,0 +1,16 @@
+{
+  "run_id": "RUN-20260823-190254",
+  "state": "COMPLETED",
+  "total_input": 206,
+  "valid_count": 206,
+  "deduped_count": 205,
+  "classified_count": 206,
+  "conflict_count": 163,
+  "human_review_count": 135,
+  "cluster_count": 58,
+  "card_count": 58,
+  "delivered_count": 0,
+  "started_at": "2026-08-23 19:02:54.158661",
+  "completed_at": "2026-08-23 19:26:32.310801",
+  "error_message": null
+}

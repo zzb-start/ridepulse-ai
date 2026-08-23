@@ -1,0 +1,4040 @@
+[
+  {
+    "card_id": "EC-2026-0001",
+    "cluster_id": "CL-0001",
+    "title": "CL-0001 设备-应用连接与第三方平台同步故障",
+    "problem_statement": "用户集中反馈设备与App之间的连接不稳定、运动数据无法同步至App，以及App与第三方平台（如Strava、Apple健康/运动）之间的同步失败或功能受限，伴随登录异常和上传卡顿问题。",
+    "priority_score": 67,
+    "priority_level": "P1",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0001",
+      "F0005",
+      "F0009",
+      "F0013",
+      "F0044",
+      "F0048",
+      "F0049",
+      "F0050",
+      "F0052",
+      "F0054",
+      "F0060",
+      "F0063",
+      "F0067",
+      "F0068",
+      "F0072",
+      "F0075",
+      "F0089",
+      "F0090"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown",
+      "Google Play"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "App端网络连接或超时处理机制存在缺陷（F0001、F0005、F0050）",
+      "设备与App配对/通信链路异常，可能受系统更新或固件影响（F0001、F0052）",
+      "App通知同步逻辑异常，未在App与设备间正确分发（F0013）"
+    ],
+    "counter_evidence": "['F0009 描述偏向产品功能范围评价（仅数据字段与基础导航），未直接涉及连接或同步故障，可能不完全属于本簇根因', '簇内未提供崩溃日志、错误码或具体版本号等客观数据，现有根因推测均基于用户描述，需技术侧日志进一步验证']",
+    "recommended_actions": [
+      {
+        "action": "排查并修复设备-App配对/通信链路，验证固件与App版本兼容性",
+        "owner": "设备连接团队"
+      },
+      {
+        "action": "改进App网络请求超时与重试机制，增加用户侧明确错误反馈",
+        "owner": "移动端研发团队"
+      },
+      {
+        "action": "修复通知同步逻辑，确保App与设备间数据一致",
+        "owner": "通知服务团队"
+      },
+      {
+        "action": "对接Strava与Apple健康/运动最新接口，恢复并稳定第三方同步功能",
+        "owner": "第三方集成团队"
+      },
+      {
+        "action": "优化图片上传与相册预览性能，排查媒体服务瓶颈",
+        "owner": "媒体服务团队"
+      }
+    ],
+    "suggested_owner": "移动端研发团队（主责）/ 第三方集成团队（协同）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:19:31.302869",
+    "evidence": [
+      {
+        "feedback_id": "F0001",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      },
+      {
+        "feedback_id": "F0005",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      },
+      {
+        "feedback_id": "F0009",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0013",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0044",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0048",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0049",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0050",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0052",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0054",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0060",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0063",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0067",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0068",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0072",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0075",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0089",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0090",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0002",
+    "cluster_id": "CL-0002",
+    "title": "码表数据上传第三方平台（Strava / TrainingPeaks / TrainerRoad）后字段缺失或同步中断",
+    "problem_statement": "用户在码表上记录了完整的骑行数据（含心率、踏频等），但通过自动同步上传到 Strava、TrainingPeaks、TrainerRoad 等第三方平台后，出现两类问题：(1) 部分字段（如心率）为空，只有基础的距离和时间；(2) 自动同步功能完全失效，需改为手动上传。",
+    "priority_score": 51,
+    "priority_level": "P2",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0002",
+      "F0006",
+      "F0040"
+    ],
+    "platforms": [
+      "App Store",
+      "Google Play",
+      "TrainerRoad"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "码表固件与第三方平台（Strava/TrainingPeaks/TrainerRoad）之间的数据字段映射存在缺失或兼容性问题，导致心率、踏频等次要字段在同步链路中被丢弃。",
+      "码表与第三方平台之间的自动同步通道（OAuth token、API 连接）在数月前发生过中断或令牌过期/失效，且缺少自动续期或失效提示机制，从而完全停止工作。",
+      "App 端自动上传功能的配置项可能被默认更改或与新版固件不兼容，用户既无明确入口恢复自动同步，也未收到错误通知。"
+    ],
+    "counter_evidence": "[\"证据 F0006 提到自动同步在'a few months ago'前正常工作，提示问题可能由近期外部变更（Strava/TrainingPeaks 接口或策略）引起，而非码表本身长期缺陷；目前尚无证据可证实是哪一方变更触发。\", \"证据 F0040 用户为询问'能否连接'的语气，说明 Magene 与 TrainerRoad 的官方连接支持状态本就不明确，不能直接归因为 Bug；需先确认是否属于功能缺失。\", '心率字段为空也可能源自用户账号隐私设置或活动类型（如室内训练）而非同步故障，目前证据未排除这一可能。', '三条证据来自不同用户、不同使用场景，可能分别对应不同根因，不能简单假设它们由同一故障引起。']",
+    "recommended_actions": [
+      {
+        "action": "在码表端导出原始活动文件（FIT/TCX），与上传到 Strava 后解析得到的数据进行字段级 diff，定位是字段映射丢失还是文件解析问题。",
+        "owner": "客户端/数据同步研发"
+      },
+      {
+        "action": "检查码表 → Strava/TrainingPeaks 自动同步链路的 OAuth/API 凭据有效期与最近一次成功上传记录，确认是否存在 token 过期或接口变更导致的整体中断。",
+        "owner": "服务端/平台对接研发"
+      },
+      {
+        "action": "复现并验证 Magene 码表到 TrainerRoad 的接入路径，确认官方是否提供对应连接方式；若未提供，需评估与 TrainerRoad 集成的可行性并给出用户指引。",
+        "owner": "产品经理 + 平台对接研发"
+      },
+      {
+        "action": "梳理 App 中'自动上传'相关的配置入口与提示文案，确保 token 失效、同步失败时用户能收到明确通知，并提供一键修复/重新授权路径。",
+        "owner": "App 端产品 + 研发"
+      },
+      {
+        "action": "对比 Magene 码表与主流竞品（Garmin/Wahoo）在 Strava/TrainingPeaks 上同步字段的差异，输出兼容性测试报告并修复缺失字段。",
+        "owner": "测试 QA + 数据同步研发"
+      }
+    ],
+    "suggested_owner": "平台对接研发（联合 App 端产品、客户端同步研发、QA 与用户支持共同跟进）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:19:39.935045",
+    "evidence": [
+      {
+        "feedback_id": "F0002",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      },
+      {
+        "feedback_id": "F0006",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      },
+      {
+        "feedback_id": "F0040",
+        "source_url": "https://www.trainerroad.com/forum/t/is-there-a-way-i-can-connect-my-magene-bike-computer/113753"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0003",
+    "cluster_id": "CL-0003",
+    "title": "簇 CL-0003：配对页与地图入口白屏，需杀进程恢复",
+    "problem_statement": "用户进入配对页或地图入口时出现白屏，无法继续操作，必须杀掉 App 并重新打开才能恢复。该问题在簇内仅 1 条直接证据（F0003），但严重度评估为 S2（关键功能不可用），优先级分数 28。",
+    "priority_score": 28,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0003"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "配对页与地图入口的渲染逻辑存在未捕获异常（例如异步数据/权限缺失时未走降级分支），导致 Activity/Fragment 白屏后无法自愈。",
+      "地图 SDK 或配对相关依赖初始化失败（如定位权限、网络鉴权、Key 配置缺失），将首屏绘制流程阻塞在空白状态。",
+      "白屏后系统未触发标准的 ANR/崩溃上报路径，问题停留在进程内异常状态，只能通过杀进程恢复。"
+    ],
+    "counter_evidence": "['簇内仅 1 条证据 F0003，样本量不足以确认白屏问题在多大范围的用户/机型上出现，S2 严重度可能受单条反馈高标。', '证据原文仅描述现象（白屏+必须杀进程恢复），未提供崩溃栈、日志、设备或版本信息，无法证明白屏是否由崩溃、ANR 或渲染阻塞引起。', '优先级分数 28 是该簇的聚合结果，但缺乏同簇横向对比数据，无法判断 28 在同类簇中的相对水位。']",
+    "recommended_actions": [
+      {
+        "action": "在配对页与地图入口接入异常埋点与白屏超时降级，捕获首屏渲染失败信息并支持自动重试或 Toast 引导，避免用户必须冷启。",
+        "owner": "客户端研发（配对/地图模块 owner）"
+      },
+      {
+        "action": "核查地图 SDK Key、定位权限、网络鉴权在白屏路径下的初始化时序，确保异常分支不会阻塞首屏绘制。",
+        "owner": "客户端研发（地图 SDK 集成 owner）"
+      },
+      {
+        "action": "补充 F0003 的复现条件信息（机型、系统版本、网络环境、是否首次启动/冷启动、是否授予定位权限），以便判断是否为可复现的环境依赖类问题。",
+        "owner": "反馈受理 / 一线客服"
+      },
+      {
+        "action": "由于簇内仅有 1 条直接证据，评估是否需要扩大采样（例如检索更多同类白屏反馈、查看线上 Crash/ANR 报表），避免因样本过少导致优先级误判。",
+        "owner": "质量分析 / 数据分析 owner"
+      }
+    ],
+    "suggested_owner": "客户端研发（配对/地图模块 owner）牵头，联合一线客服与质量分析 owner 协同。",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:19:46.653560",
+    "evidence": [
+      {
+        "feedback_id": "F0003",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0004",
+    "cluster_id": "CL-0004",
+    "title": "更新后中文语言选项消失，仅显示英文界面",
+    "problem_statement": "在系统/应用更新后，用户发现中文语言选项不再可见，界面只能显示为英文。这导致中文用户的可用性显著下降，并引发对更新回归的担忧。",
+    "priority_score": 18,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0004"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "更新包中遗漏或未包含中文语言资源文件（i18n locale bundle）",
+      "更新过程中语言资源文件被覆盖、删除或未正确部署",
+      "语言回退/默认语言逻辑变更，导致在缺少 zh locale 时直接回退到 en 而不在 UI 暴露其他语言选项"
+    ],
+    "counter_evidence": "['当前仅有 1 条用户反馈，不足以排除单设备/单环境异常（如区域设置被手动更改）', '未提供应用版本号、操作系统版本、设备型号与地区设置，无法判断是否为全局性回归', '未见更新前后的功能开关或 A/B 配置变更记录，无法确认是资源缺失还是策略变更', '无崩溃或错误日志证据，尚不能区分‘语言选项被移除’与‘语言选项未加载但仍存在’']",
+    "recommended_actions": [
+      {
+        "action": "核对受影响版本与上一版本的构建产物，确认中文语言资源文件（zh / zh-CN / zh-TW）是否存在",
+        "owner": "Build/Release Engineer"
+      },
+      {
+        "action": "检查发布包/部署流水线中 i18n 资源打包与部署脚本，确认更新过程未删除或漏部署 locale 文件",
+        "owner": "Release Engineer"
+      },
+      {
+        "action": "审查配置中 supported_languages 或等价字段，确认未被错误剔除",
+        "owner": "Backend/Config Owner"
+      },
+      {
+        "action": "在受影响的设备/环境上抓取运行日志，确认 locale 加载与回退路径，定位为何仅显示英文",
+        "owner": "QA / Support"
+      },
+      {
+        "action": "回滚或发布修复版本，恢复中文语言资源，并在 UI 中验证语言切换功能",
+        "owner": "Release Manager"
+      }
+    ],
+    "suggested_owner": "Release Manager",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:19:55.593505",
+    "evidence": [
+      {
+        "feedback_id": "F0004",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0005",
+    "cluster_id": "CL-0005",
+    "title": "C606 设备每月初训练数据上传失败",
+    "problem_statement": "用户报告在每月初从 C606 设备上传训练数据（workouts）到配套 App 时出现失败，需等待 2-3 天后才能成功上传，目前仅有一条 S3 级别证据（F0007）。",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0007"
+    ],
+    "platforms": [
+      "Google Play"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "每月初服务端可能存在周期性的批量同步、计费或对账任务，导致上传接口限流、排队或临时不可用",
+      "客户端 App 在月初与设备 C606 的首次同步逻辑（例如日期边界、时区或 token 刷新）存在缺陷，触发上传失败",
+      "C606 固件在跨月节点（例如 1 号 00:00 附近）的数据打包或本地缓存写入异常，导致上传包损坏或为空"
+    ],
+    "counter_evidence": "['当前簇内仅有一条 S3 级证据（F0007），样本量极小，无法排除偶发性网络或用户侧因素', '证据原文被截断，缺少失败发生的具体日期、App 版本、C606 固件版本、错误提示码等关键信息，无法直接验证是否与月初强相关', '未提供是否在非月初时段出现过相同失败的信息，因此难以判断问题的周期性边界']",
+    "recommended_actions": [
+      {
+        "action": "复现并核对 F0007 报障时间点与月初日期的对应关系，确认是否为月初必现",
+        "owner": "客户支持 / 工单录入方"
+      },
+      {
+        "action": "拉取该用户上报前 7 天内的客户端上传日志与服务端接收日志，定位失败发生在客户端打包、网络传输还是服务端处理环节",
+        "owner": "后端服务团队"
+      },
+      {
+        "action": "检查服务端月初相关定时任务（同步、计费、对账、批量合并）与上传接口的耦合情况，确认是否存在资源争抢或限流",
+        "owner": "后端服务团队"
+      },
+      {
+        "action": "复核 C606 固件在跨月时间点的数据打包与本地缓存逻辑，必要时在测试环境模拟跨月时间进行上传验证",
+        "owner": "C606 固件 / 客户端团队"
+      },
+      {
+        "action": "在确认根因前，先在客户端加入更明显的月初失败提示与重试/手动重传入口，降低用户感知等待时间",
+        "owner": "客户端 App 团队"
+      }
+    ],
+    "suggested_owner": "后端服务团队（联合 C606 固件 / 客户端团队）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:20:05.205836",
+    "evidence": [
+      {
+        "feedback_id": "F0007",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0006",
+    "cluster_id": "CL-0006",
+    "title": "硬件交互可靠性与传感器数据异常簇 CL-0006",
+    "problem_statement": "用户反馈两类问题：(1) 设备开机键响应不可靠，需要多次长按才能开机，疑似电源/按键硬件故障；(2) 仅做手部晃动时设备报告心率超过 180 bpm，疑似运动传感器与心率算法误识别。两类问题均影响用户对设备基础功能与数据准确性的信任。",
+    "priority_score": 39,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0008",
+      "F0080"
+    ],
+    "platforms": [
+      "App Store",
+      "Google Play"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': 'C506 开机键（power button）机械或电气接触不良，导致按键信号需要多次触发才能被识别', 'evidence_refs': ['F0008']}",
+      "{'hypothesis': '设备开机/上电流程存在软件防抖或开机逻辑异常，将单次短按误判为无效输入', 'evidence_refs': ['F0008']}",
+      "{'hypothesis': '心率算法在剧烈手部晃动时未能有效抑制运动伪影，将加速度信号误判为心搏信号，导致心率虚高至 180+ bpm', 'evidence_refs': ['F0080']}"
+    ],
+    "counter_evidence": "[{'finding': \"F0008 用户描述为'有时候'按键失灵，且成功长按后可开机，提示并非完全硬件损坏，也可能是偶发软件/静电导致的瞬态识别失败\", 'implication': '不能仅归因为硬件接触不良，需同步排查固件防抖与上电时序'}, {'finding': \"F0080 仅来自单条用户反馈，无法排除用户对'心率 180+'读数的口述误差，或设备被佩戴于非标准位置导致信号异常\", 'implication': '在实验室复现前，不能直接断言心率算法必然存在运动误识别问题'}]",
+    "recommended_actions": [
+      {
+        "action": "复现并验证 F0008：抽样 C506 设备进行按键可靠性测试（包括短按、长按、不同按压力度），统计按键失效率并检查硬件批次",
+        "owner": "硬件 QA"
+      },
+      {
+        "action": "排查 F0008 开机固件逻辑：审查 power button 的 debounce 与开机判定状态机，必要时优化防抖参数或允许更短的短按触发",
+        "owner": "嵌入式固件"
+      },
+      {
+        "action": "复现 F0080：在实验室条件下让受试者进行纯手部晃动运动，采集原始 PPG 与加速度数据，确认心率 >180 是否为算法误判",
+        "owner": "信号处理 / 算法"
+      },
+      {
+        "action": "针对 F0080 优化心率算法：加强运动状态检测（acc magnitude/频谱特征），在剧烈运动且 PPG 信号质量差时抑制心率输出或标记低置信度",
+        "owner": "健康算法团队"
+      },
+      {
+        "action": "对受影响批次 C506 增加出厂按键测试覆盖率，并对搭载问题算法的固件版本提供补丁升级通道",
+        "owner": "产品 / 售后工程"
+      }
+    ],
+    "suggested_owner": "硬件可靠性 + 健康算法联合负责人",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:20:12.562127",
+    "evidence": [
+      {
+        "feedback_id": "F0008",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      },
+      {
+        "feedback_id": "F0080",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0007",
+    "cluster_id": "CL-0007",
+    "title": "用户因强制更新与开发团队问题产生强烈抵触情绪",
+    "problem_statement": "存在用户因产品强制更新机制以及开发团队相关问题而表达出放弃使用或强烈警告他人避免的负面情绪，态度极其负面（最高严重度 S4），可能引发用户流失和口碑下滑风险。",
+    "priority_score": 42,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0010",
+      "F0073"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "产品存在强制更新机制，剥夺了用户对软件版本的控制权，引发用户反感（F0073）",
+      "用户认为开发团队存在问题（如开发能力不足、态度敷衍、bug 频出等），担心产品被开发团队拖累（F0010）",
+      "产品功能或定位与用户预期存在落差，用户担心其成为 'everything-else killer'（吞噬其他一切的灾难性产品）（F0010）"
+    ],
+    "counter_evidence": "['当前仅有 2 条证据来源，样本量极小，结论可能受个别极端用户观点影响，不一定代表广泛用户群体态度', '证据原文未提供具体的产品名称、版本号、强制更新场景或开发团队问题的详细描述，根因推断存在较大不确定性', 'F0010 属于用户主观警告性言论，无法判断其代表性；F0073 同样为单一用户情绪化表达，缺乏量化数据支撑', '无法排除该负面情绪是否由用户特定的设备环境、网络条件或使用场景等外部因素诱发']",
+    "recommended_actions": [
+      {
+        "action": "调研现有强制更新机制的具体规则，评估是否提供延后更新或版本回退等用户可选方案，以降低强制感",
+        "owner": "产品经理"
+      },
+      {
+        "action": "通过用户调研、社区舆情分析等方式，深入了解用户对开发团队的具体不满点，输出诊断报告",
+        "owner": "用户研究团队"
+      },
+      {
+        "action": "审近期更新日志与质量数据，排查是否存在高频 bug 或低质量问题，若属实需公开说明改进计划",
+        "owner": "开发团队负责人 / QA 负责人"
+      },
+      {
+        "action": "建立用户反馈闭环机制，针对高严重度负面反馈提供及时回应，避免情绪进一步发酵",
+        "owner": "客户成功团队"
+      }
+    ],
+    "suggested_owner": "产品经理（联合开发团队负责人与用户研究团队）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:20:22.576552",
+    "evidence": [
+      {
+        "feedback_id": "F0010",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0073",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0008",
+    "cluster_id": "CL-0008",
+    "title": "ClimbPro 功能异常与训练数据丢失问题",
+    "problem_statement": "簇 CL-0008 包含 2 条用户反馈，涉及两项独立但用户体验均较差的核心问题：(1) ClimbPro 功能在高程识别和分段计算上表现失准，在平坦路面出现虚假爬升、爬升段被错误拆分、平均坡度计算异常；(2) 用户的训练/活动数据在已成功保存的情况下发生丢失。两条反馈最高严重度达 S2，优先级分数 34，表明问题直接影响用户对核心功能的可信度感知。",
+    "priority_score": 34,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0011",
+      "F0047"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "ClimbPro 的爬升检测算法可能依赖高程阈值与坡度阈值，对平坦路面上的高频高程噪点未做充分滤波，从而误判为爬升；同时坡度分段切分逻辑可能在阈值边界处不稳定，导致一段连续爬升被错误拆分",
+      "训练数据丢失可能源于数据持久化层的写入确认机制缺陷：表面提示保存成功，但实际未真正写入闪存介质，或在写入前发生异常导致回滚",
+      "ClimbPro 显示的平均剩余坡度计算口径可能与用户心智模型不一致（剩余坡度 vs 已完成坡度），存在需求或交互设计层面的歧义"
+    ],
+    "counter_evidence": "['证据原文未给出 ClimbPro 误识别发生的具体运动类型、地形条件或固件版本，不能排除是个例或特定设备/传感器异常', '证据原文未描述数据不见发生的时机、保存后多久丢失、是单条活动丢失还是批量丢失，因此无法判定是本地未写入、上传失败还是云端问题', '两条反馈分别涉及算法与数据持久化两个不同子系统，证据原文未提供任何关联信息，当前将其归为同一簇的依据仅来自聚类算法而非业务因果，不排除聚类噪声']",
+    "recommended_actions": [
+      {
+        "action": "复核 ClimbPro 的高程采样滤波与爬升分段算法，使用户外平坦路段样本验证是否存在虚假爬升，并在边界坡度处测试分段稳定性",
+        "owner": "ClimbPro 算法/运动算法工程师"
+      },
+      {
+        "action": "复盘并加固数据保存链路：核对保存成功的判定条件、写入闪存的事务性、掉电/中断场景的恢复机制，并补充端到端校验日志",
+        "owner": "数据持久化/存储模块工程师"
+      },
+      {
+        "action": "明确 ClimbPro 中剩余坡度的计算口径，在产品文案与 UI 提示中清晰标注计算方式，必要时改为同时显示已完成与剩余坡度",
+        "owner": "运动产品经理"
+      },
+      {
+        "action": "在现有反馈渠道中增加针对性问题标签（ClimbPro 误识别 / 数据丢失），便于后续归集更多样本以判定根因是否收敛",
+        "owner": "用户支持/客服运营"
+      },
+      {
+        "action": "针对数据丢失问题尝试从用户设备拉取本地缓存或日志片段，验证是否属于已保存但未上传，或写入失败后被误标为成功",
+        "owner": "客户端/数据同步工程师"
+      }
+    ],
+    "suggested_owner": "运动产品经理（联动运动算法工程师与数据持久化工程师）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:20:39.261485",
+    "evidence": [
+      {
+        "feedback_id": "F0011",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0047",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0009",
+    "cluster_id": "CL-0009",
+    "title": "用户反馈：设备电池在高强度使用下耗电过快（1小时20分钟从58%降至19%）",
+    "problem_statement": "用户在一次约1小时20分钟的使用过程中，观察到设备电量从58%降至19%（消耗约39个百分点）。该用户将其与 iGPSPORT 设备进行对比，暗示同类竞品在相似场景下仅消耗 3-4% 电量，因此认为本设备的电池续航表现明显劣于竞品。",
+    "priority_score": 18,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0012"
+    ],
+    "platforms": [
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': '在特定使用模式（如 GPS 高频采样、屏幕常亮、蓝牙持续连接）下，功耗高于设计预期，导致电量快速下降', 'evidence': '仅凭1条用户反馈描述，未提供具体使用场景或后台日志，无法验证具体耗电来源'}",
+      "{'hypothesis': '电池本身或电源管理模块存在缺陷（例如电池容量衰减、计量不准、BMS 算法问题）', 'evidence': '原文未提及设备新旧程度、是否满充、环境温度等可能影响电池表现的因素'}",
+      "{'hypothesis': '系统/固件层面存在后台进程异常唤醒或资源占用，导致非预期耗电', 'evidence': '原文未提供固件版本、日志或任务列表，无法确认是否存在软件层面异常'}"
+    ],
+    "counter_evidence": "['证据原文在描述竞品（iGPSPORT）耗电 3-4% 时被截断，缺少完整数据，可能存在对比条件不一致（如场景、亮度、采样率不同）', '仅 1 条证据，样本量极小，无法排除个体差异或用户主观感受偏差', '原文未说明起始电量是否准确、设备是否刚充满、以及是否存在边充边用等干扰条件']",
+    "recommended_actions": [
+      {
+        "action": "联系该用户补充信息：设备型号、固件版本、使用场景（骑行/跑步/导航）、是否全程 GPS、屏幕与蓝牙状态、近似环境温度、设备使用年限",
+        "owner": "客户支持 / 用户研究员"
+      },
+      {
+        "action": "在实验室条件下复现近似使用工况（连续 GPS 记录 1.5 小时 + 屏幕/蓝牙开启），记录实际耗电曲线并与同类竞品做对标",
+        "owner": "硬件 / 电源管理团队"
+      },
+      {
+        "action": "调取该设备（如有上报）近期的电池健康度、充电循环次数、电压/温度日志，判断是否存在电池个体异常",
+        "owner": "数据 / 售后分析"
+      }
+    ],
+    "suggested_owner": "电源管理 / 固件研发团队（联合客户支持复核）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:20:46.049374",
+    "evidence": [
+      {
+        "feedback_id": "F0012",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0010",
+    "cluster_id": "CL-0010",
+    "title": "码表定位延迟导致骑行结束后定位仍未完成",
+    "problem_statement": "用户在使用码表（c406）骑行回家后，定位仍未完成，导致无法生成或同步骑行路线；同时缺少设备端路线创建能力，导航完全依赖手机 App，途中出现偏离时无自动重路由能力。",
+    "priority_score": 36,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0014",
+      "F0082"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "码表 GNSS 冷启动/首次定位耗时较长，长距离骑行结束前未能完成定位锁定，导致路线数据缺失。",
+      "码表不具备独立的本地路线生成与重路由能力，导航逻辑过度依赖手机 App，断连或 App 未运行即失效。",
+      "骑行结束判断（如自动暂停/结束）可能先于定位成功触发，流程上没有等待定位完成的兜底机制。"
+    ],
+    "counter_evidence": "['现有证据未直接说明定位失败的具体阶段（冷启动、搜星、还是数据传输），也未量化定位耗时，根因判断仍属假设。', '未确认是否为偶发个案（如天气/遮挡环境）或大面积复现，缺乏影响面与发生频次数据。', '未排除手机 App 未运行、网络/蓝牙断连等外部因素对路线同步的影响。']",
+    "recommended_actions": [
+      {
+        "action": "在码表端增加本地路线记录与基础导航能力，减少对手机 App 的强依赖，异常情况下提供设备端兜底导航。",
+        "owner": "硬件/固件研发"
+      },
+      {
+        "action": "优化码表 GNSS 定位策略（如缩短冷启动、骑行结束后延迟判定结束或后台补定位），并核查是否在定位未完成时直接关闭定位模块。",
+        "owner": "硬件/固件研发"
+      },
+      {
+        "action": "增加定位失败/未定位成功的用户可见提示与重试入口，避免用户到家后才发现无路线数据。",
+        "owner": "客户端/App 研发"
+      }
+    ],
+    "suggested_owner": "硬件/固件研发",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:20:54.405901",
+    "evidence": [
+      {
+        "feedback_id": "F0014",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0082",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0011",
+    "cluster_id": "CL-0011",
+    "title": "无法直接从 Strava 下载路线至设备，需借助手机且存在路线数量限制",
+    "problem_statement": "用户无法将 Strava 上的路线直接下载到设备，必须通过手机作为中介进行中转，且在下载过程中存在路线数量上的限制，影响了路线获取的便捷性与可用量。",
+    "priority_score": 18,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0015"
+    ],
+    "platforms": [
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "设备端与 Strava 服务之间的数据同步接口缺失或不完整，导致无法建立直达下载通道，必须依赖手机作为中转节点。",
+      "Strava 或设备端对单次或单周期可下载的路线数量施加了限制（限额、配额或账号等级限制），导致可用路线数受限。"
+    ],
+    "counter_evidence": "[\"证据原文在 'route limit was o' 处被截断，具体的限额数值、生效条件以及是否区分账号类型均未提供，目前无法验证限制的具体规模与触发场景。\", \"是否所有用户均需通过手机中介，还是仅在特定设备/固件/账号条件下出现，证据不足以判断，故不能将'必须手机中介'作为普适结论。\"]",
+    "recommended_actions": [
+      {
+        "action": "排查设备与 Strava 之间的 API/数据通道，确认是否存在可复用的接口或仅在移动端开放，明确无法直连的具体技术环节。",
+        "owner": "设备端集成 / 后端开发"
+      },
+      {
+        "action": "核对 Strava 侧对路线下载的频率、数量及账号等级限制规则，确认限制来源是 Strava 平台策略还是本产品侧的自定义阈值。",
+        "owner": "产品经理 / Strava 合作对接人"
+      },
+      {
+        "action": "针对用户已被中转流程困扰的场景，先行优化手机中转的引导与可用性（例如缓存、批量下载），缓解当前痛点。",
+        "owner": "UX / 客户端开发"
+      },
+      {
+        "action": "评估直接下载能力与路线数量上限的改进方案与优先级，作为后续版本需求进行跟踪。",
+        "owner": "产品经理"
+      }
+    ],
+    "suggested_owner": "产品经理（联动 Strava 合作对接人与设备端集成开发）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:00.278727",
+    "evidence": [
+      {
+        "feedback_id": "F0015",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0012",
+    "cluster_id": "CL-0012",
+    "title": "Direct sunlight display readability degraded by screen reflectivity (CL-0012)",
+    "problem_statement": "Two field reports indicate that the display becomes hard to read under direct sunlight because the screen surface is highly reflective, forcing users to tilt the device to mitigate glare and making touchscreen interaction difficult.",
+    "priority_score": 43,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0016",
+      "F0034"
+    ],
+    "platforms": [
+      "Chinertown",
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "Magene",
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': 'Insufficient anti-reflective (AR) coating or surface treatment on the display cover glass.', 'supporting_evidence': ['F0016', 'F0034'], 'confidence': 'medium'}",
+      "{'hypothesis': 'High specular reflectance of the front glass/laminate stack under direct solar irradiance.', 'supporting_evidence': ['F0016', 'F0034'], 'confidence': 'medium'}",
+      "{'hypothesis': 'Display luminance and/or contrast ratio inadequate to overcome ambient sunlight load.', 'supporting_evidence': ['F0034'], 'confidence': 'low'}"
+    ],
+    "counter_evidence": "['F0016 explicitly notes readability is acceptable under overcast conditions, indicating the issue is specific to high-ambient direct-sunlight scenarios rather than a general display defect.', 'Only two reports are present in the cluster; broader sample size is needed before attributing the issue to a systemic component-level root cause versus isolated unit variability.', \"F0034 evidence text is truncated ('with...'), so additional context such as environmental conditions, device state, or user actions was not available to fully corroborate the hypothesis.\"]",
+    "recommended_actions": [
+      {
+        "action": "Confirm the current cover-glass anti-reflective coating specification and supplier, and benchmark reflectance against comparable products.",
+        "owner": "Display/Hardware Engineering"
+      },
+      {
+        "action": "Evaluate upgraded AR coating or matte/anti-glare alternative cover glass in a direct-sunlight readability test panel.",
+        "owner": "Display/Hardware Engineering"
+      },
+      {
+        "action": "Measure peak display luminance, contrast ratio, and ambient-light sensor behavior under defined sunlight conditions; tune auto-brightness curve if needed.",
+        "owner": "Display/Firmware Engineering"
+      },
+      {
+        "action": "Reproduce the issue with two reported units under controlled direct-sunlight test conditions; capture luminance, reflectance and usability scores.",
+        "owner": "Quality / Reliability"
+      },
+      {
+        "action": "If confirmed, escalate AR-coating change as a top-glass BOM revision in the next feasible build.",
+        "owner": "Program/Product Management"
+      }
+    ],
+    "suggested_owner": "Display/Hardware Engineering (lead) with Quality and Program Management support",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:07.445025",
+    "evidence": [
+      {
+        "feedback_id": "F0016",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0034",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0013",
+    "cluster_id": "CL-0013",
+    "title": "1050设备地图导航冻结及内存溢出导致轨迹数据丢失",
+    "problem_statement": "在Garmin 1050设备上规划约70英里航线时，地图界面会冻结2-3分钟；同时在地图屏幕上出现内存不足错误，随后设备完全重启并导致航迹数据丢失，该问题在特定使用场景下频繁发生。",
+    "priority_score": 64,
+    "priority_level": "P2",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0017",
+      "F0018"
+    ],
+    "platforms": [
+      "Garmin Forum"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "地图渲染或缓存逻辑在长航线（约70英里）下占用内存过高，触发设备内存耗尽，引发OOM及强制重启。",
+      "地图数据切片或预加载策略对设备内存峰值预估不足，未做分页或按需加载，导致长时间冻结。",
+      "航迹记录与地图渲染共用内存资源，在地图高负载时无法及时刷写航迹数据，重启过程中未持久化的航迹数据丢失。"
+    ],
+    "counter_evidence": "['当前仅2条用户反馈（F0017、F0018），无法确认该问题在大样本下的发生频率以及是否与特定固件版本或航线长度阈值强相关。', \"两条证据中关于'complete reboot and track data loss'是否一定由OOM直接导致，原文未给出系统日志或崩溃栈等客观证据，仅为用户描述。\", 'FID F0017提到航线长度约70英里，FID F0018未给出航线长度，因此不能确定内存溢出问题是否在所有航线长度下都复现，还是仅与长航线相关。']",
+    "recommended_actions": [
+      {
+        "action": "复现并测量1050在70英里航线下的内存峰值与地图冻结时延，确认是否与OOM直接相关。",
+        "owner": "设备端地图/性能研发"
+      },
+      {
+        "action": "检查地图瓦片加载与缓存策略，评估长航线场景下的内存占用，必要时引入按需加载或更低分辨率预览。",
+        "owner": "地图渲染研发"
+      },
+      {
+        "action": "审查航迹数据落盘与异常重启时的持久化机制，确保在OOM或强制重启前已写入的数据不会丢失。",
+        "owner": "航迹记录/存储研发"
+      },
+      {
+        "action": "在设备日志与崩溃报告中增加针对地图屏幕OOM和长航线冻结场景的标识，便于后续问题追踪。",
+        "owner": "设备端QA与日志平台"
+      }
+    ],
+    "suggested_owner": "设备端地图与性能研发团队（协同航迹存储）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:13.817294",
+    "evidence": [
+      {
+        "feedback_id": "F0017",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/388678/navigating-a-course-in-the-1050-is-unusable"
+      },
+      {
+        "feedback_id": "F0018",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/389402/edge-1050-out-of-memory-and-other-bugs"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0014",
+    "cluster_id": "CL-0014",
+    "title": "Edge 系列固件更新引发设备稳定性与功能性退化",
+    "problem_statement": "多名用户在升级 Garmin Edge 系列设备固件后，出现崩溃、GPS 信号丢失、菜单卡顿等问题，且部分用户认为软件质量随更新逐步下降，对产品信任度产生影响。",
+    "priority_score": 92,
+    "priority_level": "P0",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0019",
+      "F0021",
+      "F0022",
+      "F0037",
+      "F0038"
+    ],
+    "platforms": [
+      "Garmin Forum",
+      "Garmin Forum Edge 1040",
+      "Garmin Forum Edge 1050"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "固件版本（如 13.13、25.25）存在回归缺陷，影响自定义地图、路线重算等核心功能",
+      "固件更新与 GPS 模块交互异常，导致 GPS 信号丢失或固件状态异常（GPS Version 0.00）",
+      "固件更新引入 UI 性能问题，导致菜单滚动卡顿，且无法通过恢复出厂设置解决"
+    ],
+    "counter_evidence": "['证据未提供受影响设备的型号分布、固件版本分布及样本量规模，无法判断问题普遍性', 'F0037 与 F0038 为主观印象与购买意向表述，未附带可复现的技术细节或量化数据', 'F0022 提到恢复出厂设置未能解决问题，但未说明是否同时回退固件，无法区分硬件与固件根因', '现有证据未排除个案环境因素（如手机 App 版本、骑行设置、电量状态）对崩溃与 GPS 异常的影响']",
+    "recommended_actions": [
+      {
+        "action": "复现并分析 F0019 中崩溃场景，针对自定义地图与路线重算路径进行专项测试，定位回归缺陷",
+        "owner": "Firmware Engineering"
+      },
+      {
+        "action": "排查 Edge 1040 GPS 模块固件升级流程，更新失败或异常后的恢复机制需修复",
+        "owner": "Firmware Engineering"
+      },
+      {
+        "action": "对 25.25 固件的 UI 响应性能进行回归测试，定位菜单卡顿根因并发布补丁",
+        "owner": "Firmware Engineering"
+      },
+      {
+        "action": "建立固件发布的分层灰度与回滚机制，降低全量推送风险",
+        "owner": "Release Management"
+      },
+      {
+        "action": "面向受影响的 Edge 用户发布官方公告，说明已知问题与临时缓解方案（如暂停更新、恢复出厂设置建议）",
+        "owner": "Customer Support"
+      }
+    ],
+    "suggested_owner": "Firmware Engineering（主导修复），由 Release Management、Customer Support、Product Management 协同",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:23.692923",
+    "evidence": [
+      {
+        "feedback_id": "F0019",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/411282/firmware-13-13-6-crashes-during-a-35km-ride"
+      },
+      {
+        "feedback_id": "F0021",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1040-series/402382/edge-1040-25-25-keeps-trying-to-update-gps-firmware-now-no-gps-signal"
+      },
+      {
+        "feedback_id": "F0022",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1040-series/403236/it-s-getting-mind-blowing"
+      },
+      {
+        "feedback_id": "F0037",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1040-series/"
+      },
+      {
+        "feedback_id": "F0038",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/416643/return-1050-and-get-1040"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0015",
+    "cluster_id": "CL-0015",
+    "title": "客户对 Garmin 类似 CrowdStrike 级别故障的正式问责诉求",
+    "problem_statement": "客户以 GARMIN 收件方发布公开性投诉，要求 Garmin 就一次被客户描述为 'Crowdstrike level failure'（CrowdStrike 级别）的严重故障提供三项交付物：1）解释（explanation）；2）道歉（apology）；3）预防计划（prevention plan）。目前该簇仅包含 1 条证据（FID F0020），最高严重度 S2，优先级分数 35。",
+    "priority_score": 35,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0020"
+    ],
+    "platforms": [
+      "Garmin Forum"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': 'Garmin 侧发生了与 CrowdStrike 2024-07-19 全球蓝屏事件相当量级的服务/平台中断，对该客户业务造成严重影响', 'evidence_basis': \"证据原文将此次故障定性为 'Crowdstrike level failure'\"}",
+      "{'hypothesis': 'Garmin 在事件后未主动提供结构化的 RCA 沟通，迫使客户升级为公开问责', 'evidence_basis': \"证据原文以 'You owe us an explanation, apology, and prevention plan' 措辞表达，暗示三项交付物尚未提供\"}"
+    ],
+    "counter_evidence": "['簇内仅 1 条证据（FID F0020），未提供故障持续时间、受影响用户规模、收入或 SLA 影响等量化数据，无法独立验证故障是否真达到 CrowdStrike 级别', \"客户使用 'Crowdstrike level failure' 系主观类比，不必然等同 Garmin 实际发生同等量级的中断\", '无法判断该客户诉求此前是否已有私下沟通渠道诉求未果，因此尚不能排除是事件后首次主动回应而非补救性回应', '未提供合同 SLA 条款、违约责任范围等信息，暂无法评估其法律/财务影响']",
+    "recommended_actions": [
+      {
+        "action": "确认 FID F0020 所指故障事件的范围、起止时间、受影响客户业务及对应工单/事故编号，并核对 CrowdStrike 类比是否成立",
+        "owner": "事件经理（Incident Manager）"
+      },
+      {
+        "action": "组建包含客户成功、技术支持、产品/平台负责人在内的响应小组，准备正式致客户的解释信、道歉声明及预防计划三件套",
+        "owner": "客户成功负责人（Customer Success Lead）"
+      },
+      {
+        "action": "在客户公开诉求发出后 24 小时内完成首次正式回应，承认事件影响并给出三件套的交付时间表",
+        "owner": "客户支持经理（Customer Support Manager）"
+      },
+      {
+        "action": "同步内部法务与公关团队评估该客户诉求的传播风险，必要时准备对外口径",
+        "owner": "公关/法务（PR / Legal）"
+      },
+      {
+        "action": "在完整 RCA 得出前，避免在客户沟通中使用未经核实的根因结论或数字",
+        "owner": "事件经理（Incident Manager）"
+      }
+    ],
+    "suggested_owner": "客户成功负责人（Customer Success Lead），由事件经理提供技术与流程事实支撑",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:35.056045",
+    "evidence": [
+      {
+        "feedback_id": "F0020",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/402395/garmin-you-owe-us-an-explanation"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0016",
+    "cluster_id": "CL-0016",
+    "title": "Garmin 设备软件故障与配套应用同步问题",
+    "problem_statement": "用户报告 Garmin 骑行电脑与智能手表出现大面积软件故障（Blue triangle of death 蓝屏死机三角），同时配套应用与设备之间的同步存在困难且睡眠数据可信度低，影响正常使用与用户对数据准确性的信心。",
+    "priority_score": 41,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0023",
+      "F0132"
+    ],
+    "platforms": [
+      "App Store",
+      "road.cc"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "Garmin 设备固件存在缺陷，触发蓝屏死机三角形错误（Blue triangle of death），导致设备临时不可用",
+      "设备固件与配套移动应用之间的同步协议或蓝牙连接机制不稳定，造成数据同步困难",
+      "睡眠追踪算法或传感器数据处理存在缺陷，导致睡眠数据可信度低"
+    ],
+    "counter_evidence": "['FID F0132 仅提及个人使用中遇到的同步困难与睡眠数据不信任感，未必代表广泛存在的系统性问题', 'Blue triangle of death 报告（F0023）未指明具体受影响型号、固件版本或发生频率，无法确认是否为普遍缺陷']",
+    "recommended_actions": [
+      {
+        "action": "复现并定位 Blue triangle of death 故障的固件版本与触发条件，评估是否需发布修复补丁",
+        "owner": "设备固件工程团队"
+      },
+      {
+        "action": "排查设备-应用同步失败的具体场景（蓝牙配对、数据上传、会话冲突），并提交同步可靠性改进工单",
+        "owner": "移动应用工程团队"
+      },
+      {
+        "action": "复核近期睡眠追踪算法的变更记录，对比用户报告与算法输出，评估数据可信度问题",
+        "owner": "健康数据算法团队"
+      },
+      {
+        "action": "在客服与社区渠道发布已知问题通告，向受影响的骑行电脑/智能手表用户提供临时缓解建议",
+        "owner": "客户支持团队"
+      }
+    ],
+    "suggested_owner": "设备固件工程团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:50.308455",
+    "evidence": [
+      {
+        "feedback_id": "F0023",
+        "source_url": "https://road.cc/content/news/garmin-devices-temporarily-unusable-due-gps-issues-312373"
+      },
+      {
+        "feedback_id": "F0132",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0017",
+    "cluster_id": "CL-0017",
+    "title": "Wahoo Kickr Core 异常噪声与振动",
+    "problem_statement": "3条用户报告集中反映 Wahoo Kickr Core 智能骑行台在特定使用条件下出现异常振动与噪声问题：包括低于 80 RPM 低转速时通过车把可感知的研磨感（F0024）、特定踏频/功率组合下产生的低频隆隆振动且会影响邻居（F0028）、以及高飞轮转速下的高频啸叫疑似皮带摩擦异常（F0029）。",
+    "priority_score": 69,
+    "priority_level": "P1",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0024",
+      "F0028",
+      "F0029"
+    ],
+    "platforms": [
+      "TrainerRoad Forum",
+      "Wahoo Forum",
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "皮带传动系统异常：高转速下高频啸叫（F0029）疑似皮带与飞轮/皮带轮对位偏移、张紧力不足或皮带磨损，导致皮带与轮毂边缘发生摩擦（rubbing）",
+      "内部轴承磨损或润滑不足：低转速下通过车把感知的研磨感（F0024）以及特定工况下的低频隆隆振动（F0028）可能源自主轴、内部轴承磨损或润滑不良引起的机械摩擦",
+      "机体谐振与结构传递：特定踏频/功率组合下出现的低频隆隆振动（F0028）可能由踏频与机体固有频率耦合产生共振，并通过车架/车把向用户及周边环境传导"
+    ],
+    "counter_evidence": "['现有证据仅描述了用户主观感知的噪声/振动现象，缺少客观测量数据（如振动频谱、噪声分贝、踏频功率精确数值），无法严格区分机械摩擦、轴承磨损或机体谐振', '3 条证据均来自单一型号（Kickr Core）且为用户自述，缺乏实验室复现记录，目前无法确认是否存在批次性缺陷或为个体差异', 'F0024 报告的研磨感、F0028 报告的低频隆隆振动与 F0029 报告的高频啸叫可能对应多个相互独立的故障模式，证据尚不足以将其归因为同一根因']",
+    "recommended_actions": [
+      {
+        "action": "对 F0024、F0028 涉及的研磨感与低频振动问题，远程指导用户拆机检查内部主轴/轴承状态，评估润滑或更换需求",
+        "owner": "硬件技术支持团队"
+      },
+      {
+        "action": "对 F0029 涉及的高频啸叫问题，指导用户检查皮带张紧度、皮带轮对位情况及皮带磨损程度，必要时更换皮带总成",
+        "owner": "硬件技术支持团队"
+      },
+      {
+        "action": "向受影响的 3 位用户主动提供已知改进方案（如固件升级、加装减振垫/隔音垫），收集改进后的反馈以验证根因假设",
+        "owner": "客户服务团队"
+      },
+      {
+        "action": "汇总 F0024/F0028/F0029 的产品序列号、使用时长、踏频功率工况，向质量工程团队提交批次性分析请求，评估是否存在共性硬件缺陷",
+        "owner": "质量工程团队"
+      }
+    ],
+    "suggested_owner": "硬件工程团队（联合质量工程团队与客户服务团队）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:21:56.451222",
+    "evidence": [
+      {
+        "feedback_id": "F0024",
+        "source_url": "https://forums.zwift.com/t/kickr-core-2-issues/657421"
+      },
+      {
+        "feedback_id": "F0028",
+        "source_url": "https://www.trainerroad.com/forum/t/wahoo-kickr-core-vibration/39228"
+      },
+      {
+        "feedback_id": "F0029",
+        "source_url": "https://wahoox.forum.wahoofitness.com/t/weird-noise-coming-from-wahoo-kickr-core/30487"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0018",
+    "cluster_id": "CL-0018",
+    "title": "硬件故障问题簇：用户希望在停止踩踏时功率立即归零以在虚拟骑行中实现符合物理的（1条证据）",
+    "problem_statement": "Wahoo trainers with Virtual Shifting Issue: Free Watts. Power readings don't drop to zero when coasting. Phantom power l…",
+    "priority_score": 30,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0025"
+    ],
+    "platforms": [
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "Wahoo Kickr Core 的功率计在 coasting 时存在零偏校准延迟",
+      "Wahoo 与 Zwift Virtual Shifting 协议在功率上报时机上存在兼容性问题",
+      "固件未及时将功率降至 0W 导致残留读数"
+    ],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "排查硬件相关故障（按键/传感器/续航）",
+        "owner": "硬件团队"
+      }
+    ],
+    "suggested_owner": "硬件团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:06.865601",
+    "evidence": [
+      {
+        "feedback_id": "F0025",
+        "source_url": "https://forums.zwift.com/t/wahoo-trainers-with-virtual-shifting-issue-free-watts-october-2024/635715"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0019",
+    "cluster_id": "CL-0019",
+    "title": "Wahoo Kickr Core 功率读数偏高",
+    "problem_statement": "用户反馈 Wahoo Kickr Core 智能骑行台与 Assioma 功率计踏板相比读数偏高 5–10%，在高强度冲刺间歇后差距扩大至 15–20%，存在功率测量准确性问题。",
+    "priority_score": 35,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0026"
+    ],
+    "platforms": [
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "Kickr Core 内部功率计校准偏差或长时间未重新校准，导致基线读数系统性偏高",
+      "高强度冲刺间歇后飞轮/内部阻力单元温度上升，引起功率估算漂移并放大差距",
+      "Assioma 功率计踏本身存在读数偏低的情况（双向比较时差距由两端误差叠加导致）"
+    ],
+    "counter_evidence": "['证据仅 1 条，缺少其他用户或独立来源对 Kickr Core 在相同条件下系统性偏高 5–20% 的佐证，无法排除个案或测量环境干扰', 'Assioma 踏自身的精度与校准状态未经验证，若 Assioma 读数偏低，同样会导致类似差距表现', '冲刺间歇后温差、踏频差异、信号链路等因素均未被排除，目前尚不能确定读数偏高来自 Kickr Core 硬件本身']",
+    "recommended_actions": [
+      {
+        "action": "请用户对 Kickr Core 执行厂家推荐的零位校准与手动 spindown，并在前后对比功率读数变化",
+        "owner": "Support Agent"
+      },
+      {
+        "action": "指导用户升级 Kickr Core 与 Assioma 至最新固件，并确认两侧采样率与平滑设置一致",
+        "owner": "Support Agent"
+      },
+      {
+        "action": "建议用户使用第三方功率计（如 Stages、Power2Max 或 Quarq）作为参照基准，在相同冲刺间歇下重新进行三方对比测试",
+        "owner": "Customer"
+      },
+      {
+        "action": "若以上步骤后差距仍超过 5%，联系 Wahoo 技术支持提交 spindown 校准日志与原始 .fit 文件以排查硬件精度问题，必要时启动 RMA 流程",
+        "owner": "Support Agent"
+      },
+      {
+        "action": "将本案例纳入功率计准确性问题监控列表，跟踪是否出现更多 Kickr Core 与 Assioma 对比的相似报告以判断是否为批次性缺陷",
+        "owner": "QA Team"
+      }
+    ],
+    "suggested_owner": "Support Agent",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:13.431162",
+    "evidence": [
+      {
+        "feedback_id": "F0026",
+        "source_url": "https://forums.zwift.com/t/trainer-vs-power-meter-pedals-significant-power-difference/653942"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0020",
+    "cluster_id": "CL-0020",
+    "title": "Wahoo Kickr 蓝牙连接成功但无功率/踏频数据（光学传感器ESD失效）",
+    "problem_statement": "智能骑行台 Wahoo Kickr 通过蓝牙成功建立连接，但在训练期间持续不输出功率（Power）和踏频/运动（Movement）数据，故障表现为光学传感器失效，疑似由静电放电（ESD）引发。证据等级 S2，优先级 38。",
+    "priority_score": 38,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0027"
+    ],
+    "platforms": [
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "光学转速/扭矩传感器遭静电放电（ESD）击穿，导致信号采集模块无法输出功率与运动数据，但蓝牙通信链路未受影响",
+      "传感器信号调理电路或 ADC 通路受损，使蓝牙仍报告已连接但底层数据流为空",
+      "固件在传感器异常时未按规范上报故障码，造成端侧仅观察到数据缺失而缺乏明确诊断信息"
+    ],
+    "counter_evidence": "[\"证据原文以省略号结尾（'ESD ca…'），疑似 ESD 的结论未完整呈现，存在笔误或截断，不能完全排除误判\", '仅 1 条证据，样本不足；未能区分是偶发性连接/数据链路问题还是真正的传感器硬件失效', '未记录固件版本、生产批次及故障发生前的环境条件，可能存在混淆因素（如蓝牙协议握手异常、上位机应用未正确订阅数据通道）']",
+    "recommended_actions": [
+      {
+        "action": "复现并采集故障现场日志（蓝牙配对记录、固件版本、传感器自检码），确认是否存在 ESD 损伤痕迹（外观烧灼、接口放电点）",
+        "owner": "现场服务工程师"
+      },
+      {
+        "action": "联系 Wahoo 技术支持获取该型号已知的 ESD 失效案例与传感器更换/校准流程，必要时更换光学传感器模组",
+        "owner": "售后技术支持"
+      },
+      {
+        "action": "检查固件是否为最新版本；如非最新则升级，并复核是否仍出现数据缺失",
+        "owner": "嵌入式/固件工程师"
+      },
+      {
+        "action": "在用户使用环境增加 ESD 防护建议（防静电垫、湿度控制、避免穿戴化纤衣物骑行），并更新用户告知文档",
+        "owner": "产品/用户文档负责人"
+      },
+      {
+        "action": "建立同类光学传感器+蓝牙方案在量产阶段的 ESD 抗扰度（IEC 61000-4-2）抽检与设计评审门槛",
+        "owner": "硬件设计/质量工程师"
+      }
+    ],
+    "suggested_owner": "硬件质量工程师（协同售后与固件）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:24.357597",
+    "evidence": [
+      {
+        "feedback_id": "F0027",
+        "source_url": "https://forums.zwift.com/t/wahoo-kicker-connected-via-bluetooth-but-no-power-and-no-movement-of-rider/601059"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0021",
+    "cluster_id": "CL-0021",
+    "title": "Strava API 限制引发的健身数据访问性问题",
+    "problem_statement": "Strava 对其 API 实施了限制，导致健身数据生态中的数据访问与集成受阻，影响依赖该平台的下游应用与用户。该问题在 CL-0021 簇内当前仅有 1 条证据（FID F0032），最高严重度 S3，优先级分数 18。",
+    "priority_score": 18,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0032"
+    ],
+    "platforms": [
+      "The Verge"
+    ],
+    "brands": [
+      "Strava"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "Strava 出于数据隐私、合规或商业策略考虑收紧第三方 API 访问权限",
+      "API 变更沟通或迁移期不足，导致集成方难以快速适配",
+      "健身数据本身的多源、异构与归属敏感特性放大了 API 收紧的连锁影响"
+    ],
+    "counter_evidence": "当前簇内仅 1 条证据（F0032），且原文在截断处结束（'break'），缺乏完整的 API 政策细节、影响范围与时间线，难以独立验证严重度的实际外溢效应；建议补充更多来源以确认问题边界。",
+    "recommended_actions": [
+      {
+        "action": "梳理受 Strava API 限制影响的内部集成点，评估功能降级或替代数据源方案",
+        "owner": "平台/集成研发负责人"
+      },
+      {
+        "action": "与产品团队沟通，向用户明确说明 Strava 数据同步现状及替代方案",
+        "owner": "产品经理"
+      },
+      {
+        "action": "持续监测 Strava 官方 API 政策更新与开发者社区动态",
+        "owner": "技术情报/BD 负责人"
+      }
+    ],
+    "suggested_owner": "平台/集成研发负责人",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:27.448030",
+    "evidence": [
+      {
+        "feedback_id": "F0032",
+        "source_url": "https://www.theverge.com/2024/11/22/24303124/strava-fitness-data-wearables"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0022",
+    "cluster_id": "CL-0022",
+    "title": "功率计校准导致软件冻结",
+    "problem_statement": "在尝试校准功率计时，软件会完全冻结，必须重启整个系统才能恢复。仅有一条证据（F0033），严重度评级为 S3，优先级分数为 23。",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0033"
+    ],
+    "platforms": [
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "功率计校准流程中存在阻塞操作（例如同步串口/I/O 等待），导致 UI 主线程挂起",
+      "校准子进程或固件握手逻辑进入无限循环或缺少超时机制，造成软件整体无响应"
+    ],
+    "counter_evidence": "['目前仅有一条用户报告，尚不足以确认是否为系统性缺陷或用户环境触发的偶发问题', '未提供日志、重启前错误码或具体功率计型号，无法排除外设硬件兼容性问题']",
+    "recommended_actions": [
+      {
+        "action": "复现冻结场景并捕获线程转储与 I/O 日志，确认主线程阻塞点",
+        "owner": "软件维护工程师"
+      },
+      {
+        "action": "为校准流程添加超时与非阻塞异步机制，避免 UI 主线程被挂起",
+        "owner": "固件/驱动开发工程师"
+      },
+      {
+        "action": "在后续测试轮次中覆盖功率计校准用例，防止回归",
+        "owner": "QA 测试工程师"
+      }
+    ],
+    "suggested_owner": "软件维护工程师",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:31.348140",
+    "evidence": [
+      {
+        "feedback_id": "F0033",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0023",
+    "cluster_id": "CL-0023",
+    "title": "第三方 ANT+ 传感器无电量显示与蓝牙空闲掉连",
+    "problem_statement": "证据 F0035 指出设备对任何第三方 ANT+ 传感器均不显示电池状态，并且手机应用端的蓝牙连接在空闲后会发生断连现象。证据原文在末尾以 'Cl' 截断，未提供完整描述，因此可分析的内容仅限于以上两点。",
+    "priority_score": 18,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0035"
+    ],
+    "platforms": [
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': '固件/应用未实现读取第三方 ANT+ 传感器标准电量数据页（battery data page）的解析逻辑', 'supporting_evidence': \"F0035 直接陈述 'No battery status display for any third-party ANT+ sensors'，且范围为 'any'，暗示是通用解析缺失而非单设备兼容性问题\", 'confidence': '中'}",
+      "{'hypothesis': '手机应用蓝牙链路缺少空闲保活（keep-alive）机制，或系统级蓝牙省电策略被触发导致连接释放', 'supporting_evidence': \"F0035 明确提到 'Phone app Bluetooth drops after idle'，'after idle' 暗示空闲状态触发了断开\", 'confidence': '中'}",
+      "{'hypothesis': \"证据原文被截断（以 'Cl' 结尾），可能存在尚未暴露的额外根因\", 'supporting_evidence': \"证据文本 'Cl' 后缺失，可能包含更多上下文信息\", 'confidence': '低'}"
+    ],
+    "counter_evidence": "[\"簇内仅 1 条证据且原文被截断（'Cl'），样本量不足以排除单设备/单环境偶发问题\", '无对照信息说明是仅在特定手机型号、特定 ANT+ 厂商或特定固件版本下出现', '未提供第三方传感器的具体型号、固件版本，无法判断是否为设备互操作性问题']",
+    "recommended_actions": [
+      {
+        "action": "获取 F0035 完整原文以确认是否包含更多根因线索或复现条件",
+        "owner": "需求分析师"
+      },
+      {
+        "action": "核查设备端 ANT+ 协议栈是否支持并解析第三方传感器电量数据页，若不支持评估实现成本",
+        "owner": "固件/协议工程师"
+      },
+      {
+        "action": "排查手机应用蓝牙空闲断连问题，检查是否有 keep-alive 心包、是否存在 OS 蓝牙省电策略被触发，并复现以确认根因",
+        "owner": "移动端开发工程师"
+      },
+      {
+        "action": "收集其他第三方 ANT+ 传感器型号的反馈，确认电量显示缺失是否对所有厂商一致",
+        "owner": "测试/QA"
+      }
+    ],
+    "suggested_owner": "移动端开发工程师（主）+ 固件/协议工程师（协）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:37.834229",
+    "evidence": [
+      {
+        "feedback_id": "F0035",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0024",
+    "cluster_id": "CL-0024",
+    "title": "簇 CL-0024: 功率与温度读数残留/漂移",
+    "problem_statement": "簇内仅 1 条证据（F0036），描述停止踩踏后功率读数持续 3-5 秒不归零（sticky watts），且温度读数偏低约 2（单位在原文中被截断）。最高严重度 S3，优先级分数 23，问题集中在功率与温度两类传感器读数在动作停止后未能及时复位或读数偏离基线。",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0036"
+    ],
+    "platforms": [
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "功率计在踩踏停止后未及时下发零偏校准或残余扭矩被误识别为有效功率，导致 sticky watts。",
+      "功率/温度传感器采样与显示更新之间存在滤波或窗口平滑延迟，停止踩踏后短时间内仍输出历史值。",
+      "温度传感器的安装位置、接触或补偿算法偏移，使读数系统性偏低约 2 个单位。"
+    ],
+    "counter_evidence": "['当前簇内仅 1 条证据（F0036），且原文被截断，温度偏低的具体单位与量程未知，无法区分是 °C、°F 还是其他传感量的 -2。', '尚无对照样本（如同类设备、环境温度记录、停止踩踏前后的基线读数）来佐证 sticky watts 与温度 -2 是否同时出现于同一硬件单元，还是两条独立症状被归入同簇。', '未观察到用户实际投诉或现场失败数据，不能排除该现象在统计上属于传感器正常滤波行为而非真故障。']",
+    "recommended_actions": [
+      {
+        "action": "复现 sticky watts 现象，采集停止踩踏后 0-10 秒的原始功率波形，确认残留持续时间是否稳定在 3-5 秒，判断属于算法滤波还是硬件零偏问题。",
+        "owner": "固件/算法工程师"
+      },
+      {
+        "action": "检查功率计零偏校准（auto-zero / manual zero）逻辑与触发条件，必要时缩短或调整停止检测后的强制零偏时间窗。",
+        "owner": "固件工程师"
+      },
+      {
+        "action": "复核温度传感器通道的读数：核对参考电阻、ADC 配置、冷端补偿/校准系数，确认是否存在系统性 -2 的偏差。",
+        "owner": "硬件工程师"
+      },
+      {
+        "action": "在已知温度环境中对温度通道进行标定对比，量化偏差是否随温度点变化，必要时重新写入校准参数。",
+        "owner": "测试/标定工程师"
+      },
+      {
+        "action": "检查功率与温度传感器共用的信号链路（连接器、线束、ADC 输入），排除接触不良或通道串扰导致的读数漂移。",
+        "owner": "硬件工程师"
+      }
+    ],
+    "suggested_owner": "固件工程师（牵头），硬件与标定工程师协同",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:43.241000",
+    "evidence": [
+      {
+        "feedback_id": "F0036",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0025",
+    "cluster_id": "CL-0025",
+    "title": "骑行中停止/数据保存异常及强制更新与实名问题",
+    "problem_statement": "用户反馈在骑行过程中无法正常停止记录，导致运动数据丢失或无法查看；同时存在软件时常闪退、数据保存异常的稳定性问题。此外，有用户对应用的强制更新和强制实名机制表达不满。簇内同时混入少量与问题无关的低质量反馈（如情感宣泄、灌水、跑题）。",
+    "priority_score": 33,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0041",
+      "F0042",
+      "F0051",
+      "F0056",
+      "F0065",
+      "F0070",
+      "F0071",
+      "F0074",
+      "F0078",
+      "F0085",
+      "F0087",
+      "F0209"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': '骑行记录/停止功能的代码逻辑存在缺陷（例如停止事件未正确写入存储、状态机未正确收敛或异常分支未处理），导致用户无法结束会话或结束后数据未持久化。', 'evidence_refs': ['F0041', 'F0042'], 'confidence_basis': '多条反馈直接描述‘停止不了骑行、数据丢失、想看数据都看不到’，指向停止+持久化链路异常。'}",
+      "{'hypothesis': '数据保存模块在异常路径（如异常退出、闪退、低存储、并发冲突）下未能落盘，造成运动数据丢失或保存异常。', 'evidence_refs': ['F0041', 'F0071'], 'confidence_basis': 'F0071 明确提及‘闪退，数据保存异常’，与 F0041 的数据丢失可由同一落盘/异常路径解释。'}",
+      "{'hypothesis': '应用进程在骑行过程中被系统回收或自身崩溃（OOM、ANR、未捕获异常），引发闪退与会话未正常关闭。', 'evidence_refs': ['F0071'], 'confidence_basis': '用户描述‘时常运动闪退’，提示运行期稳定性问题。'}"
+    ],
+    "counter_evidence": "['簇内多条反馈（F0051、F0056、F0070、F0074、F0078、F0085）文本极短或纯情绪化，与骑行/数据问题无语义关联，可能拉高簇的频次但不代表同一根因，需谨慎对待其权重。', 'F0065 反映的是强制更新与强制实名的策略争议，并非由骑行停止/数据丢失功能缺陷直接导致，可能属于独立的产品体验议题。', 'F0071 同时提及‘闪退’和‘数据保存异常’，但样本仅 1 条，单点不足以独立确证闪退是导致数据丢失的主因，需结合日志与监控进一步验证。', '未在给定证据中看到具体的崩溃率、ANR 率、更新失败率、停止失败率等量化指标，任何关于‘高频’或‘大规模影响’的结论均超出当前证据范围。']",
+    "recommended_actions": [
+      {
+        "action": "复现并诊断‘骑行中无法停止 + 数据丢失’问题：抓取停止事件、落盘调用栈与异常日志，确认停止按钮事件是否触发、数据库事务是否提交、是否有未捕获异常导致会话未关闭。",
+        "owner": "客户端研发（骑行功能模块）"
+      },
+      {
+        "action": "加固数据持久化与异常兜底：骑行过程采用增量/分段落盘（每 N 秒或每 N 米一次），并在停止、退出、闪退、低存储、进程被杀等路径下确保会话可恢复或至少不静默丢失。",
+        "owner": "客户端研发（数据存储）+ 后端研发（若有同步链路）"
+      },
+      {
+        "action": "排查并修复运动中的闪退：接入崩溃监控（如 ANR/Crash SDK），针对 OOM、未捕获异常、第三方 SDK 冲突进行归因；建立针对骑行场景的长时稳定性回归用例。",
+        "owner": "客户端研发（稳定性）"
+      },
+      {
+        "action": "评审强制更新与强制实名的必要性、时机与提示体验：评估是否可在非关键版本放宽强制更新阈值、或在关键版本给出更清晰提示与延期窗口，减少与功能故障叠加的负面感知。",
+        "owner": "产品负责人 + 增长/运营（合规策略对齐）"
+      },
+      {
+        "action": "对簇内噪声反馈进行清洗与标记：在分析管线中基于关键词/无语义内容过滤纯情绪与跑题文本，避免其混入主题簇影响优先级与告警。",
+        "owner": "数据分析 / 用户洞察"
+      }
+    ],
+    "suggested_owner": "客户端研发（骑行功能模块）牵头，数据存储与稳定性团队协同，产品负责人对齐强制更新/实名策略",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:51.565443",
+    "evidence": [
+      {
+        "feedback_id": "F0041",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0042",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0051",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0056",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0065",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0070",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0071",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0074",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0078",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0085",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0087",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0209",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0026",
+    "cluster_id": "CL-0026",
+    "title": "实时监控与运动健康生态集成缺失",
+    "problem_statement": "用户希望在骑行过程中能实时查看聚焦数据（不依赖额外码表硬件），并希望骑行数据能同步至 Apple 健康等主流健康平台，以补齐运动健康生态闭环。",
+    "priority_score": 44,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0043",
+      "F0055",
+      "F0057",
+      "F0064",
+      "F0076",
+      "F0077",
+      "F0079",
+      "F0083",
+      "F0088"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "锁屏后前台实时数据展示/小组件能力缺失，导致无码表用户无法在骑行中查看关键指标",
+      "未实现与 Apple 健康（及同类平台）的数据互通接口",
+      "首页信息架构以社区内容为主，数据入口弱化，与用户期望的'数据为主'相悖"
+    ],
+    "counter_evidence": "[\"F0083 反馈近期图片分享等新功能正在推进且'听劝'，说明团队对用户反馈响应良好，新功能优先级可能挤占健康同步/锁屏监控资源\", \"F0055 同时指出社区投入'效果甚微'，与上述'首页社区降级'建议一致，但该结论属用户主观判断，缺乏量化数据佐证\"]",
+    "recommended_actions": [
+      {
+        "action": "评估并实现锁屏态/实时活动下的关键数据展示方案（含灵动岛、系统实时活动或独立骑行伴侣硬件方案）",
+        "owner": "移动端产品 + iOS 研发"
+      },
+      {
+        "action": "对接 Apple HealthKit，将每次骑行摘要数据写入健康应用，并补充必要的权限说明与引导",
+        "owner": "iOS 研发 + 健康数据后端"
+      },
+      {
+        "action": "调整首页信息架构，将个人骑行数据作为首屏核心，社区内容降级为独立 Tab",
+        "owner": "产品 + 增长"
+      },
+      {
+        "action": "梳理用户对'说明文档/字段说明'的诉求，在数据页增加字段释义或帮助入口",
+        "owner": "产品 + 设计"
+      }
+    ],
+    "suggested_owner": "移动端产品负责人",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:22:55.272924",
+    "evidence": [
+      {
+        "feedback_id": "F0043",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0055",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0057",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0064",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0076",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0077",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0079",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0083",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0088",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0027",
+    "cluster_id": "CL-0027",
+    "title": "用户对骑行App功能与隐私/账号机制的强烈不满",
+    "problem_statement": "用户反馈当前骑行App在社交功能、代码兼容、设备适配方面明显落后于竞品（如黑鸟），且强制升级、强制实名认证、缺乏海外支持等运营机制严重影响使用体验，导致用户不满情绪累积。",
+    "priority_score": 40,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0045",
+      "F0059",
+      "F0066",
+      "F0081"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "App功能迭代缓慢，未能跟上竞品节奏：用户明确指出竞品已支持轨迹合并、查看他人详细数据等功能，而本产品仍不具备。",
+      "核心体验存在硬件门槛：新功能（如赛段打卡）过度依赖特定码表硬件，限制了纯手机App用户的使用。",
+      "强制升级与强制实名认证策略执行过于强硬：缺乏降级或跳过选项，触发用户对隐私侵扰的反感。"
+    ],
+    "counter_evidence": "['证据中未提供竞品更新时间的具体数据，无法判断本产品迭代是否真的落后于竞品节奏。', '强制升级与实名认证的触发条件及频次在原文中描述较为模糊，可能存在用户主观放大的成分。', '海外版本码表不支持的具体范围（覆盖哪些国家/地区）在证据中未明确。', '缺乏量化的用户规模或流失数据，无法判断这些反馈对整体业务的影响程度。']",
+    "recommended_actions": [
+      {
+        "action": "对竞品（如黑鸟）的社交、轨迹合并、好友数据可见性等功能进行对标差距评估，制定分阶段功能落地路线图并明确上线时间",
+        "owner": "产品经理"
+      },
+      {
+        "action": "梳理当前依赖特定硬件才能完整体验的功能列表，规划纯手机App路径下的替代方案或独立功能体验",
+        "owner": "产品经理"
+      },
+      {
+        "action": "复核强制升级与实名认证流程，提供合理降级路径和跳过选项，避免无差别强弹窗",
+        "owner": "产品经理"
+      },
+      {
+        "action": "设计更友好的蓝牙权限请求策略，仅在功能真正需要时触发申请，并提供清晰的用途说明",
+        "owner": "客户端研发"
+      },
+      {
+        "action": "调研海外版代码与账号体系的兼容需求，评估国际版或海外用户支持的可行方案",
+        "owner": "海外业务负责人"
+      }
+    ],
+    "suggested_owner": "产品经理",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:18.700160",
+    "evidence": [
+      {
+        "feedback_id": "F0045",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0059",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0066",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0081",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0028",
+    "cluster_id": "CL-0028",
+    "title": "缺乏人工客服通道",
+    "problem_statement": "用户反馈在寻求人工服务支持时找不到可用的人工客服通道，导致用户诉求无法通过人工方式得到响应。",
+    "priority_score": 8,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0046"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "未配置或未向用户充分暴露人工客服入口（如电话、在线人工坐席等）。"
+    ],
+    "counter_evidence": "['暂无其他证据直接说明人工客服通道的当前配置情况，亦不能排除用户自身未找到已有入口的可能。']",
+    "recommended_actions": [
+      {
+        "action": "核查现有客服渠道，确认是否存在人工客服入口及其可达性。",
+        "owner": "客服运营"
+      },
+      {
+        "action": "在用户主要触点（App、官网、电话菜单等）显著位置增设人工客服入口并补充引导文案。",
+        "owner": "产品/用户体验"
+      },
+      {
+        "action": "回访该用户，确认改进后人工客服通道是否可正常使用。",
+        "owner": "客服运营"
+      }
+    ],
+    "suggested_owner": "客服运营",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:21.997305",
+    "evidence": [
+      {
+        "feedback_id": "F0046",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0029",
+    "cluster_id": "CL-0029",
+    "title": "数据生态封闭：缺少 Strava 集成与 Apple HealthKit 对接",
+    "problem_statement": "多位用户反馈，迈金（IGP/Magene）设备及其配套 App 存在明显的数据生态封闭问题：原 Strava 集成功能被下架后，平台未提供有效的替代同步方案，导致用户无法将骑行数据分享至 Apple HealthKit，也无法便捷查看好友骑行数据；同时数据同步速度慢，软件体验被频繁吐槽。鸿蒙（HarmonyOS）原生版本长期缺失，进一步限制了使用华为设备的用户群体。整体来看，数据出口单一、生态兼容性差正在造成用户流失与口碑下滑。",
+    "priority_score": 53,
+    "priority_level": "P2",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0053",
+      "F0061",
+      "F0062",
+      "F0069",
+      "F0084",
+      "F0086"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "Strava 集成被禁用后，产品侧未及时规划并落地替代的数据同步/分享能力（如直接对接 Apple HealthKit、Garmin Connect、第三方平台等），形成生态真空。",
+      "App 与 Apple HealthKit 的对接缺失（FID F0053、F0086），叠加数据同步性能差（FID F0062），使用户无法在统一健康数据视图中整合骑行记录，削弱使用价值。",
+      "从竞品（如 Strava、IGPPort）迁移过来的用户原本依赖社交与跨平台数据互通能力，迈金 App 在社交骑行（好友数据查看）与数据互通上的薄弱造成迁移体验断崖。"
+    ],
+    "counter_evidence": "['簇内未直接给出 Apple HealthKit 对接的官方规划或拒绝原因，无法排除公司存在合规、隐私或商务层面的客观限制（如 Apple HealthKit 审核要求、Strava API 政策变动等）。', 'Strava 集成下架（FID F0061、F0069）目前仅以用户陈述出现，缺乏官方公告或原理解释，不能确认是临时调整还是长期策略。', \"FID F0062 同时吐槽了'数据同步慢'与'软件烂'，簇内无法区分其对数据生态封闭的贡献度，需警惕将多类问题合并归因。\", '鸿蒙版缺失（FID F0084）可能受限于开发资源或鸿蒙生态成熟度，并非全部由产品意愿决定。', '负面评价集中在部分迁移用户中，样本量较小（6 条），不能直接外推为全体用户流失主因。']",
+    "recommended_actions": [
+      {
+        "action": "优先实现 App 与 Apple HealthKit 的双向数据同步（写入骑行/运动记录，并允许读取健康数据），覆盖 iOS 用户基础数据出口需求。",
+        "owner": "产品 + iOS 研发"
+      },
+      {
+        "action": "针对 Strava 下架造成的缺口，提供等价或更优的替代同步路径（如 Garmin Connect、TrainingPeaks、Strava 间接同步方案等），并在 App 内显式引导用户完成配置。",
+        "owner": "产品 + 后端集成"
+      },
+      {
+        "action": "上线或恢复\"好友骑行数据\"社交能力，至少支持关注、查看与评论，并结合数据同步性能优化（缩短同步耗时），修复 FID F0062 提及的慢同步问题。",
+        "owner": "App 研发 + 后端"
+      },
+      {
+        "action": "推进鸿蒙（HarmonyOS）原生版 App 的开发与发布节奏，对外给出明确的时间承诺，缓解 FID F0084 类用户的预期焦虑。",
+        "owner": "鸿蒙研发 + 产品"
+      },
+      {
+        "action": "建立生态合作与数据出口路线图，明确第三方平台支持优先级（Apple Health、Strava、Garmin、微信运动等），并在做出兼容性变更前提前通知与补偿用户。",
+        "owner": "产品负责人"
+      }
+    ],
+    "suggested_owner": "产品负责人（牵头），协同 iOS/App 研发、后端、鸿蒙研发与用户运营",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:30.050747",
+    "evidence": [
+      {
+        "feedback_id": "F0053",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0061",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0062",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0069",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0084",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0086",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0030",
+    "cluster_id": "CL-0030",
+    "title": "会员开通后方可使用骑行台——强制付费投诉",
+    "problem_statement": "用户反馈必须先开通会员才能使用骑行台功能，认为属于强制消费，并给出差评。该问题在证据簇 CL-0030 中严重度最高（S4，优先级 16），且目前仅有 1 条证据，需要进一步确认是否具有普遍性。",
+    "priority_score": 16,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0058"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [
+      "骑行台功能被设置为会员专属权限，未付费用户无法使用，导致用户感受到强制消费",
+      "会员权益与功能说明在产品引导页或权限提示中不清晰，用户在尝试使用骑行台时才被告知需付费",
+      "骑行台相关的资源/服务（如数据同步、训练课程）依赖会员订阅作为唯一解锁路径"
+    ],
+    "counter_evidence": "['当前簇内仅有 1 条证据，样本量不足以判断该问题是否为普遍现象，需更多用户反馈数据加以佐证', '尚无证据说明骑行台功能是否存在免费试用、非会员使用次数或其他替代入口，原文未给出权限机制细节']",
+    "recommended_actions": [
+      {
+        "action": "核实骑行台功能的权限配置与会员开通页面的提示文案，确认是否存在强制开通或提示不清的情况，并据此优化权限说明与引导",
+        "owner": "产品经理"
+      },
+      {
+        "action": "梳理骑行台相关功能是否必须绑定会员订阅，评估是否可设置免费试用或基础功能免费体验，以缓解强制消费感知",
+        "owner": "产品经理"
+      },
+      {
+        "action": "在客服与社区渠道对该类差评进行定向回访，确认是否为单点反馈还是具有普遍性，并补充更多证据样本",
+        "owner": "客服运营"
+      }
+    ],
+    "suggested_owner": "产品经理",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:34.383326",
+    "evidence": [
+      {
+        "feedback_id": "F0058",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0031",
+    "cluster_id": "CL-0031",
+    "title": "Watch–App 同步与连接稳定性问题（疑似更新后回归）",
+    "problem_statement": "多名用户在配对、连接、同步等环节反复遭遇问题：配对后频繁断连、需反复重新配对/重连；同步耗时长；训练数据无法正确同步到手表；更新后手表不再接收手机通知；新购 iPhone 17 设备出现兼容性问题；还有用户报告 Index BPM 无法连接。问题在一次更新后明显恶化（见 F0096、F0108），呈面性回归而非个案。",
+    "priority_score": 59,
+    "priority_level": "P2",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0091",
+      "F0093",
+      "F0096",
+      "F0099",
+      "F0102",
+      "F0104",
+      "F0106",
+      "F0108",
+      "F0114",
+      "F0119",
+      "F0124",
+      "F0126",
+      "F0137",
+      "F0138",
+      "F0139",
+      "F0140",
+      "F0191",
+      "F0195",
+      "F0196",
+      "F0199",
+      "F0200",
+      "F0201"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "近期 App / 手表固件更新引入了蓝牙连接管理或后台同步逻辑的回归，导致握手失败、链路抖动与同步超时。",
+      "App 与 iPhone 17 等新机型的蓝牙权限/后台保活/通知通道兼容性未充分覆盖，存在 OS 适配缺陷。",
+      "同步管线在训练记录、通知下发、第三方设备（如 Index BPM、Strava）通道上存在状态机错误或重连退避策略不充分。"
+    ],
+    "counter_evidence": "[\"F0102 反馈 'Connected with Strava is great!'，说明在同一 App 上与 Strava 的连接通路在部分用户场景下工作正常，可能缩小问题范围到手表 BLE 链路而非通用连接层。\", \"证据中未给出受影响用户量、设备占比、OS 版本分布等定量数据，因此'面性回归 vs 个案'的判断仍需日志/遥测进一步验证。\", \"F0099 将问题归因于 '新 iPhone 17'，F0104 提到 'Can not connect index BPM'，可能存在多类独立根因叠加，目前尚无法仅凭反馈文本断言是同一根因。\"]",
+    "recommended_actions": [
+      {
+        "action": "对近 3 个发布版本的蓝牙链路、连接握手、同步后台任务相关 diff 做回归审计，定位疑似引入回归的提交。",
+        "owner": "客户端 App 研发（连接/同步模块）"
+      },
+      {
+        "action": "复现并验证 iPhone 17（iOS 当前版本） + Fenix 7 Pro / Epix Pro Gen 2 的连接与通知链路，必要时在崩溃/连接日志中加采样标记。",
+        "owner": "移动端兼容性 QA + iOS 研发"
+      },
+      {
+        "action": "为断连、需重连、同步失败增加客户端可见的错误码与帮助链接，并在日志中埋点以便统计影响面与设备/OS 分布。",
+        "owner": "App 客户端研发 + 可观测性/数据团队"
+      },
+      {
+        "action": "优化重连与后台同步退避策略：在重试间隔、并发约束、配对态缓存上做改进，降低用户必须手动重连的概率。",
+        "owner": "连接/同步模块研发"
+      },
+      {
+        "action": "对 Index BPM、Strava 等第三方设备/平台的连接通路进行一轮冒烟测试，确认是否仅限个案还是面性问题。",
+        "owner": "第三方集成 QA"
+      }
+    ],
+    "suggested_owner": "App 客户端研发负责人（连接/同步模块），协同 iOS 适配 QA、可观测性/数据团队与客户支持",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:40.780716",
+    "evidence": [
+      {
+        "feedback_id": "F0091",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0093",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0096",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0099",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0102",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0104",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0106",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0108",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0114",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0119",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0124",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0126",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0137",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0138",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0139",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0140",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0191",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0195",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0196",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0199",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0200",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0201",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0032",
+    "cluster_id": "CL-0032",
+    "title": "Latest software update causing accelerated battery drain",
+    "problem_statement": "Users report that after installing a recent software update, their device (watch and/or phone) battery drains significantly faster than before. At least one quantitative observation notes approximately 20% battery consumed in the background over a 10-hour period, and the symptom has been reproducible over consecutive days.",
+    "priority_score": 41,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0092",
+      "F0110",
+      "F0117"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': 'The latest firmware/software version introduced a background process or service that consumes excessive power.', 'supporting_evidence_ids': ['F0092', 'F0110', 'F0117']}",
+      "{'hypothesis': 'A regression in the update changed power management, scheduling, or wake-lock behavior, causing increased background activity.', 'supporting_evidence_ids': ['F0110', 'F0117']}",
+      "{'hypothesis': 'The update modified default settings (e.g., sync frequency, sensor sampling, connectivity radios) that users have not yet re-tuned, leading to elevated battery usage.', 'supporting_evidence_ids': ['F0092', 'F0117']}"
+    ],
+    "counter_evidence": "[{'description': 'None of the three feedback items specify the device model, OS version before/after the update, or usage patterns, so the drain could plausibly be caused by user-side factors (e.g., app usage, signal conditions) rather than the update itself.', 'evidence_ids': ['F0092', 'F0110', 'F0117']}, {'description': 'The 20%-over-10h figure is reported by a single user (F0117) without methodology; it cannot yet be generalized as a typical post-update behavior.', 'evidence_ids': ['F0117']}, {'description': 'Sample size is small (3 reports) and no telemetry or controlled measurements are cited, so the link between the update and the drain remains correlational until instrumented evidence is gathered.', 'evidence_ids': ['F0092', 'F0110', 'F0117']}]",
+    "recommended_actions": [
+      {
+        "action": "Compare power-profile telemetry and background-task logs between the previous and the latest release to identify processes with increased wake time or CPU usage.",
+        "owner": "Firmware Engineering"
+      },
+      {
+        "action": "Audit release notes and code diffs for changes to power management, background sync, radio (Bluetooth/Wi-Fi/Cellular) behavior, and sensor polling rates introduced in the latest build.",
+        "owner": "Software Engineering"
+      },
+      {
+        "action": "Reproduce the 20%-per-10h background drain on a representative device running the latest build and profile with battery/energy tracing tools to pinpoint the dominant consumer.",
+        "owner": "QA / Performance Lab"
+      },
+      {
+        "action": "If a regression is confirmed, prepare a hotfix or staged rollback and publish guidance for affected users, including any recommended setting adjustments as a temporary mitigation.",
+        "owner": "Release Management"
+      },
+      {
+        "action": "Add automated battery-regression tests to the CI pipeline covering representative background-load scenarios to prevent recurrence.",
+        "owner": "QA / Performance Lab"
+      }
+    ],
+    "suggested_owner": "Firmware Engineering (with support from QA/Performance Lab and Release Management)",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:47.146408",
+    "evidence": [
+      {
+        "feedback_id": "F0092",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0110",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0117",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0033",
+    "cluster_id": "CL-0033",
+    "title": "CL-0033: Garmin Connect 用户整体满意度与功能正面反馈集群",
+    "problem_statement": "该簇由 13 条证据组成，全部为简短或中等长度的正面评价（如 'great app'、'Like all garmin products, it works very well'、'I love the functionality and data quality'、'COROS is far more organized… garmin is still mo…' 等）。当前簇内没有出现关于崩溃、性能下降、登录问题等具体负面根因描述；严重度 S4 与优先级分数 21 似乎与内容中可见的负面信号不匹配，需要进一步核验分簇与打分的依据。",
+    "priority_score": 21,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0094",
+      "F0100",
+      "F0109",
+      "F0113",
+      "F0115",
+      "F0120",
+      "F0122",
+      "F0127",
+      "F0133",
+      "F0134",
+      "F0192",
+      "F0193",
+      "F0197"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "证据文本层面不存在明显缺陷：所有证据均为满意度/功能正面反馈，未提供可定位的根因。",
+      "可能存在分簇误判：少量包含对比性表述（如 F0122 将 COROS 与 Garmin 进行对比，且句子被截断）的记录被错误归入此簇，或被算法误判为高严重度。",
+      "评分可能受到簇内证据数量（13 条）聚合放大影响，而非真实负面体验驱动。"
+    ],
+    "counter_evidence": "[\"簇内证据全部为正面表述（如 'great app'、'Love it!'、'Amazing app'），与 S4 严重度直接矛盾。\", \"证据 F0100 为俄语 'Все хорошо. Все работает . Все устраивает.'（译：一切都好，一切正常，一切满意），明确无问题报告。\", '证据 F0094、F0127、F0134 为极短纯褒义反馈，不含任何可作为根因的负面要素。', '簇内未出现任何崩溃、卡顿、登录失败、计费、隐私等典型 App 痛点关键词。', '优先级分数 21 在缺乏负面根因的情况下缺乏可解释依据。']",
+    "recommended_actions": [
+      {
+        "action": "复核 F0122 等被截断的证据原文，确认是否包含未读取到的负面陈述或竞品对比吐槽。",
+        "owner": "数据标注 / 语料分析团队"
+      },
+      {
+        "action": "重新审视 CL-0033 的分簇规则与严重度 S4 的判定逻辑，验证是否存在将正面反馈簇误标为高严重度的情况。",
+        "owner": "NLP 聚类与质量负责人"
+      },
+      {
+        "action": "对簇内全部 13 条证据进行人工抽样复核，统计真实负面占比，并据此调整优先级分数。",
+        "owner": "用户洞察分析师"
+      },
+      {
+        "action": "若确认本簇确实以正面反馈为主，将其从高优先级处理队列中降级或拆分为品牌忠诚度 / 竞品对比两个子簇。",
+        "owner": "产品/运营优先级管理负责人"
+      },
+      {
+        "action": "针对 F0122 的竞品对比信息，提炼为独立洞察条目（如 COROS 在组织性与体验上被部分用户视为优于 Garmin）。",
+        "owner": "竞品分析负责人"
+      }
+    ],
+    "suggested_owner": "NLP 聚类与质量负责人",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:23:59.488208",
+    "evidence": [
+      {
+        "feedback_id": "F0094",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0100",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0109",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0113",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0115",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0120",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0122",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0127",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0133",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0134",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0192",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0193",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0197",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0034",
+    "cluster_id": "CL-0034",
+    "title": "CL-0034：易用性尚可但反馈文本不完整",
+    "problem_statement": "用户认为产品起初有些令人困惑，但能较快掌握；同时认可其相较 Apple Watch 的功能与洞察体验，并表达了对 Garmin Venu 4 的高度喜爱。现有3条证据均为不完整文本，缺少具体问题、功能诉求或期望，因此无法确定明确缺陷。",
+    "priority_score": 16,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0095",
+      "F0101",
+      "F0129"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "产品首次使用流程可能不够直观，但用户能够较快适应。",
+      "证据文本在摘录时可能被截断，导致潜在的具体诉求缺失。"
+    ],
+    "counter_evidence": "两条反馈明确表示已较快掌握产品，且另一条仅表明功能更多、洞察体验令人喜爱，没有直接投诉易用性缺陷。",
+    "recommended_actions": [
+      {
+        "action": "补充收集这3条反馈的完整原文及上下文，识别被截断的具体问题或功能诉求。",
+        "owner": "用户研究团队"
+      },
+      {
+        "action": "在确认用户集中遇到的困难后，对首次使用流程开展易用性测试。",
+        "owner": "产品设计团队"
+      },
+      {
+        "action": "核查首次使用引导、关键功能入口及说明文档是否存在理解成本。",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "用户研究团队牵头，产品设计团队协作",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:05.027257",
+    "evidence": [
+      {
+        "feedback_id": "F0095",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0101",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0129",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0035",
+    "cluster_id": "CL-0035",
+    "title": "Garmin Connect App 体验与 UI/UX 缺陷簇",
+    "problem_statement": "用户对 Garmin 智能手表硬件高度认可（'absolutely love my Garmin watch'、'love everything about the watch'），但对配套移动端 App 普遍表达强烈不满，包括界面难看、交互笨拙、Bug 频出、功能说明缺失、可定制性差，证据中已出现因 App 问题而想放弃手表的极端表述。",
+    "priority_score": 43,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0097",
+      "F0107",
+      "F0112",
+      "F0118",
+      "F0123",
+      "F0125",
+      "F0203"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': 'App UI/UX 设计陈旧，未与硬件产品的高端定位匹配', 'supporting_evidence_ids': ['F0107', 'F0112', 'F0118'], 'confidence': 'medium'}",
+      "{'hypothesis': 'App 存在频繁且影响核心流程的 Bug，稳定性不足', 'supporting_evidence_ids': ['F0097', 'F0112', 'F0118'], 'confidence': 'medium'}",
+      "{'hypothesis': 'App 功能引导与可发现性差，关键功能缺少说明', 'supporting_evidence_ids': ['F0123', 'F0125'], 'confidence': 'medium'}"
+    ],
+    "counter_evidence": "['证据量较小（仅 7 条），且为用户主观反馈，缺乏客观性能/崩溃率/留存等量化数据支撑', \"F0125 用户明确表示'The app works pretty well'，与簇内主流负面情绪存在分歧，说明问题可能集中在特定场景或用户群体\", 'F0203 为纯正面反馈且未提及 App 痛点，被归入该簇的依据不明，可能拉低问题平均严重度', '优先级分数 43 与最高严重度 S3 之间存在张力，需结合更大样本与定量指标验证']",
+    "recommended_actions": [
+      {
+        "action": "对 App 近期高频 Bug 进行专项排查与回归测试，重点复现证据中描述的崩溃/异常路径",
+        "owner": "Mobile App 稳定性团队 (App QA & Stability)"
+      },
+      {
+        "action": "启动 App UI/UX 现代化改版项目，对齐 Garmin 硬件高端定位与'pro look'诉求",
+        "owner": "Product Design / UX 团队"
+      },
+      {
+        "action": "梳理核心功能矩阵，补齐功能引导（Onboarding、空状态、Tooltip、Help Center）",
+        "owner": "Product Management + Content Design"
+      },
+      {
+        "action": "评估并开放更多可定制项（表盘、卡片、Dashboard 布局、通知与数据字段）",
+        "owner": "Product Management"
+      },
+      {
+        "action": "建立'硬件忠实用户'流失预警机制，对 F0118 类极端反馈用户进行定向回访",
+        "owner": "Customer Support / CRM"
+      }
+    ],
+    "suggested_owner": "Mobile App Product Owner（移动 App 产品负责人）统筹，协调 UX、QA、Engineering 与 Customer Support",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:12.646263",
+    "evidence": [
+      {
+        "feedback_id": "F0097",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0107",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0112",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0118",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0123",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0125",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0203",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0036",
+    "cluster_id": "CL-0036",
+    "title": "缺少批量编辑运动记录的能力",
+    "problem_statement": "用户希望在运动模式下能够对多条记录进行批量编辑（例如批量调整 cardio workout 记录），但当前版本缺少此能力，造成使用上的不便与失望。",
+    "priority_score": 34,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0098",
+      "F0136"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "运动记录编辑界面仅支持单条编辑，未提供批量选择与操作入口",
+      "新版本回退了上一版本曾提供的批量编辑功能（针对 cardio workouts）",
+      "运动模式下的数据编辑流程缺乏针对多条/多日记录的批量处理能力"
+    ],
+    "counter_evidence": "['仅 2 条用户反馈，样本量较小，可能仅代表个别高频用户的需求，不足以推断为普遍痛点', 'FID F0136 中未明确提及批量编辑诉求（原文被截断），其完整诉求可能并非针对批量编辑能力', \"尚不清楚上一版本是否已正式上线批量编辑功能，亦可能是测试版或部分用户可见功能，'回退'假设需进一步核实\"]",
+    "recommended_actions": [
+      {
+        "action": "确认上一版本中 cardio workout 批量编辑功能的回归/移除原因，并评估重新引入的成本与影响",
+        "owner": "Product Manager (Workouts)"
+      },
+      {
+        "action": "在运动编辑流程中设计并实现多选与批量编辑入口（至少覆盖 cardio workout 类型）",
+        "owner": "Engineering Lead - Workouts"
+      },
+      {
+        "action": "梳理运动模式下所有可批量化的编辑操作（类型、时间、备注等），纳入批量编辑范围",
+        "owner": "Product Manager (Workouts)"
+      },
+      {
+        "action": "对批量编辑操作进行可用性验证，确保不会破坏现有单条编辑的数据完整性",
+        "owner": "QA Lead"
+      }
+    ],
+    "suggested_owner": "Product Manager (Workouts) 联合 Engineering Lead - Workouts",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:15.884359",
+    "evidence": [
+      {
+        "feedback_id": "F0098",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0136",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0037",
+    "cluster_id": "CL-0037",
+    "title": "Garmin Explore 2 用户反馈（截断证据）",
+    "problem_statement": "用户新购入 Garmin Explore 2 用于骑行，整体尚可接受，但对该产品的 'Con'（劣势/缺点）方面表达了不满。证据文本被截断，未能获取具体抱怨内容。",
+    "priority_score": 11,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0103"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "用户在骑行场景下对设备某项功能（如导航、续航、屏幕可读性、配件兼容性等）存在不满，但具体根因因证据截断无法确认。",
+      "用户对产品定位（户外探险 vs 骑行专用）的预期与实际体验存在落差。"
+    ],
+    "counter_evidence": "[\"用户明确表示 'I like it so far'，说明对产品的整体体验偏向正面，潜在的抱怨可能仅限于次要方面。\", '当前簇仅含 1 条证据，且文本被截断，不足以支撑严重度 S4 的判定；建议复核严重度评分是否准确。']",
+    "recommended_actions": [
+      {
+        "action": "联系用户 F0103 索取完整的反馈内容，确认其指出的具体劣势与使用场景。",
+        "owner": "客户体验经理"
+      },
+      {
+        "action": "检索 Explore 2 骑行场景下的相关工单与社区帖子，交叉验证是否存在同类抱怨模式。",
+        "owner": "产品经理（户外/骑行品类）"
+      },
+      {
+        "action": "在获取完整反馈后，评估是否需要纳入产品改进 backlog 或 FAQ 文档更新。",
+        "owner": "产品经理（户外/骑行品类）"
+      }
+    ],
+    "suggested_owner": "产品经理（户外/骑行品类）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:22.089428",
+    "evidence": [
+      {
+        "feedback_id": "F0103",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0038",
+    "cluster_id": "CL-0038",
+    "title": "CL-0038: 单条高严重度正面反馈（界面定制化与个人记录动机）",
+    "problem_statement": "簇 CL-0038 仅包含 1 条证据（FID F0105），严重度标注为 S5，优先级分数为 4。证据内容为用户对产品界面可定制性的正面评价，并指出该特性有助于激励用户打破个人记录。由于仅凭一条正向反馈无法支撑任何负面问题诊断，目前该簇更接近一条孤立的积极信号，而非缺陷簇。",
+    "priority_score": 4,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0105"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': '证据不足以构成可分析的问题，因簇内仅有 1 条 S5 级别的正面反馈，无法从中提取任何负面根因', 'evidence': '簇内仅 1 条证据，且原文为用户对界面定制化的肯定性描述'}",
+      "{'hypothesis': '高严重度 S5 与低优先级分数 4 的组合可能源于该反馈虽情感强烈但属孤立信号，缺乏可行动的负面模式', 'evidence': '证据条数为 1，未观察到重复出现的问题模式'}"
+    ],
+    "counter_evidence": "['簇内仅有 1 条证据，原文为正向陈述（‘Love how customizable…’、‘motivates you to break personal records’），不包含任何负面问题描述', '证据原文被截断（‘The o…’），可能缺失后半段是否包含负面内容的判断依据', '无法在单条证据基础上验证 S5 严重度标签的合理性']",
+    "recommended_actions": [
+      {
+        "action": "确认是否因分类或聚类阈值导致单条正面反馈被错误归入高严重度簇；如属误聚类，应将其归入正向口碑簇或剔除",
+        "owner": "需求分析负责人"
+      },
+      {
+        "action": "将 FID F0105 作为积极信号单独记录，并评估其‘界面可定制化驱动个人记录’这一洞察是否值得纳入产品亮点叙事",
+        "owner": "产品经理"
+      },
+      {
+        "action": "为该簇补充检索：在更大证据池中查找是否存在与界面定制化相关的负面反馈或障碍，避免遗漏潜在风险",
+        "owner": "需求分析负责人"
+      },
+      {
+        "action": "若后续检索仍无可关联证据，考虑下调该簇的严重度与优先级，并关闭或合并簇",
+        "owner": "需求分析负责人"
+      }
+    ],
+    "suggested_owner": "需求分析负责人",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:26.918990",
+    "evidence": [
+      {
+        "feedback_id": "F0105",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0039",
+    "cluster_id": "CL-0039",
+    "title": "Watch requires subscription for key features and perceived as poor value",
+    "problem_statement": "用户对这款手表普遍表达不满，认为设备本身价值不高，且多项核心功能（如训练追踪）需要额外订阅才能使用，整体性价比差，被部分用户称为浪费金钱。",
+    "priority_score": 32,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0111",
+      "F0116",
+      "F0131"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "设备的核心功能（如训练追踪、数据看板）被设置为付费订阅才能使用，用户为硬件付费后仍需持续付费才能正常使用",
+      "产品价格与所提供功能的价值不匹配，用户认为花费与所得不相当",
+      "关键功能依赖第三方应用集成（如 MyFitnessPal 卡路里输入），集成方式可能受限或被削弱，影响实用性"
+    ],
+    "counter_evidence": "['F0131 用户明确表达对功能看板的喜爱，说明产品并非在所有功能层面都缺乏价值', '证据样本量较小（仅 3 条），可能无法代表全部用户群体，不排除部分用户对订阅模式接受度较高']",
+    "recommended_actions": [
+      {
+        "action": "审查并梳理当前需要订阅才能解锁的功能清单，评估是否将基础功能（如训练追踪）改为免费可用，明确免费与付费功能边界",
+        "owner": "产品经理（Product Manager）"
+      },
+      {
+        "action": "对比竞品定价与功能策略，评估当前订阅价格与捆绑模式的合理性，必要时调整价格或提供更透明的订阅说明",
+        "owner": "产品经理（Product Manager）"
+      },
+      {
+        "action": "梳理手表与第三方应用（如 MyFitnessPal）的集成现状，确认功能完整性并修复可能的集成缺陷",
+        "owner": "软件工程团队（Software Engineering）"
+      },
+      {
+        "action": "在产品页面、包装及购买流程中清晰披露订阅要求与费用，避免用户购后产生预期落差",
+        "owner": "市场营销团队（Marketing）"
+      }
+    ],
+    "suggested_owner": "产品经理（Product Manager）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:31.805811",
+    "evidence": [
+      {
+        "feedback_id": "F0111",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0116",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0131",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0040",
+    "cluster_id": "CL-0040",
+    "title": "CL-0040: 数据完整性不足（统计/活动追踪数据缺失或不一致）",
+    "problem_statement": "用户在使用该应用时遇到了与数据完整性相关的显著问题。具体表现为：(1) 应用提供的统计数据被认为有价值，但同时存在其他用户报告的数据丢失问题；(2) 新用户在使用应用和手表初期即丢失了所有数据；(3) 若用户不主动追踪，应用与用户的睡眠及日常活动严重脱节，无法准确反映情况。综合来看，应用在数据记录、保存与呈现的一致性方面存在不足，影响用户对统计数据的信任与可用性。",
+    "priority_score": 38,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0121",
+      "F0128",
+      "F0194"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "数据持久化或同步机制存在缺陷，导致新用户初期数据丢失（F0128 明确反映此现象）",
+      "应用依赖用户手动开启追踪，否则无法后台持续采集睡眠与日常活动数据，被动记录缺失（F0194 反映此现象）",
+      "数据采集与统计呈现模块之间存在断层，导致同一用户感知到的统计价值与实际数据完整性不一致（F0121 与 F0128/F0194 之间的张力）"
+    ],
+    "counter_evidence": "[\"F0121 中用户明确肯定应用提供了'非常好的统计数据'，表明统计模块在部分用户场景下工作良好，并非所有用户都遭遇数据缺失，问题的覆盖面与触发条件需进一步核实\", '三篇反馈未提供具体的设备型号、系统版本或使用时长等可复现性细节，无法完全排除用户操作不当、配对异常或权限未授予等外部因素导致的数据丢失', \"F0194 的抱怨带有较强主观色彩（'way out of touch'），其归因可能部分源于产品定位（如不主打自动追踪）而非纯粹的数据完整性缺陷\"]",
+    "recommended_actions": [
+      {
+        "action": "排查并修复应用与设备/手表之间的数据同步链路，包括初次配对、后台同步与断网重传逻辑，以杜绝新用户早期数据丢失",
+        "owner": "移动端开发团队（同步/持久化方向）"
+      },
+      {
+        "action": "审核并补齐被动数据采集（睡眠、日常活动）的后台采集与权限策略，确保用户无需手动开启即可持续记录",
+        "owner": "数据采集/可穿戴集成团队"
+      },
+      {
+        "action": "对统计模块与原始采集数据进行端到端一致性校验，定位并修复可能导致展示与实际数据不一致的问题",
+        "owner": "数据/统计后端团队"
+      },
+      {
+        "action": "增加数据采集异常、丢失或缺失状态的检测与用户可见提示，并提供数据恢复或重新追踪入口",
+        "owner": "产品 + 客户端开发"
+      },
+      {
+        "action": "针对 CL-0040 涉及的反馈（F0121、F0128、F0194）进行用户回访与补充调研，确认问题复现条件与影响面",
+        "owner": "用户研究/CX 支持"
+      }
+    ],
+    "suggested_owner": "移动端开发团队（同步与持久化方向）牵头，联合数据采集与统计后端团队共同修复",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:36.911499",
+    "evidence": [
+      {
+        "feedback_id": "F0121",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0128",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0194",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0041",
+    "cluster_id": "CL-0041",
+    "title": "举重活动中动作顺序变为随机乱序",
+    "problem_statement": "在举重（weight lifting）相关功能中，原本应当按特定顺序展示或执行的内容（包括可能的动作/锻炼项目等）现在完全以随机顺序呈现，用户体验与功能预期不符，可能影响训练流程的连贯性和正确性。",
+    "priority_score": 8,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0130"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "用于控制举重动作/项目顺序的排序逻辑（例如基于难度、流程、ID 等字段的排序条件）被移除、改坏或未生效，导致回退为默认随机顺序",
+      "前端展示层在渲染举重活动列表时丢失了排序参数，或后端接口返回的数据集本身未按预期排序",
+      "近期对内容管理/CMS、数据导入或迁移流程的改动，使举重相关条目的时间戳或排序键被重置，从而影响顺序计算"
+    ],
+    "counter_evidence": "['现有证据仅来自 FID F0130 一条记录，且原文被截断（以“the “re”结尾），无法确认是 UI 展示乱序、后端数据乱序，还是用户/教练自定义顺序造成的“感知上的随机”，需补充完整描述后再定性', '若举重活动本身设计为随机化训练顺序（例如间歇/多样化训练模式），则“随机顺序”可能属于预期行为而非缺陷，需与产品/教练侧确认该功能的预期行为规范', '尚未看到用户量、影响范围与严重后果数据，优先级分数 8 与 S4 严重度的判定依据在当前证据中未直接体现']",
+    "recommended_actions": [
+      {
+        "action": "复核举重活动模块的排序实现，确认排序字段、排序方向与默认值是否被修改或覆盖；如有必要恢复为预期顺序",
+        "owner": "前端/全栈开发（举重功能模块负责人）"
+      },
+      {
+        "action": "检查后端接口返回的举重相关数据是否携带顺序信息（如 order/index/sortKey），必要时在接口层显式返回有序结果",
+        "owner": "后端开发"
+      },
+      {
+        "action": "排查近期对内容管理、CMS、数据导入/迁移或定时任务的变更，确认是否有操作重置了举重条目的排序字段",
+        "owner": "内容/CMS 或数据运维负责人"
+      },
+      {
+        "action": "添加针对举重列表顺序的回归测试用例，防止后续改动再次破坏排序逻辑",
+        "owner": "QA"
+      }
+    ],
+    "suggested_owner": "举重功能模块的研发负责人（前端 + 后端协同），并由 QA 进行回归验证",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:43.732583",
+    "evidence": [
+      {
+        "feedback_id": "F0130",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0042",
+    "cluster_id": "CL-0042",
+    "title": "心率在低活动段持续高估拍数",
+    "problem_statement": "在用户活动量较低的时段，心率监测设备连续多拍过度计数，导致读数在相当长的一段时期内偏离实际心率（用户原文：'not always accurate. hr sometimes way overcounts beats for stretches of time when minimal effort is …'）。簇内仅 1 条 S3 证据，优先级分数 13，问题影响范围有限但用户体验受损明显。",
+    "priority_score": 13,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0135"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "信号采集侧：在低活动、低心率区间，光电（PPG）传感器的信号幅度较弱，运动伪影阈值或增益设置使算法将噪声误识别为脉搏波峰，引发过度计数。",
+      "算法侧：低活动时段心率波形形态改变（峰间距拉长、波形平坦），现有波峰检测/频率估计逻辑未充分适配该区段，缺少针对低活动模式的滤波或拒绝阈值。",
+      "运动状态判定侧：活动量识别未将“极低活动”与“正常活动”区分开，触发统一的计拍分支，导致误检。"
+    ],
+    "counter_evidence": "['簇内仅含 1 条 S3 证据，样本量不足以确认问题在一般用户群体中的普遍性，可能是个别佩戴或环境因素导致的偶发体验。', \"证据原文被截断（'when minimal effort is …'），未明确触发场景的持续时长、活动类型与发生频率，难以判断是稳定缺陷还是边界用例。\", '未提供该时段的心率真值对照，无法排除用户主观感受与设备读数偏差的范围；若真实心率本身存在波动，读数差异可能被放大描述。', '未涉及不同固件/硬件版本的差异，尚不明确是当前版本回归还是历史遗留问题。']",
+    "recommended_actions": [
+      {
+        "action": "复现并量化低活动段过度计数的复现条件（佩戴松紧、活动类型、信号质量指标），采集对应原始 PPG/加速度波形作为基线。",
+        "owner": "测试/质量分析团队"
+      },
+      {
+        "action": "在信号预处理与波峰检测模块中，针对低活动段加入信号幅度/质量门限和最小峰间距约束，超出门限的候选峰不参与心率估计。",
+        "owner": "心率算法团队"
+      },
+      {
+        "action": "引入或强化低活动专用模式（极小运动场景下的波形特征模型），与现有活动分支解耦，并叠加平稳性校验以抑制连续误检。",
+        "owner": "心率算法团队"
+      },
+      {
+        "action": "改进佩戴/信号质量提示：在长期检测到低活动段过度计数时，向用户提示检查佩戴贴合度，并记录信号质量标签用于后续分析。",
+        "owner": "产品/客户端团队"
+      },
+      {
+        "action": "建立覆盖低活动区段的回归测试集（含不同佩戴条件下的真值对照），将过度计数指标纳入版本发布门禁。",
+        "owner": "测试/质量分析团队"
+      }
+    ],
+    "suggested_owner": "心率算法团队（主导），测试/质量分析团队与产品/客户端团队协同",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:49.435520",
+    "evidence": [
+      {
+        "feedback_id": "F0135",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0043",
+    "cluster_id": "CL-0043",
+    "title": "簇 CL-0043：用户反馈严重度与情绪评价显著不一致",
+    "problem_statement": "簇 CL-0043 包含 9 条证据，严重度被标记为最高等级 S3，优先级分数 36。然而，簇内原文证据呈现明显两极化：多数为正面好评（'great interface'、'easy to use'、'best bike route planner'、'Fantastic'、'incredible experience'、'Awesome experience'、'Love it'、'The best by far'），仅个别证据含负面表述（F0143 提及 'garbage software'、F0165 出现视频卡顿与年度付费合同相关不满）。证据原文与 S3 / 36 的高优先级结论之间存在明显落差，需要复核归类与打分依据。",
+    "priority_score": 36,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0141",
+      "F0143",
+      "F0158",
+      "F0160",
+      "F0165",
+      "F0173",
+      "F0181",
+      "F0190",
+      "F0206"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "证据被错误归入 CL-0043：部分正面反馈可能因关键词（如 'app'、'bike'、'use'）被聚类算法错配至本簇，导致簇内整体严重度被少数负面证据拉高。",
+      "S3 / 36 打分主要被 F0143 与 F0165 单独驱动，其余 7 条正面反馈并未提供新的根因信号。",
+      "F0165 中'expensive annual agreement'与视频卡顿属于已知或偶发问题，文本中未给出可量化频率或影响面，无法支撑最高严重度判定。"
+    ],
+    "counter_evidence": "['簇内 7/9 的证据（F0141、F0158、F0160、F0173、F0181、F0190、F0206）均为明确正面情绪，与 S3 最高严重度判定方向相反。', \"F0143 'garbage software' 与 F0165 'Video constantly froze' 均未在原文给出可量化的影响面、复现条件或受影响用户数量，无法独立支撑优先级 36。\", '若剔除 F0143 与 F0165，剩余证据指向的是产品体验优势，不应触发高优先级缺陷处理流程。']",
+    "recommended_actions": [
+      {
+        "action": "重新核验 CL-0043 的聚类边界，将 F0143、F0165 与其余正面反馈分别独立评估是否同簇",
+        "owner": "数据分析/聚类负责人"
+      },
+      {
+        "action": "复核 F0143 与 F0165 的严重度 S3 与优先级 36 判定依据，确认打分规则（影响用户数、复现率、业务影响）是否被原文证据满足",
+        "owner": "缺陷分级评审委员会"
+      },
+      {
+        "action": "针对 F0143 联系用户补充 'garbage software' 的具体功能与场景描述，以判断是否构成独立缺陷",
+        "owner": "客户支持/用户研究员"
+      },
+      {
+        "action": "针对 F0165 的视频卡顿问题核查该版本是否已有已知缺陷或已修复版本",
+        "owner": "客户端研发 / QA"
+      },
+      {
+        "action": "将本簇中无负面信号的多条好评证据归档至对应正面反馈簇或剔除，以避免污染高优先级缺陷池",
+        "owner": "缺陷分类管理员"
+      }
+    ],
+    "suggested_owner": "缺陷分级评审委员会（联合数据分析、客户端研发、用户研究）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:24:57.984967",
+    "evidence": [
+      {
+        "feedback_id": "F0141",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0143",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0158",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0160",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0165",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0173",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0181",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0190",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0206",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0044",
+    "cluster_id": "CL-0044",
+    "title": "Kia 跑步锻炼相关语音片段 — 簇 CL-0044",
+    "problem_statement": "证据 F0142 内容为用户提到宠物 Kia 喜欢跑步，因此需要想办法带它进行可维持的锻炼；片段在该位置被截断。该簇仅含此 1 条证据，最高严重度 S5，优先级分数 0，问题陈述范围有限且不完整。",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0142"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "用户正在口头描述为爱跑步的宠物 Kia 设计可持续锻炼方案的需求，但片段在记录中被截断，缺乏后续上下文。",
+      "证据被聚类到 CL-0044 可能仅基于 Kia 与 run/workout 这类关键词，缺乏明确的痛点或失败信号。",
+      "由于只有 1 条不完整证据，且严重度与优先级分数不一致（S5 与优先级 0），可能反映分类或打分异常，而非真实高严重度问题。"
+    ],
+    "counter_evidence": "['优先级分数为 0，表明系统已判定该簇不构成实际需求风险。', '仅 1 条且被截断的证据不足以支撑 S5 的高严重度判定。', '片段本身未包含明确的失败、错误或用户痛点描述，不能据此认定存在产品需求缺口。']",
+    "recommended_actions": [
+      {
+        "action": "回溯获取 F0142 的完整转写文本，确认该片段是否被截断以及是否存在被忽略的上下文。",
+        "owner": "证据/数据工程"
+      },
+      {
+        "action": "复核 CL-0044 的聚类依据与 S5 / 优先级 0 的评分是否一致，必要时调整严重度或优先级标注。",
+        "owner": "需求分析负责人"
+      },
+      {
+        "action": "在获得完整证据前，暂缓针对该簇形成具体需求结论，避免基于不完整片段做出推断。",
+        "owner": "产品经理"
+      }
+    ],
+    "suggested_owner": "产品经理（联合证据工程复核）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:04.593046",
+    "evidence": [
+      {
+        "feedback_id": "F0142",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0045",
+    "cluster_id": "CL-0045",
+    "title": "Route Planner Usability Issues Causing App Instability and User Friction",
+    "problem_statement": "Users consistently value the app's core value propositions — accurate bike-lane routing, comprehensive route planning, and offline/turn-by-turn navigation — but report meaningful friction in exercising those features. Across 15 pieces of evidence, recurring complaints describe the route planner as hard to use, non-functional, or non-intuitive, navigation on saved routes as erratic, and at least one reported app crash during route execution on a paid offline workflow. The contradiction between high feature love and high reported difficulty signals a usability and stability gap on the primary user journey.",
+    "priority_score": 49,
+    "priority_level": "P2",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0144",
+      "F0148",
+      "F0155",
+      "F0157",
+      "F0163",
+      "F0166",
+      "F0168",
+      "F0170",
+      "F0182",
+      "F0184",
+      "F0187",
+      "F0188",
+      "F0189",
+      "F0205",
+      "F0208"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "Route planner UX has a discoverability/affordance gap: users struggle to complete basic route creation on first attempts (evidence: F0166 — 'tried about 10x to make it work'), suggesting the workflow is not self-evident and lacks adequate onboarding or empty-state guidance.",
+      "Saved-route navigation behavior diverges from user mental model: users describe saved-route navigation as 'wonky' and report 'weird quirks' (F0157, F0184), suggesting state transitions between planning, saving, and following a route have unclear or inconsistent UX cues.",
+      "Route planner has functional defects that block task completion: 'Route planner just doesn't work!' (F0163) and 'half stuck that crashes the app' (F0170) indicate at least some users hit hard failures, not only learning-curve issues — possibly tied to edge cases in saved/imported routes, offline mode, or large route graphs."
+    ],
+    "counter_evidence": "[\"Multiple users explicitly praise the route planner and the app's core navigation value (F0144, F0148, F0155, F0168, F0182), indicating the feature works well for a non-trivial segment and the issues above may be concentrated in specific flows or user segments rather than the planner as a whole.\", \"Some reported friction is self-attributed to user learning curve rather than product defect (F0157: 'More to learn I guess'), suggesting at least part of the difficulty is onboarding-related and not all 'wonky' behavior is a functional bug.\", \"The cluster contains 15 pieces of evidence but only a small subset explicitly report crashes or total failure (F0163, F0170); the dominant theme is 'hard to use' rather than 'broken,' which limits certainty about engineering root causes vs. UX root causes.\"]",
+    "recommended_actions": [
+      {
+        "action": "Run a targeted usability test on the route-planner first-run flow to identify the specific steps where users (especially those needing 10+ attempts per F0166) fail, and remediate the top blockers with UI affordances and clearer empty states.",
+        "owner": "Product Design / UX Research"
+      },
+      {
+        "action": "Audit saved-route navigation state transitions for inconsistencies producing 'wonky' behavior and 'weird quirks' (F0157, F0184); produce a defect list and prioritize fixes against a 'follow a saved route' happy-path specification.",
+        "owner": "Navigation Engineering"
+      },
+      {
+        "action": "Triage crash and 'half stuck' reports on the offline + saved-route path (F0170): pull crash logs filtered by offline mode and saved-route IDs, and fix the top reproducible crashes before the next release.",
+        "owner": "Mobile Engineering / Crash Stability"
+      },
+      {
+        "action": "Add in-app onboarding, tooltips, and a 'how to plan a route' help entry surfaced at first route-creation attempt to reduce the self-reported learning burden (F0155, F0157).",
+        "owner": "Product / Content Design"
+      },
+      {
+        "action": "Instrument the route-planner funnel (open planner → add start/waypoints → save → start navigation) to quantify drop-off rates and identify the step where users most often abandon or re-try, complementing the qualitative evidence in this cluster.",
+        "owner": "Data Analytics"
+      }
+    ],
+    "suggested_owner": "Product Manager — Route Planning (with UX Research, Navigation Engineering, Mobile Engineering, and Analytics as supporting owners)",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:10.968038",
+    "evidence": [
+      {
+        "feedback_id": "F0144",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0148",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0155",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0157",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0163",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0166",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0168",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0170",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0182",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0184",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0187",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0188",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0189",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0205",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0208",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0046",
+    "cluster_id": "CL-0046",
+    "title": "应用步数准确但缺少附近交通显示功能，存在安全风险",
+    "problem_statement": "用户反馈应用步数计数与 Apple 步数计数器准确一致，对该功能表示满意；同时强烈希望应用能显示附近的交通情况，并暗示因缺乏此功能而遭遇了危及人身安全的事件。该问题被定级为最高严重度 S5，优先级分数为 7，属于关键安全类需求缺口。",
+    "priority_score": 7,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0145"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "应用当前未集成任何实时交通信息数据源（如交通摄像头、道路通行状态 API 等），导致无法向用户呈现附近的交通状况",
+      "产品在功能规划阶段未将附近交通展示纳入核心安全相关功能的优先级，资源投入不足",
+      "应用的使用场景设计未充分考虑步行/通勤用户在道路环境中的安全风险，未提供交通预警或路况提示"
+    ],
+    "counter_evidence": "['当前仅有 1 条用户反馈（F0145），样本量不足以确认附近交通显示是普遍需求或系统性安全隐患', \"用户文本被截断（'almost killed' 后内容缺失），无法判断事件的完整情境与严重程度，可能存在夸大或语境缺失\", '未见其他证据表明该应用主要面向户外步行或通勤场景，若使用场景以室内健身为主，则交通信息相关性的优先级可能需重新评估']",
+    "recommended_actions": [
+      {
+        "action": "评估并集成附近的实时交通数据源（如交管局开放 API、第三方交通信息平台），优先支持步行通勤常见场景下的交通状况展示",
+        "owner": "产品经理 + 数据合作负责人"
+      },
+      {
+        "action": "设计并上线附近交通状况的展示模块，验证其信息准确性与推送时效性",
+        "owner": "移动应用研发团队"
+      },
+      {
+        "action": "主动联系该用户，了解事件细节以评估真实风险等级，并按需提供后续支持或安全建议",
+        "owner": "客户支持团队"
+      },
+      {
+        "action": "对该问题进行安全影响复盘，评估是否需要在正式版本上线前通过安全提示或临时方案降低用户风险",
+        "owner": "安全 / 风控负责人"
+      }
+    ],
+    "suggested_owner": "产品经理（联合移动应用研发团队、安全 / 风控负责人）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:15.233433",
+    "evidence": [
+      {
+        "feedback_id": "F0145",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0047",
+    "cluster_id": "CL-0047",
+    "title": "CL-0047: 用户对骑行者类应用的稳定性与个性化功能提出改进诉求",
+    "problem_statement": "长期用户和付费用户对一款主要用于骑行路线规划与跟踪的应用表达了整体认可（F0150、F0151、F0152、F0156、F0161、F0162、F0172），但同时也提出了一系列改进诉求，包括：希望支持在便携设备（手机/平板）上编辑路线（F0149）；升级到付费版本后发现仍存在使用体验上的不足，但原文未完整呈现（F0146）；希望支持已分享路线的\"反向骑行\"功能（F0161）；以及将该应用用于衡量步行的不同交通方式下的运动表现（F0154）。整体而言，该簇反映出核心功能稳定、用户粘性高，但在跨设备编辑能力和路线共享场景下的功能完整性方面仍有提升空间。",
+    "priority_score": 35,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0146",
+      "F0149",
+      "F0150",
+      "F0151",
+      "F0152",
+      "F0154",
+      "F0156",
+      "F0161",
+      "F0162",
+      "F0172",
+      "F0175",
+      "F0177",
+      "F0179"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "路线编辑功能可能主要面向桌面端（Windows 等）设计，未针对移动端（手机/平板）进行充分适配，导致依赖便携设备的用户在订阅付费版本后仍无法完成编辑操作（F0146、F0149）。",
+      "路线分享场景下缺少\"反向骑行/方向翻转\"等常见派生功能，反映出对共享后用户编辑能力的考虑不足（F0161）。",
+      "部分长篇证据原文被截断（如 F0146、F0150），可能隐藏了更具体的痛点描述，但基于现有文本无法确认。"
+    ],
+    "counter_evidence": "['F0151、F0152、F0156、F0162、F0172 等多条证据对应用整体功能和体验给出了明确积极评价，与本簇中提出的功能缺失/改进诉求形成一定张力，说明问题并非普遍性缺陷，而是边缘场景或特定用户群体的诉求。', 'F0146 原文被截断，付费版本升级后的具体不满内容未知，现有文本不足以独立支撑根因假设。', 'F0154 描述的是多交通方式下的进度追踪正面用途，并未直接指向应用缺陷。']",
+    "recommended_actions": [
+      {
+        "action": "评估并优化移动端（手机/平板）路线编辑能力，确保付费用户在便携设备上拥有与桌面端等效的核心编辑体验",
+        "owner": "Product Lead"
+      },
+      {
+        "action": "在路线分享场景中增加\"反向骑行/路径翻转\"等派生编辑选项，提升共享路线的可用性",
+        "owner": "Route Planning Team"
+      },
+      {
+        "action": "完善证据采集机制，避免用户反馈原文被截断，以便后续簇分析能基于完整上下文定位根因",
+        "owner": "Research/Insights Team"
+      }
+    ],
+    "suggested_owner": "Product Lead",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:20.492941",
+    "evidence": [
+      {
+        "feedback_id": "F0146",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0149",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0150",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0151",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0152",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0154",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0156",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0161",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0162",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0172",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0175",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0177",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0179",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0048",
+    "cluster_id": "CL-0048",
+    "title": "Trial-to-paid 转化后用户对自动续费与计费的负面反馈",
+    "problem_statement": "多位用户在免费试用结束后遭遇自动扣费，且无法在试用期内完整体验全部功能（如导航），导致强烈不满并给出低评价。试用与正式订阅之间的关系不清，使得用户感到被强制收费。",
+    "priority_score": 19,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0147",
+      "F0159",
+      "F0176"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "免费试用期结束后缺乏清晰的事前告知或二次确认机制，导致用户对自动续费感到意外。",
+      "免费试用期间部分核心功能（如导航）受限，用户无法在试用中完整体验产品价值，从而对后续收费产生抵触。",
+      "用户已存在另一个有效订阅账户，新订阅与之冲突或重复，引发对计费合理性的质疑。"
+    ],
+    "counter_evidence": "['当前证据均来自试用结束前后的用户主观陈述，未包含计费系统日志或续费确认的实际发送记录，尚不能确认是否存在提醒缺失。', \"无法仅凭 3 条反馈判断'导航功能在试用中受限'是普遍产品策略还是个别账户配置问题，需结合功能开关配置与 A/B 实验数据验证。\", \"关于'另一个账户'的情况，可能源于用户自身账号管理问题（如家庭共享、换设备登录），而非系统错误，需进一步核对账户体系设计。\"]",
+    "recommended_actions": [
+      {
+        "action": "审计并优化试用结束前的提醒机制，在试用期过半及结束前 24–48 小时通过应用内通知与邮件明确告知续费日期、金额及取消方式。",
+        "owner": "Lifecycle Marketing"
+      },
+      {
+        "action": "复核免费试用期内功能限制策略，评估是否在试用阶段开放导航等核心功能，让用户完整体验产品价值。",
+        "owner": "Product"
+      },
+      {
+        "action": "在结账与订阅确认页面增加显眼的'自动续费'披露，并在用户开始试用时即展示续费日期与价格。",
+        "owner": "Checkout / Growth"
+      },
+      {
+        "action": "检测并提示重复账户：在用户注册或试用时校验邮箱/账户，若发现已有订阅则引导合并、切换或暂停新订阅，避免重复扣费。",
+        "owner": "Identity / Billing Engineering"
+      },
+      {
+        "action": "简化取消与退款流程：确保用户在订阅页、应用商店及客服渠道均可一键取消，并为试用后短期内的用户提供主动退订入口。",
+        "owner": "Customer Support / Self-Serve"
+      }
+    ],
+    "suggested_owner": "Product (订阅与试用体验负责人)",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:27.405905",
+    "evidence": [
+      {
+        "feedback_id": "F0147",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0159",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0176",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0049",
+    "cluster_id": "CL-0049",
+    "title": "应用在用户不希望时仍持续追踪行程",
+    "problem_statement": "用户因应用在其不希望时仍持续追踪行程而感到沮丧。现有证据未提供更多影响范围或业务数据。",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0153"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "应用可能在未明确获得用户许可的情况下持续启用行程追踪。",
+      "行程追踪的停止或退出机制可能无法按用户意图生效。"
+    ],
+    "counter_evidence": "证据仅包含一名用户的主观陈述，未说明追踪发生时的具体操作、权限状态、追踪持续时间或实际影响。",
+    "recommended_actions": [
+      {
+        "action": "核查行程追踪的权限申请、启用条件及停止逻辑。",
+        "owner": "客户端研发团队"
+      },
+      {
+        "action": "确认用户停止追踪后系统是否真正停止相关数据采集。",
+        "owner": "客户端研发团队"
+      }
+    ],
+    "suggested_owner": "客户端研发团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:31.220079",
+    "evidence": [
+      {
+        "feedback_id": "F0153",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0050",
+    "cluster_id": "CL-0050",
+    "title": "Subscription management limitations on mobile",
+    "problem_statement": "Users on the offline learning app encounter obstacles managing their subscriptions via mobile, including inability to manage the subscription when offline and concerns about unintended billing due to the app not saving progress.",
+    "priority_score": 41,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0164",
+      "F0174"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "Subscription management functionality is unavailable or gated by connectivity, preventing offline users from viewing, modifying, or canceling their subscriptions (F0164).",
+      "Progress state is not persisted locally, which may cause users to be charged for sessions they could not complete or did not knowingly start (F0174)."
+    ],
+    "counter_evidence": "['F0164 may reflect a user expectation gap rather than a defect if subscription management is intentionally online-only for security; this would need product confirmation before treating as a bug.', 'F0174 expresses a fear of being billed incorrectly, but no evidence in the cluster directly confirms an actual erroneous charge occurred; the issue could be perception driven by missing progress feedback rather than a billing fault.', 'The cluster contains only 2 evidence items, which is a small sample and may not represent the broader population of offline or subscription-related complaints.']",
+    "recommended_actions": [
+      {
+        "action": "Enable offline access to subscription management screens (view plan, cancel, update) and queue any changes for sync when connectivity is restored.",
+        "owner": "Mobile Engineering"
+      },
+      {
+        "action": "Implement robust local persistence of user progress so completed or interrupted sessions are accurately reflected, and audit billing logic to ensure charges only occur for confirmed, completed learning sessions.",
+        "owner": "Mobile Engineering + Billing"
+      },
+      {
+        "action": "Surface a clear in-app message explaining billing timing relative to saved progress, and provide an accessible refund/contact path for users worried about being overcharged.",
+        "owner": "Customer Support + Product"
+      }
+    ],
+    "suggested_owner": "Mobile Engineering",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:38.827079",
+    "evidence": [
+      {
+        "feedback_id": "F0164",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0174",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0051",
+    "cluster_id": "CL-0051",
+    "title": "骑行记录与结束骑行流程的可用性 / 直观性缺陷",
+    "problem_statement": "用户在使用骑行功能时遇到两个相互关联的困扰：一是按下“记录”按钮后骑行未被正确录制（例如 F0167 描述按下记录键、骑行后行程仍显示未记录，并因故被打断未完整叙述）；二是结束骑行的交互流程难以理解，连技术熟练的子女都感到困惑（F0186），并被定性为“直观性严重缺失”（F0178）。该簇涵盖 3 条反馈，最高严重度 S3，优先级分数 30，集中体现应用核心骑行闭环（开始记录 → 结束记录）在交互清晰度和功能可靠性上的双重问题。",
+    "priority_score": 30,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0167",
+      "F0178",
+      "F0186"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "“记录”按钮的交互反馈与状态指示不明确：用户按下后缺少明显的录制中状态提示（如图标、计时器或震动反馈），导致用户以为已开始记录，实际并未触发或中途被中断。",
+      "结束骑行的入口或确认流程埋藏过深，或与结束/暂停/保存等动作的语义混淆，导致用户（包括技术熟练者）无法稳定完成骑行闭环。",
+      "行程录制存在后台可靠性问题（权限被回收、被系统杀死、传感器未启动等），使“按下按钮=已开始记录”的用户心智模型与实际行为不一致。"
+    ],
+    "counter_evidence": "['F0167 的叙述在“cane ho”处被截断，未明确说明是按钮未生效、录制被中断，还是行程未保存/未同步，因此“按下即未录制”的因果关系尚不能完全确认。', '本簇仅 3 条证据，样本量极小，F0178 的“需要严肃改进直观性”属于泛化抱怨，未指向具体页面或操作，不足以支撑全应用层面的直观性结论。', 'F0186 描述的是“结束骑行”困难，但未指明是入口找不到、确认弹窗混乱，还是与计费/支付等环节耦合，需进一步取证才能定位真实根因。']",
+    "recommended_actions": [
+      {
+        "action": "对录制状态指示与“记录”按钮交互进行可用性评审与重构：在按下后立即给出不可忽略的视觉/触觉反馈，并在界面持续显示录制中状态（计时、轨迹描点、顶部横幅），同时在录制异常中断时主动提示用户。",
+        "owner": "产品经理（骑行核心体验）+ 移动端研发负责人"
+      },
+      {
+        "action": "梳理并简化“结束骑行”流程：统一结束/暂停/保存的措辞与图标，提供明确的二次确认与可撤销窗口，并补充 1–2 步新手引导，覆盖首次骑行场景。",
+        "owner": "产品经理（骑行核心体验）"
+      },
+      {
+        "action": "排查并修复行程未被录制的可靠性问题：核查权限、前台服务保活、传感器/GPS 启动时序、后台被杀恢复路径，并补齐埋点以量化“按下记录但未生成行程”的发生率。",
+        "owner": "移动端研发负责人 + 后端/数据平台负责人"
+      },
+      {
+        "action": "建立可用性测试机制：每版本对开始/结束骑行闭环执行快速定向可用性测试（含技术熟练用户与非熟练用户），将 F0178 类“直观性”反馈纳入回归门禁。",
+        "owner": "UX 研究员"
+      }
+    ],
+    "suggested_owner": "骑行核心体验产品经理（主导）；移动端研发负责人（执行落地）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:46.365396",
+    "evidence": [
+      {
+        "feedback_id": "F0167",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0178",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0186",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0052",
+    "cluster_id": "CL-0052",
+    "title": "涉嫌以\"7天免费试用\"为幌子的即时扣费欺骗性注册行为",
+    "problem_statement": "簇 CL-0052 包含 1 条 S4 级证据（F0169），投诉指出商家通过宣称提供 7 天免费试用诱导消费者注册，但在注册过程中或注册后立即进行扣费，构成欺骗性签约行为。该问题直接影响消费者对试用促销的信任，并可能引发监管层面的合规审查。",
+    "priority_score": 8,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0169"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "注册流程设计问题：试用期与首笔扣费触发条件之间缺少明确的时间延迟或二次确认机制，导致消费者在不知情或误以为仍处于试用期内时被扣款。",
+      "促销信息披露不充分：关于 7 天免费试用结束后自动续费或立即产生费用的条款，可能未在显著位置、清晰措辞地向消费者展示。",
+      "结算页面/付费确认环节的合规性不足：扣费前未取得消费者的明确、知情同意，违反明示同意原则。"
+    ],
+    "counter_evidence": "['目前簇内仅 1 条证据（F0169），样本量极小，尚无法排除消费者个人对\"免费试用\"条款理解偏差的可能性。', '原文未提供具体的注册流程截图、扣费时间戳或计费条款文本，无法直接证实商家存在主观欺骗意图或系统性误导设计，亦无法定量评估问题规模（如退款金额、涉及订单数）。', '在获得更多同类投诉、订单计费日志或条款披露证据之前，不应将单条反馈直接定性为组织级的合规或欺诈问题。']",
+    "recommended_actions": [
+      {
+        "action": "复审注册及付费流程，确保\"7天免费试用\"与首笔扣费之间存在明确时间分隔，并核对各页面文案与实际计费规则的一致性。",
+        "owner": "产品经理 / 注册流程设计负责人"
+      },
+      {
+        "action": "对所有相关促销与计费条款进行法律合规审查，确保披露位置显著、措辞清晰，并满足消费者明示同意的法定要求。",
+        "owner": "法务 / 合规团队"
+      },
+      {
+        "action": "核对销售与客服话术规范，排查是否存在与免费试用条款不一致的误导性表述，并强化一线人员培训。",
+        "owner": "客户体验 / 客服运营负责人"
+      },
+      {
+        "action": "针对 F0169 这条 S4 投诉，专项核查被投诉订单的实际扣费时间、金额及对应的授权凭证，评估是否构成违规扣费并准备相应处置方案。",
+        "owner": "风控 / 订单核查负责人"
+      },
+      {
+        "action": "在产品侧增加扣费前提醒（例如试用期到期前 24–48 小时邮件/短信通知以及扣费前二次确认），降低因误解导致的投诉与退款。",
+        "owner": "产品经理 / 生命周期营销负责人"
+      }
+    ],
+    "suggested_owner": "产品经理（联合法务、合规、客服运营共同跟进）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:25:59.455144",
+    "evidence": [
+      {
+        "feedback_id": "F0169",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0053",
+    "cluster_id": "CL-0053",
+    "title": "CL-0053: GPS 定位严重不准",
+    "problem_statement": "用户反馈该 GPS 应用是其用过的最差应用，连用户当前位置都无法正确获取，使用体验极差。当前证据仅 1 条，最高严重度 S3，优先级分数 0。",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0171"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "定位算法或定位服务集成存在缺陷，导致获取的经纬度与实际位置偏差较大",
+      "设备权限（如定位权限、精准位置权限）请求或处理逻辑异常，使应用无法拿到准确坐标",
+      "特定机型或系统版本下位置服务兼容性问题"
+    ],
+    "counter_evidence": "['当前簇内仅 1 条用户反馈，样本量极小，不足以排除个体因素（如用户设备 GPS 硬件问题、首次冷启动未校准、室外遮挡等使用环境因素）', '尚未提供可复现的日志或设备信息，无法确认是应用侧还是设备/环境侧问题', '无法排除用户主观感知偏差（例如地图偏移被误判为定位不准）']",
+    "recommended_actions": [
+      {
+        "action": "复现用户场景，在多机型/多系统版本下验证定位精度，并对比系统自带定位服务的结果",
+        "owner": "客户端研发"
+      },
+      {
+        "action": "审查定位 SDK 集成与坐标解析代码，检查是否有明显的算法或单位/坐标系错误",
+        "owner": "客户端研发"
+      },
+      {
+        "action": "核对应用定位权限、后台定位及精确位置选项的申请与降级策略",
+        "owner": "客户端研发"
+      },
+      {
+        "action": "收集更多用户反馈（场景、设备、时间）以判断是否为普遍问题还是个别案例，再决定是否提升优先级",
+        "owner": "产品 / 用户研究"
+      }
+    ],
+    "suggested_owner": "客户端研发（定位模块负责人）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:26:04.009354",
+    "evidence": [
+      {
+        "feedback_id": "F0171",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0054",
+    "cluster_id": "CL-0054",
+    "title": "App 数据记录与同步失败 (CL-0054)",
+    "problem_statement": "多名用户反馈应用频繁无法记录来自手表的健康数据（如心率），且无法稳定保存运动/健康记录；同时存在与 My Elemnt 会员同步失败、陷入循环的问题，影响核心数据保存与会员功能使用。",
+    "priority_score": 46,
+    "priority_level": "P2",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0180",
+      "F0183",
+      "F0185"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "{'hypothesis': '应用与可穿戴设备（手表）之间的配对/同步链路不稳定，导致心率等传感器数据无法可靠采集并落库', 'evidence_refs': ['F0180', 'F0185']}",
+      "{'hypothesis': 'My Elemnt 会员账户体系与应用内的会员状态同步异常，导致登录/状态校验循环', 'evidence_refs': ['F0183']}",
+      "{'hypothesis': '数据持久化层在写入健康/运动记录时存在失败或回滚问题，导致记录无法稳定保存', 'evidence_refs': ['F0185']}"
+    ],
+    "counter_evidence": "['当前证据仅 3 条且均为用户主观描述，缺乏服务器侧日志、崩溃栈或同步成功率等客观指标，尚无法确认根因属于客户端、网络还是服务端', 'F0183 与 F0180/F0185 描述的故障路径不同（会员同步 vs 传感器数据），可能属于两个独立问题被聚合到同一簇，需进一步拆分验证']",
+    "recommended_actions": [
+      {
+        "action": "复现并分析手表数据采集失败与记录保存失败的日志链路，覆盖配对、同步、数据落库三个阶段",
+        "owner": "移动端 / 客户端研发"
+      },
+      {
+        "action": "排查 My Elemnt 会员账户同步流程，定位导致循环跳转的状态校验或会话续期问题",
+        "owner": "账户与会员服务后端"
+      },
+      {
+        "action": "对健康/运动记录的数据持久化链路（含本地缓存与云端写入）增加失败埋点与重试机制",
+        "owner": "数据/后端服务"
+      },
+      {
+        "action": "针对受影响用户发布已知问题公告，并收集设备型号、OS 版本与失败时间窗用于进一步定位",
+        "owner": "客户支持 / 产品"
+      }
+    ],
+    "suggested_owner": "移动端研发（联合账户服务与数据后端）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:26:12.387184",
+    "evidence": [
+      {
+        "feedback_id": "F0180",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0183",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0185",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0055",
+    "cluster_id": "CL-0055",
+    "title": "应用移除手动活动追踪功能并以共享/出售机制替代",
+    "problem_statement": "用户反馈应用体验差（\"The app sucks\"），且原本可用的手动活动追踪功能被移除，被替换为某种\"共享\"机制（用户认为存在售卖漏洞）。该问题严重度被标记为 S5，但优先级分数为 0，存在评估不一致。",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0198"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "产品决策层将手动活动追踪功能定位为低价值或可货币化资产，故以数据共享/出售机制替代，引发用户不满",
+      "应用整体体验（\"The app sucks\"）问题可能掩盖或与该功能变更叠加，导致用户集中投诉",
+      "证据数量极少（仅 1 条），可能为偶发投诉而非系统性问题，故优先级分数被压低"
+    ],
+    "counter_evidence": "['证据原文被截断（\"...sell in a loophole wa\"），完整语义与背景不明，可能存在误解', '簇内仅 1 条证据，样本不足以证明问题普遍性', '优先级分数为 0，表明已有评估机制判断该问题当前不需立即处理']",
+    "recommended_actions": [
+      {
+        "action": "核实该功能变更的产品决策背景与上线时间，确认是否为有意识的产品策略调整",
+        "owner": "Product Manager"
+      },
+      {
+        "action": "审查\"共享/出售\"机制的法律合规性与隐私政策披露是否充分",
+        "owner": "Legal/Compliance"
+      },
+      {
+        "action": "扩大样本采集，收集更多用户对功能变更的反馈以判断是否为孤立事件",
+        "owner": "Customer Insights"
+      },
+      {
+        "action": "复核严重度 S5 与优先级分数 0 之间的评估逻辑，确认评估模型是否存在偏差",
+        "owner": "Triage Lead"
+      }
+    ],
+    "suggested_owner": "Product Manager",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:26:15.590275",
+    "evidence": [
+      {
+        "feedback_id": "F0198",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0056",
+    "cluster_id": "CL-0056",
+    "title": "添加装备至训练时保存功能失效",
+    "problem_statement": "用户在使用保存功能将装备（gear）添加到训练记录时，该功能无法正常工作，导致用户无法完成装备与训练的关联操作。该问题给用户带来困扰（annoying），目前簇内仅有 1 条反馈证据，严重度评估为 S4，优先级分数为 8。",
+    "priority_score": 8,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0202"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "保存按钮触发的事件未正确调用后端接口，或接口请求因参数错误（装备 ID / 训练 ID 缺失或格式异常）被拒绝。",
+      "前端表单状态在添加装备后未正确更新（例如 gear 关联数据未写入待提交 payload），导致点击保存时实际提交的内容仍为旧值。",
+      "后端在处理“训练关联装备”写入时存在逻辑缺陷（如重复关联校验失败、事务回滚、或权限/校验拦截），使保存请求静默失败。"
+    ],
+    "counter_evidence": "['簇内仅 1 条用户反馈，样本量极小，可能为个案（如用户端网络、设备或操作路径差异），尚不能确认是普遍性功能缺陷。', '证据原文未提供错误提示、报错码或截图，无法判断是 UI 无响应、后端报错，还是用户操作误解。', '标题中包含主观情绪词“Annoying”，需警惕严重度被情绪放大，需以可复现的技术现象为准。']",
+    "recommended_actions": [
+      {
+        "action": "复现并定位：在测试环境按用户操作路径复现“添加 gear 到 workout → 保存”，捕获网络请求与响应，确认是请求未发送、参数错误还是服务端返回错误。",
+        "owner": "Client Engineer"
+      },
+      {
+        "action": "检查前端保存流程：核对添加 gear 后表单/状态是否被正确收集并随保存请求一并提交，必要时补充单元/E2E 测试用例覆盖该路径。",
+        "owner": "Client Engineer"
+      },
+      {
+        "action": "排查后端写入逻辑：审查训练-装备关联接口的校验、事务处理与错误日志，确认是否存在静默失败或异常回滚。",
+        "owner": "Backend Engineer"
+      },
+      {
+        "action": "若证据不足：增加埋点或日志，收集保存失败时的客户端与服务端日志，再结合用户反馈做根因定位。",
+        "owner": "QA / Support"
+      }
+    ],
+    "suggested_owner": "Client Engineer（前端为主，后端协同）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:26:19.937109",
+    "evidence": [
+      {
+        "feedback_id": "F0202",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0057",
+    "cluster_id": "CL-0057",
+    "title": "更新后手表广播心率时自动重启",
+    "problem_statement": "最近一次更新后，用户尝试通过手表广播心率时，设备会自动重启，导致心率广播功能无法正常使用。该问题直接影响健康监测数据的对外共享，且与近期系统更新强相关，存在较广的潜在影响面。",
+    "priority_score": 21,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0204"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "更新引入的心率广播服务（broadcast service）在初始化或注册回调时存在缺陷，触发系统级异常导致设备重启",
+      "更新后的固件中蓝牙/GATT 广播栈与心率服务存在兼容性问题，广播触发底层看门狗（watchdog）超时",
+      "更新改变了心率传感器数据通路或权限配置，导致广播流程进入未处理的错误分支，引发系统重启"
+    ],
+    "counter_evidence": "['当前簇内仅有 1 条用户反馈（FID F0204），样本量不足以确认问题与最近更新之间存在必然因果关系，可能为个别设备的硬件或偶发故障', '证据原文被截断（以“Afte”结尾），缺少重启发生的具体条件、是否每次广播都触发、是否仅在特定型号/系统版本出现等关键信息，无法判断严重程度是否被高估']",
+    "recommended_actions": [
+      {
+        "action": "收集该簇对应的设备日志（包含崩溃栈、内核日志、广播服务调用轨迹），定位重启触发点",
+        "owner": "设备端软件 / 固件工程师"
+      },
+      {
+        "action": "复现广播心率触发重启的完整路径（触发条件、复现率、是否依赖特定手表型号或系统版本），缩小问题范围",
+        "owner": "QA 复现测试团队"
+      },
+      {
+        "action": "对比更新前后心率广播相关代码变更（蓝牙栈、广播服务、传感器通路），定位可疑改动",
+        "owner": "固件研发负责人"
+      },
+      {
+        "action": "评估是否需要在下一个补丁版本中临时回滚或禁用广播心率功能，以避免用户进一步受影响",
+        "owner": "产品 / 发布经理"
+      },
+      {
+        "action": "在确认根因后发布修复补丁，并通过 OTA 推送给受影响用户",
+        "owner": "OTA 发布工程团队"
+      }
+    ],
+    "suggested_owner": "固件研发负责人",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:26:26.451000",
+    "evidence": [
+      {
+        "feedback_id": "F0204",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0058",
+    "cluster_id": "CL-0058",
+    "title": "音频提示延迟且与Garmin GPS不同步，试用期仍不划算",
+    "problem_statement": "用户反馈即使有免费试用，音频提示出现明显延迟，且与Garmin GPS设备的数据同步存在异常（描述为“wonky”/不稳定），综合体验导致用户认为该产品“不值得”。该问题直接影响核心功能（实时音频引导与设备协同）的可用性感知。",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0207"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [
+      "音频提示的触发与播报管线存在性能瓶颈或排队延迟，导致turn-by-turn音频播报晚于实际路况出现。",
+      "App与Garmin GPS设备之间的数据协议/蓝牙连接存在兼容性问题，导致位置、心率或路线同步不稳定（“wonky”）。",
+      "免费试用阶段可能启用了功能受限或降级模式（如延迟播报、禁用实时同步），影响用户对完整功能的体验判断。"
+    ],
+    "counter_evidence": "['当前仅1条用户反馈，样本极小，不能排除为个案设备或环境因素（如特定Garmin型号、固件版本或蓝牙干扰）。', '用户原文未提供延迟量级、发生频率或具体同步错位的细节，根因判断仍属假设。', '未确认该用户是否完整走完试用流程，或试用账号/区域是否存在已知差异，结论需更多证据收敛。']",
+    "recommended_actions": [
+      {
+        "action": "在试用与付费用户两端复现音频延迟，定位是否由客户端管线、TTS服务或网络回传导致，并对比付费版本行为。",
+        "owner": "音频/导航客户端工程"
+      },
+      {
+        "action": "排查App与Garmin GPS的配对、连接稳定性与数据同步逻辑，核查固件兼容性与蓝牙会话管理。",
+        "owner": "可穿戴/设备集成工程"
+      },
+      {
+        "action": "确认免费试用期的功能配置（如播报频率、实时同步开关），评估是否存在削弱体验的降级策略。",
+        "owner": "产品（试用体验负责人）"
+      },
+      {
+        "action": "收集更多关于“wonky”同步的定量数据（如漂移、断连、错位日志），以验证是否系统性问题而非个案。",
+        "owner": "数据/分析"
+      }
+    ],
+    "suggested_owner": "导航与可穿戴集成产品负责人（联合音频客户端工程）",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-08-23T19:26:32.238296",
+    "evidence": [
+      {
+        "feedback_id": "F0207",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  }
+]
