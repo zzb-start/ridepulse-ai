@@ -1,0 +1,4440 @@
+[
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 1057,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 575,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 387,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 621,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 368,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 594,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 333,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 571,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 578,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 369,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 602,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 382,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 409,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 587,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 374,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 364,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 363,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 618,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 374,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 591,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 603,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 565,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 363,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 364,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 594,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 582,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 598,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 575,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 332,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 342,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 367,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 593,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 632,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 598,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 881,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 335,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 331,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 364,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 384,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 611,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 561,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 336,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 618,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 565,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 543,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 586,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 593,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 592,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 596,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 367,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 731,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 335,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 352,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 331,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 601,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 572,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 582,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 342,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 332,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 561,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 573,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 327,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 336,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 583,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 1245,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 586,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 374,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 374,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 342,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 605,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 368,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 364,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 617,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 588,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 572,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 580,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 587,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 601,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 352,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 333,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 581,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 565,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 593,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 601,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 591,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 575,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 335,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 587,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 382,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 604,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 371,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 569,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 587,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 593,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 589,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 612,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 364,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 385,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 369,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 381,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 1250,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 336,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 369,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 381,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 368,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 336,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 591,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 596,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 892,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 368,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 378,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 638,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 376,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 637,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 428,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 631,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 602,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 374,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 602,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 371,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 597,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 626,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 377,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 376,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 367,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 394,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 368,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 598,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 371,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 369,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 381,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 383,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 352,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 643,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 599,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 399,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 615,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 382,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 403,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 617,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 364,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 376,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 369,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 596,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 352,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 599,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 378,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 600,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 604,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 382,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 367,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 569,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 594,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 597,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 371,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 382,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 607,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 608,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 906,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 579,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 321,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 580,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 352,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 605,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 577,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 587,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 595,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 682,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 363,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 336,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 331,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 329,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 610,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 588,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 328,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 579,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 582,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 357,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 342,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 569,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 569,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 325,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 589,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 335,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 336,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 584,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 601,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 584,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 570,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 333,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 367,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 578,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 602,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 379,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 360,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 587,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 1184,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 333,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 329,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 619,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 350,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 618,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 696,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 605,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 373,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 583,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 590,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 372,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 368,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 380,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 362,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 370,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 588,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 614,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 585,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 581,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 348,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 581,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 334,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 590,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 598,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 366,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 363,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 581,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 579,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 581,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 337,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 442,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 331,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 590,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 333,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 353,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 341,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 331,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 576,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 356,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 338,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 575,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 386,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 358,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 371,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 365,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 346,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 345,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 351,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 379,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 918,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 343,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 361,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 359,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 363,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 375,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 355,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 600,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 347,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 340,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 342,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 354,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 344,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 339,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 349,
+    "attempts": 1
+  },
+  {
+    "model": "MiniMax-M3",
+    "status": "failed",
+    "error": "http_error",
+    "duration_ms": 576,
+    "attempts": 1
+  }
+]
