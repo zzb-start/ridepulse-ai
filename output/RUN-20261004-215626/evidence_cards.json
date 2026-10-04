@@ -1,0 +1,3469 @@
+[
+  {
+    "card_id": "EC-2026-0001",
+    "cluster_id": "CL-0001",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（3条证据）",
+    "problem_statement": "设备显示上传成功，但活动未出现在App里，重试了三次都一样",
+    "priority_score": 22,
+    "priority_level": "P3",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0001",
+      "F0007",
+      "F0013"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown",
+      "Google Play"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:42.866989",
+    "evidence": [
+      {
+        "feedback_id": "F0001",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      },
+      {
+        "feedback_id": "F0007",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      },
+      {
+        "feedback_id": "F0013",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0002",
+    "cluster_id": "CL-0002",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（3条证据）",
+    "problem_statement": "心率数据和踏频都记录在码表上了，但是同步到Strava之后只有基本的距离和时间，心率字段是空的",
+    "priority_score": 24,
+    "priority_level": "P3",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0002",
+      "F0006",
+      "F0040"
+    ],
+    "platforms": [
+      "App Store",
+      "Google Play",
+      "TrainerRoad"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:43.251335",
+    "evidence": [
+      {
+        "feedback_id": "F0002",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      },
+      {
+        "feedback_id": "F0006",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      },
+      {
+        "feedback_id": "F0040",
+        "source_url": "https://www.trainerroad.com/forum/t/is-there-a-way-i-can-connect-my-magene-bike-computer/113753"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0003",
+    "cluster_id": "CL-0003",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "配对页和地图入口白屏，只能杀掉App重新打开",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0003"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:43.630566",
+    "evidence": [
+      {
+        "feedback_id": "F0003",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0004",
+    "cluster_id": "CL-0004",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "更新后中文语言选项消失了，只能看英文界面",
+    "priority_score": 7,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0004",
+      "F0369"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:44.001622",
+    "evidence": [
+      {
+        "feedback_id": "F0004",
+        "source_url": "https://apps.apple.com/cz/app/onelapfit/id1555629744"
+      },
+      {
+        "feedback_id": "F0369",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0005",
+    "cluster_id": "CL-0005",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（48条证据）",
+    "problem_statement": "App keeps showing network timeout when trying to connect my device. Tried WiFi and mobile data.",
+    "priority_score": 22,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0005",
+      "F0009",
+      "F0010",
+      "F0041",
+      "F0042",
+      "F0043",
+      "F0046",
+      "F0047",
+      "F0048",
+      "F0050",
+      "F0051",
+      "F0052",
+      "F0054",
+      "F0056",
+      "F0060",
+      "F0061",
+      "F0062",
+      "F0063",
+      "F0064",
+      "F0065",
+      "F0067",
+      "F0068",
+      "F0070",
+      "F0071",
+      "F0072",
+      "F0073",
+      "F0074",
+      "F0075",
+      "F0076",
+      "F0077",
+      "F0078",
+      "F0080",
+      "F0082",
+      "F0083",
+      "F0084",
+      "F0085",
+      "F0087",
+      "F0088",
+      "F0089",
+      "F0090",
+      "F0209",
+      "F0240",
+      "F0261",
+      "F0262",
+      "F0290",
+      "F0291",
+      "F0319",
+      "F0368"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown",
+      "Google Play"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:44.373403",
+    "evidence": [
+      {
+        "feedback_id": "F0005",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      },
+      {
+        "feedback_id": "F0009",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0010",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0041",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0042",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0043",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0046",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0047",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0048",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0050",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0051",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0052",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0054",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0056",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0060",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0061",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0062",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0063",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0064",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0065",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0067",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0068",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0070",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0071",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0072",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0073",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0074",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0075",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0076",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0077",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0078",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0080",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0082",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0083",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0084",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0085",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0087",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0088",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0089",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0090",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0209",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0240",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0261",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0262",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0290",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0291",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0319",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0368",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0006",
+    "cluster_id": "CL-0006",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "C506开机键有时候按了没反应，要长按好几次才能开机",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0008"
+    ],
+    "platforms": [
+      "Google Play"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:44.849858",
+    "evidence": [
+      {
+        "feedback_id": "F0008",
+        "source_url": "https://play.google.com/store/apps/details?id=com.onelap.fitness"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0007",
+    "cluster_id": "CL-0007",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "ClimbPro is pathetic - ghost climbs on flat roads, climbs split incorrectly, average grade remaining fluctuates randomly…",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0011"
+    ],
+    "platforms": [
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:45.222395",
+    "evidence": [
+      {
+        "feedback_id": "F0011",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0008",
+    "cluster_id": "CL-0008",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（9条证据）",
+    "problem_statement": "Battery dropped from 58% to 19% in just 1h20. That's way worse than my iGPSPORT which drains 3-4% per hour with same sen…",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0012",
+      "F0092",
+      "F0110",
+      "F0117",
+      "F0212",
+      "F0268",
+      "F0278",
+      "F0351",
+      "F0357"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown"
+    ],
+    "brands": [
+      "Garmin",
+      "Magene"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:45.597213",
+    "evidence": [
+      {
+        "feedback_id": "F0012",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0092",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0110",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0117",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0212",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0268",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0278",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0351",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0357",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0009",
+    "cluster_id": "CL-0009",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（4条证据）",
+    "problem_statement": "No on-device route creation - navigation relies entirely on phone app. No automatic re-routing if you go off course. Map…",
+    "priority_score": 21,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0014",
+      "F0015",
+      "F0317",
+      "F0318"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:46.059050",
+    "evidence": [
+      {
+        "feedback_id": "F0014",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0015",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0317",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0318",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0010",
+    "cluster_id": "CL-0010",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "Screen is super reflective at certain angles. Fine in overcast but in direct sun you have to tilt it just right to read.",
+    "priority_score": 18,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0016",
+      "F0034"
+    ],
+    "platforms": [
+      "Chinertown",
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "Magene",
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:46.534995",
+    "evidence": [
+      {
+        "feedback_id": "F0016",
+        "source_url": "https://chinertown.com/index.php/topic,5655.0"
+      },
+      {
+        "feedback_id": "F0034",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0011",
+    "cluster_id": "CL-0011",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（6条证据）",
+    "problem_statement": "Navigating a course in the 1050 is unusable. Map freezes for 2-3 minutes on a 70-mile course. Screen goes white. On MTB …",
+    "priority_score": 43,
+    "priority_level": "P3",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0017",
+      "F0018",
+      "F0019",
+      "F0020",
+      "F0023",
+      "F0038"
+    ],
+    "platforms": [
+      "Garmin Forum",
+      "Garmin Forum Edge 1050",
+      "road.cc"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:47.013133",
+    "evidence": [
+      {
+        "feedback_id": "F0017",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/388678/navigating-a-course-in-the-1050-is-unusable"
+      },
+      {
+        "feedback_id": "F0018",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/389402/edge-1050-out-of-memory-and-other-bugs"
+      },
+      {
+        "feedback_id": "F0019",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/411282/firmware-13-13-6-crashes-during-a-35km-ride"
+      },
+      {
+        "feedback_id": "F0020",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/402395/garmin-you-owe-us-an-explanation"
+      },
+      {
+        "feedback_id": "F0023",
+        "source_url": "https://road.cc/content/news/garmin-devices-temporarily-unusable-due-gps-issues-312373"
+      },
+      {
+        "feedback_id": "F0038",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1050/416643/return-1050-and-get-1040"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0012",
+    "cluster_id": "CL-0012",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（108条证据）",
+    "problem_statement": "Edge 1040 25.25 keeps trying to update GPS Firmware now no GPS signal GPS Version 0.00. I've done hard reset. Garmin Ger…",
+    "priority_score": 22,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0021",
+      "F0022",
+      "F0091",
+      "F0093",
+      "F0094",
+      "F0095",
+      "F0096",
+      "F0097",
+      "F0099",
+      "F0100",
+      "F0102",
+      "F0104",
+      "F0106",
+      "F0107",
+      "F0108",
+      "F0109",
+      "F0112",
+      "F0113",
+      "F0114",
+      "F0118",
+      "F0119",
+      "F0120",
+      "F0122",
+      "F0123",
+      "F0124",
+      "F0125",
+      "F0126",
+      "F0127",
+      "F0128",
+      "F0131",
+      "F0133",
+      "F0134",
+      "F0137",
+      "F0138",
+      "F0139",
+      "F0140",
+      "F0191",
+      "F0192",
+      "F0193",
+      "F0195",
+      "F0196",
+      "F0197",
+      "F0199",
+      "F0200",
+      "F0201",
+      "F0203",
+      "F0204",
+      "F0213",
+      "F0215",
+      "F0218",
+      "F0220",
+      "F0223",
+      "F0225",
+      "F0227",
+      "F0229",
+      "F0233",
+      "F0243",
+      "F0246",
+      "F0248",
+      "F0249",
+      "F0251",
+      "F0253",
+      "F0254",
+      "F0255",
+      "F0256",
+      "F0264",
+      "F0265",
+      "F0266",
+      "F0267",
+      "F0271",
+      "F0272",
+      "F0275",
+      "F0276",
+      "F0277",
+      "F0279",
+      "F0280",
+      "F0281",
+      "F0292",
+      "F0293",
+      "F0294",
+      "F0296",
+      "F0297",
+      "F0298",
+      "F0303",
+      "F0321",
+      "F0323",
+      "F0324",
+      "F0326",
+      "F0327",
+      "F0330",
+      "F0331",
+      "F0332",
+      "F0333",
+      "F0336",
+      "F0337",
+      "F0338",
+      "F0339",
+      "F0340",
+      "F0341",
+      "F0343",
+      "F0345",
+      "F0348",
+      "F0349",
+      "F0350",
+      "F0352",
+      "F0353",
+      "F0356",
+      "F0359"
+    ],
+    "platforms": [
+      "App Store",
+      "Garmin Forum"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:47.385817",
+    "evidence": [
+      {
+        "feedback_id": "F0021",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1040-series/402382/edge-1040-25-25-keeps-trying-to-update-gps-firmware-now-no-gps-signal"
+      },
+      {
+        "feedback_id": "F0022",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1040-series/403236/it-s-getting-mind-blowing"
+      },
+      {
+        "feedback_id": "F0091",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0093",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0094",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0095",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0096",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0097",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0099",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0100",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0102",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0104",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0106",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0107",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0108",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0109",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0112",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0113",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0114",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0118",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0119",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0120",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0122",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0123",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0124",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0125",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0126",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0127",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0128",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0131",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0133",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0134",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0137",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0138",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0139",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0140",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0191",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0192",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0193",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0195",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0196",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0197",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0199",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0200",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0201",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0203",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0204",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0213",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0215",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0218",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0220",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0223",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0225",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0227",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0229",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0233",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0243",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0246",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0248",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0249",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0251",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0253",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0254",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0255",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0256",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0264",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0265",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0266",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0267",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0271",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0272",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0275",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0276",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0277",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0279",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0280",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0281",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0292",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0293",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0294",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0296",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0297",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0298",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0303",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0321",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0323",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0324",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0326",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0327",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0330",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0331",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0332",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0333",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0336",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0337",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0338",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0339",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0340",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0341",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0343",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0345",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0348",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0349",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0350",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0352",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0353",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0356",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0359",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0013",
+    "cluster_id": "CL-0013",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（3条证据）",
+    "problem_statement": "My Kickr Core makes a grinding sensation felt through the handlebars at low cadence below 80 RPM and high power above 20…",
+    "priority_score": 29,
+    "priority_level": "P3",
+    "confidence_level": "high",
+    "evidence_ids": [
+      "F0024",
+      "F0028",
+      "F0029"
+    ],
+    "platforms": [
+      "TrainerRoad Forum",
+      "Wahoo Forum",
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:47.730154",
+    "evidence": [
+      {
+        "feedback_id": "F0024",
+        "source_url": "https://forums.zwift.com/t/kickr-core-2-issues/657421"
+      },
+      {
+        "feedback_id": "F0028",
+        "source_url": "https://www.trainerroad.com/forum/t/wahoo-kickr-core-vibration/39228"
+      },
+      {
+        "feedback_id": "F0029",
+        "source_url": "https://wahoox.forum.wahoofitness.com/t/weird-noise-coming-from-wahoo-kickr-core/30487"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0014",
+    "cluster_id": "CL-0014",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "Wahoo trainers with Virtual Shifting Issue: Free Watts. Power readings don't drop to zero when coasting. Phantom power l…",
+    "priority_score": 21,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0025",
+      "F0036"
+    ],
+    "platforms": [
+      "Chinertown iGPSPORT",
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo",
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:48.097851",
+    "evidence": [
+      {
+        "feedback_id": "F0025",
+        "source_url": "https://forums.zwift.com/t/wahoo-trainers-with-virtual-shifting-issue-free-watts-october-2024/635715"
+      },
+      {
+        "feedback_id": "F0036",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0015",
+    "cluster_id": "CL-0015",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Kickr Core reads 5-10% higher than my Assioma pedals. After sprint intervals the gap widens to 15-20%. Factory spindown …",
+    "priority_score": 6,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0026"
+    ],
+    "platforms": [
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:48.476091",
+    "evidence": [
+      {
+        "feedback_id": "F0026",
+        "source_url": "https://forums.zwift.com/t/trainer-vs-power-meter-pedals-significant-power-difference/653942"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0016",
+    "cluster_id": "CL-0016",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Kickr connected via Bluetooth but no Power and no Movement of rider. Optical sensor failure - ESD can fry the sensor per…",
+    "priority_score": 6,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0027"
+    ],
+    "platforms": [
+      "Zwift Forum"
+    ],
+    "brands": [
+      "Wahoo"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:48.845855",
+    "evidence": [
+      {
+        "feedback_id": "F0027",
+        "source_url": "https://forums.zwift.com/t/wahoo-kicker-connected-via-bluetooth-but-no-power-and-no-movement-of-rider/601059"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0017",
+    "cluster_id": "CL-0017",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Strava's API debacle highlights the messiness of fitness data. The company restricted its API, breaking integrations wit…",
+    "priority_score": 6,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0032"
+    ],
+    "platforms": [
+      "The Verge"
+    ],
+    "brands": [
+      "Strava"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:49.223273",
+    "evidence": [
+      {
+        "feedback_id": "F0032",
+        "source_url": "https://www.theverge.com/2024/11/22/24303124/strava-fitness-data-wearables"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0018",
+    "cluster_id": "CL-0018",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "The software freezes completely when trying to calibrate power meters. Have to restart the entire computer. Rain causes …",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0033"
+    ],
+    "platforms": [
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:49.606102",
+    "evidence": [
+      {
+        "feedback_id": "F0033",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0019",
+    "cluster_id": "CL-0019",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（4条证据）",
+    "problem_statement": "No battery status display for any third-party ANT+ sensors. Phone app Bluetooth drops after idle. Climb detection only w…",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0035",
+      "F0153",
+      "F0260",
+      "F0286"
+    ],
+    "platforms": [
+      "App Store",
+      "Chinertown iGPSPORT"
+    ],
+    "brands": [
+      "Ride with GPS",
+      "iGPSPORT"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:49.986460",
+    "evidence": [
+      {
+        "feedback_id": "F0035",
+        "source_url": "https://chinertown.com/index.php/topic,6454.0"
+      },
+      {
+        "feedback_id": "F0153",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0260",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0286",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0020",
+    "cluster_id": "CL-0020",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（6条证据）",
+    "problem_statement": "My impression is that software quality gets generally worse with each update. I've been using Edge devices since 2010 an…",
+    "priority_score": 23,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0037",
+      "F0219",
+      "F0221",
+      "F0230",
+      "F0269",
+      "F0295"
+    ],
+    "platforms": [
+      "App Store",
+      "Garmin Forum Edge 1040"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:50.459784",
+    "evidence": [
+      {
+        "feedback_id": "F0037",
+        "source_url": "https://forums.garmin.com/sports-fitness/cycling/f/edge-1040-series/"
+      },
+      {
+        "feedback_id": "F0219",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0221",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0230",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0269",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0295",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0021",
+    "cluster_id": "CL-0021",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（9条证据）",
+    "problem_statement": "发帖上传照片卡的要死 还无法预览相册内容 运动数据无法同步苹果运动 实在难以置信这是2026年的软件",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0044",
+      "F0049",
+      "F0053",
+      "F0055",
+      "F0057",
+      "F0069",
+      "F0079",
+      "F0086",
+      "F0316"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:50.840064",
+    "evidence": [
+      {
+        "feedback_id": "F0044",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0049",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0053",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0055",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0057",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0069",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0079",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0086",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0316",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0022",
+    "cluster_id": "CL-0022",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（5条证据）",
+    "problem_statement": "最近一年的更新很用心，特别是新增的赛段打卡功能，让骑行更有乐趣了！不过目前似乎主要依赖迈金码表才能完整体验。建议未来能让只用手机App的骑友也能参与打卡，这样能吸引更多没有硬件设备的用户加入，软件生态也会更活跃。期待改进！",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0045",
+      "F0058",
+      "F0059",
+      "F0066",
+      "F0081"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene"
+    ],
+    "languages": [
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:51.270369",
+    "evidence": [
+      {
+        "feedback_id": "F0045",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0058",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0059",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0066",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0081",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0023",
+    "cluster_id": "CL-0023",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（9条证据）",
+    "problem_statement": "Gotta bring back the bulk editing for cardio workouts... This was already a feature in previous versions so I don't know…",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0098",
+      "F0130",
+      "F0202",
+      "F0210",
+      "F0214",
+      "F0224",
+      "F0244",
+      "F0302",
+      "F0344"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:51.642645",
+    "evidence": [
+      {
+        "feedback_id": "F0098",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0130",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0202",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0210",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0214",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0224",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0244",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0302",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0344",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0024",
+    "cluster_id": "CL-0024",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（28条证据）",
+    "problem_statement": "Compared with Apple Watch this one has more features I like and use. I’m loving all the insights I’m getting from this. …",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0101",
+      "F0103",
+      "F0115",
+      "F0121",
+      "F0132",
+      "F0194",
+      "F0198",
+      "F0211",
+      "F0217",
+      "F0222",
+      "F0231",
+      "F0232",
+      "F0241",
+      "F0242",
+      "F0245",
+      "F0250",
+      "F0273",
+      "F0274",
+      "F0299",
+      "F0300",
+      "F0301",
+      "F0322",
+      "F0329",
+      "F0334",
+      "F0335",
+      "F0342",
+      "F0346",
+      "F0358"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:52.016841",
+    "evidence": [
+      {
+        "feedback_id": "F0101",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0103",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0115",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0121",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0132",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0194",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0198",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0211",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0217",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0222",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0231",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0232",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0241",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0242",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0245",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0250",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0273",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0274",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0299",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0300",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0301",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0322",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0329",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0334",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0335",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0342",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0346",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0358",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0025",
+    "cluster_id": "CL-0025",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（4条证据）",
+    "problem_statement": "Love how customizable the interface is. It definitely motivates you to break personal records. The only downside (and it…",
+    "priority_score": 10,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0105",
+      "F0116",
+      "F0129",
+      "F0257"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:52.411543",
+    "evidence": [
+      {
+        "feedback_id": "F0105",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0116",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0129",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0257",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0026",
+    "cluster_id": "CL-0026",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "This over sized hunk of junk requires a subscription for everything. Want to track training? Subscription. Want to play …",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0111"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:52.801035",
+    "evidence": [
+      {
+        "feedback_id": "F0111",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0027",
+    "cluster_id": "CL-0027",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "not always accurate. hr sometimes way overcounts beats for stretches of time when minimal effort is being exerted and hr…",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0135"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:53.181756",
+    "evidence": [
+      {
+        "feedback_id": "F0135",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0028",
+    "cluster_id": "CL-0028",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "I’ve been using the cirqa for a week, but it’s absolutely disappointing that in exercise mode you can’t see the differen…",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0136"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:53.557748",
+    "evidence": [
+      {
+        "feedback_id": "F0136",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0029",
+    "cluster_id": "CL-0029",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（58条证据）",
+    "problem_statement": "Easy to work- great interface and reliable control",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0141",
+      "F0144",
+      "F0146",
+      "F0147",
+      "F0148",
+      "F0149",
+      "F0150",
+      "F0151",
+      "F0155",
+      "F0156",
+      "F0157",
+      "F0158",
+      "F0159",
+      "F0160",
+      "F0161",
+      "F0162",
+      "F0163",
+      "F0168",
+      "F0172",
+      "F0173",
+      "F0177",
+      "F0178",
+      "F0182",
+      "F0184",
+      "F0187",
+      "F0188",
+      "F0189",
+      "F0190",
+      "F0205",
+      "F0206",
+      "F0207",
+      "F0208",
+      "F0234",
+      "F0235",
+      "F0237",
+      "F0238",
+      "F0239",
+      "F0258",
+      "F0259",
+      "F0283",
+      "F0284",
+      "F0285",
+      "F0287",
+      "F0288",
+      "F0289",
+      "F0305",
+      "F0306",
+      "F0309",
+      "F0311",
+      "F0312",
+      "F0314",
+      "F0315",
+      "F0360",
+      "F0361",
+      "F0362",
+      "F0363",
+      "F0364",
+      "F0365"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:53.939843",
+    "evidence": [
+      {
+        "feedback_id": "F0141",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0144",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0146",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0147",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0148",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0149",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0150",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0151",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0155",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0156",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0157",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0158",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0159",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0160",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0161",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0162",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0163",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0168",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0172",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0173",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0177",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0178",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0182",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0184",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0187",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0188",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0189",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0190",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0205",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0206",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0207",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0208",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0234",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0235",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0237",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0238",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0239",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0258",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0259",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0283",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0284",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0285",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0287",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0288",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0289",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0305",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0306",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0309",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0311",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0312",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0314",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0315",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0360",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0361",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0362",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0363",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0364",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0365",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0030",
+    "cluster_id": "CL-0030",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Kia loves to run, so I had to figure out how to take him for a workout that I could maintain his youth and pedigree. My …",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0142"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:54.425633",
+    "evidence": [
+      {
+        "feedback_id": "F0142",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0031",
+    "cluster_id": "CL-0031",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（17条证据）",
+    "problem_statement": "Even got the premium upgrade, but it’s garbage software",
+    "priority_score": 17,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0143",
+      "F0152",
+      "F0164",
+      "F0165",
+      "F0166",
+      "F0170",
+      "F0171",
+      "F0174",
+      "F0175",
+      "F0179",
+      "F0185",
+      "F0236",
+      "F0282",
+      "F0304",
+      "F0307",
+      "F0310",
+      "F0367"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:54.786465",
+    "evidence": [
+      {
+        "feedback_id": "F0143",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0152",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0164",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0165",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0166",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0170",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0171",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0174",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0175",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0179",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0185",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0236",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0282",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0304",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0307",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0310",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0367",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0032",
+    "cluster_id": "CL-0032",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "Great App!  Accurate with my Apple step counter.  Wish they would show nearby traffic, almost killed by a white jeep at …",
+    "priority_score": 1,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0145",
+      "F0366"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:55.149274",
+    "evidence": [
+      {
+        "feedback_id": "F0145",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0366",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0033",
+    "cluster_id": "CL-0033",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "This is useful for measuring progress with different conveyances (walking, biking, engine or non engine assisted movemen…",
+    "priority_score": 1,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0154",
+      "F0320"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Magene",
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:55.521706",
+    "evidence": [
+      {
+        "feedback_id": "F0154",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0320",
+        "source_url": "https://itunes.apple.com/cn/review?id=1413057863&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0034",
+    "cluster_id": "CL-0034",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "Frustrated that my ride was not recorded. Why? Because I pressed the “record “ button, rode, cane home and saw the “Star…",
+    "priority_score": 1,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0167",
+      "F0308"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:56.001282",
+    "evidence": [
+      {
+        "feedback_id": "F0167",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0308",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0035",
+    "cluster_id": "CL-0035",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Deceptive practices to get you to sign up claiming 7 day free trial and immediately charging you",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0169"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:56.387888",
+    "evidence": [
+      {
+        "feedback_id": "F0169",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0036",
+    "cluster_id": "CL-0036",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "Loved this for the trial period but it seems I still have another account for the rest of this year. Will be switching a…",
+    "priority_score": 1,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0176",
+      "F0183"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:56.746690",
+    "evidence": [
+      {
+        "feedback_id": "F0176",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0183",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0037",
+    "cluster_id": "CL-0037",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "The app frequently failed to record heart rate data from my watch. This has been an ongoing issue for over a year..",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0180"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:57.111636",
+    "evidence": [
+      {
+        "feedback_id": "F0180",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0038",
+    "cluster_id": "CL-0038",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "What an incredible experience! We rented e-bikes and took a GPS-guided tour through our phones that was designed by the …",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0181"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:57.480445",
+    "evidence": [
+      {
+        "feedback_id": "F0181",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0039",
+    "cluster_id": "CL-0039",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Confusing to end a ride even for my tech savvy son. If it starts OUT that way what other frustrating stuff have your IT …",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0186"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:57.838607",
+    "evidence": [
+      {
+        "feedback_id": "F0186",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0040",
+    "cluster_id": "CL-0040",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（3条证据）",
+    "problem_statement": "The Cirqa keeps disconnecting, and takes forever for it to reconnect… it’s rather inconvenient.",
+    "priority_score": 3,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0216",
+      "F0228",
+      "F0263"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:58.199835",
+    "evidence": [
+      {
+        "feedback_id": "F0216",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0228",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0263",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0041",
+    "cluster_id": "CL-0041",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（3条证据）",
+    "problem_statement": "Complex to understand and get to your stats the graphic design is outdated",
+    "priority_score": 3,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0226",
+      "F0252",
+      "F0347"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:58.563460",
+    "evidence": [
+      {
+        "feedback_id": "F0226",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0252",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0347",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0042",
+    "cluster_id": "CL-0042",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "Yesterday I ran a 10 K and ended the activity around 6.27 km. It was a PR for me and I got the PR record for fastest 10K…",
+    "priority_score": 1,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0247",
+      "F0354"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:59.074939",
+    "evidence": [
+      {
+        "feedback_id": "F0247",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0354",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0043",
+    "cluster_id": "CL-0043",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（2条证据）",
+    "problem_statement": "I can no longer get in to track nutrition. It looks like the plus icon is clicked but nothing happens.",
+    "priority_score": 1,
+    "priority_level": "P3",
+    "confidence_level": "medium",
+    "evidence_ids": [
+      "F0270",
+      "F0325"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:59.429689",
+    "evidence": [
+      {
+        "feedback_id": "F0270",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      },
+      {
+        "feedback_id": "F0325",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0044",
+    "cluster_id": "CL-0044",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "When navigating a  downloaded route (not as live logger) the app leaves a red trace marking the actual route of our vehi…",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0313"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Ride with GPS"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:01:59.793172",
+    "evidence": [
+      {
+        "feedback_id": "F0313",
+        "source_url": "https://itunes.apple.com/us/review?id=893687399&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0045",
+    "cluster_id": "CL-0045",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "Since the latest update I am constantly getting a “you’re not following anyone” on my Newsfeed screen. I can’t even see …",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0328"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:02:00.313083",
+    "evidence": [
+      {
+        "feedback_id": "F0328",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  },
+  {
+    "card_id": "EC-2026-0046",
+    "cluster_id": "CL-0046",
+    "title": "其他问题簇：分类调用失败，未生成独立判断（1条证据）",
+    "problem_statement": "I’ve only been using this for a few weeks but so far it has been amazing.  I am working to build my cadence and strength…",
+    "priority_score": 0,
+    "priority_level": "P3",
+    "confidence_level": "low",
+    "evidence_ids": [
+      "F0355"
+    ],
+    "platforms": [
+      "App Store"
+    ],
+    "brands": [
+      "Garmin"
+    ],
+    "languages": [
+      "en"
+    ],
+    "root_cause_hypotheses": [],
+    "counter_evidence": null,
+    "recommended_actions": [
+      {
+        "action": "人工梳理该问题簇的根因与责任团队",
+        "owner": "产品团队"
+      }
+    ],
+    "suggested_owner": "产品团队",
+    "human_review_status": "pending",
+    "model_name": "MiniMax-M3",
+    "prompt_version": "evidence_v1",
+    "created_at": "2026-10-04T22:02:00.673281",
+    "evidence": [
+      {
+        "feedback_id": "F0355",
+        "source_url": "https://itunes.apple.com/us/review?id=583446403&type=Purple%20Software"
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "run_id": "RUN-20261004-215626",
+  "state": "COMPLETED",
+  "total_input": 366,
+  "valid_count": 366,
+  "deduped_count": 365,
+  "classified_count": 366,
+  "conflict_count": 0,
+  "human_review_count": 366,
+  "cluster_count": 46,
+  "card_count": 46,
+  "delivered_count": 0,
+  "started_at": "2026-10-04 21:56:26.570757",
+  "completed_at": "2026-10-04 22:02:00.738630",
+  "error_message": null
+}
