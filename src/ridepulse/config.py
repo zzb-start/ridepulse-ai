@@ -1,10 +1,31 @@
-"""配置管理 — 全部从环境变量读取，绝不硬编码凭证。"""
+"""配置管理 — 全部从环境变量读取，绝不硬编码凭证。
+
+默认指向 OpenAI 官方端点与 GPT-6 系列：分类用 Luna、复判用 Sol、证据卡用 Astra。
+只换 LLM_BASE_URL / 模型名即可接其他 OpenAI 兼容端点，代码零改动。
+"""
 
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
+
+# OpenAI 官方端点（GPT-6 系列默认走这里）
+DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1"
+
+# 默认模型分层：
+#   luna  — 单条分类量大、结构固定，用低成本档跑量
+#   sol   — 复判必须与首轮不同模型，且要独立判断能力
+#   astra — 证据卡是长上下文综合 + 引用约束，用旗舰档
+DEFAULT_PRIMARY_MODEL = "gpt-6-luna"
+DEFAULT_REVIEW_MODEL = "gpt-6-sol"
+DEFAULT_EVIDENCE_MODEL = "gpt-6-astra"
+DEFAULT_EMBEDDING_MODEL = "text-embedding-3-large"
+DEFAULT_EMBEDDING_DIMENSION = 3072
+
+# 推理强度同样按阶段配：分类量大用 low，复判要判断力用 medium，
+# 证据卡直接对外输出用 high。LLM_REASONING_EFFORT 一填即全局覆盖。
+DEFAULT_REASONING_EFFORT = {"classify": "low", "review": "medium", "evidence": "high"}
 
 
 def _require(name: str) -> str:
@@ -22,13 +43,14 @@ _STR_ENV_KEYS = {
     "env": ("RIDEPULSE_ENV", "development"),
     "db_path": ("RIDEPULSE_DB_PATH", "data/ridepulse.db"),
     "output_dir": ("RIDEPULSE_OUTPUT_DIR", "output"),
-    "llm_base_url": ("LLM_BASE_URL", ""),
+    "llm_base_url": ("LLM_BASE_URL", DEFAULT_OPENAI_BASE_URL),
     "llm_api_key": ("LLM_API_KEY", ""),
-    "llm_primary_model": ("LLM_PRIMARY_MODEL", ""),
-    "llm_review_model": ("LLM_REVIEW_MODEL", ""),
-    "llm_evidence_model": ("LLM_EVIDENCE_MODEL", ""),
+    "llm_primary_model": ("LLM_PRIMARY_MODEL", DEFAULT_PRIMARY_MODEL),
+    "llm_review_model": ("LLM_REVIEW_MODEL", DEFAULT_REVIEW_MODEL),
+    "llm_evidence_model": ("LLM_EVIDENCE_MODEL", DEFAULT_EVIDENCE_MODEL),
+    "llm_reasoning_effort": ("LLM_REASONING_EFFORT", ""),
     "embedding_mode": ("EMBEDDING_MODE", "api"),
-    "embedding_model": ("EMBEDDING_MODEL", ""),
+    "embedding_model": ("EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL),
     "feishu_app_id": ("FEISHU_APP_ID", ""),
     "feishu_app_secret": ("FEISHU_APP_SECRET", ""),
     "feishu_bitable_app_token": ("FEISHU_BITABLE_APP_TOKEN", ""),
@@ -57,19 +79,22 @@ class Config:
     db_path: Path = Path(os.getenv("RIDEPULSE_DB_PATH", "data/ridepulse.db"))
     output_dir: Path = Path(os.getenv("RIDEPULSE_OUTPUT_DIR", "output"))
 
-    # -- LLM --
-    llm_base_url: str = os.getenv("LLM_BASE_URL", "")
-    llm_api_key: str = os.getenv("LLM_API_KEY", "")
-    llm_primary_model: str = os.getenv("LLM_PRIMARY_MODEL", "")
-    llm_review_model: str = os.getenv("LLM_REVIEW_MODEL", "")
-    llm_evidence_model: str = os.getenv("LLM_EVIDENCE_MODEL", "")
+    # -- LLM（默认 OpenAI GPT-6 系列） --
+    llm_base_url: str = os.getenv("LLM_BASE_URL", DEFAULT_OPENAI_BASE_URL)
+    llm_api_key: str = os.getenv("LLM_API_KEY", "") or os.getenv("OPENAI_API_KEY", "")
+    llm_primary_model: str = os.getenv("LLM_PRIMARY_MODEL", DEFAULT_PRIMARY_MODEL)
+    llm_review_model: str = os.getenv("LLM_REVIEW_MODEL", DEFAULT_REVIEW_MODEL)
+    llm_evidence_model: str = os.getenv("LLM_EVIDENCE_MODEL", DEFAULT_EVIDENCE_MODEL)
+    llm_reasoning_effort: str = os.getenv("LLM_REASONING_EFFORT", "")
     llm_timeout_seconds: int = int(os.getenv("LLM_TIMEOUT_SECONDS", "60"))
     llm_max_retries: int = int(os.getenv("LLM_MAX_RETRIES", "3"))
 
     # -- Embedding --
     embedding_mode: str = os.getenv("EMBEDDING_MODE", "api")  # api / local / fake
-    embedding_model: str = os.getenv("EMBEDDING_MODEL", "")
-    embedding_dimension: int = int(os.getenv("EMBEDDING_DIMENSION", "0") or "0")
+    embedding_model: str = os.getenv("EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL)
+    embedding_dimension: int = int(
+        os.getenv("EMBEDDING_DIMENSION", str(DEFAULT_EMBEDDING_DIMENSION)) or "0"
+    )
 
     # -- 飞书 --
     feishu_app_id: str = os.getenv("FEISHU_APP_ID", "")
@@ -89,6 +114,24 @@ class Config:
     def llm_configured(self) -> bool:
         """LLM API 是否已配置（可真实调用）。"""
         return bool(self.llm_base_url and self.llm_api_key and self.llm_primary_model)
+
+    @property
+    def llm_provider(self) -> str:
+        """供应商标识：官方端点记 openai，其余记 openai-compatible。"""
+        return "openai" if "api.openai.com" in (self.llm_base_url or "") else "openai-compatible"
+
+    @property
+    def llm_model_stack(self) -> dict[str, str]:
+        """三层模型分工（写进运行报告，便于回溯每次结果由哪个模型产出）。"""
+        return {
+            "classify": self.llm_primary_model,
+            "review": self.llm_review_model or self.llm_primary_model,
+            "evidence": self.llm_evidence_model or self.llm_primary_model,
+        }
+
+    def reasoning_effort_for(self, stage: str) -> str:
+        """取某阶段的推理强度：全局设置优先，否则按阶段默认。"""
+        return self.llm_reasoning_effort or DEFAULT_REASONING_EFFORT.get(stage, "low")
 
     @property
     def feishu_configured(self) -> bool:
@@ -119,6 +162,11 @@ class Config:
             value = os.getenv(env_key)
             if value is not None:
                 setattr(self, attr, int(value))
+        # 兼容 OpenAI 官方命名的凭证变量（GitHub Actions 里通常只配 OPENAI_API_KEY）
+        if not self.llm_api_key:
+            self.llm_api_key = os.getenv("OPENAI_API_KEY", "")
+        if not self.llm_base_url:
+            self.llm_base_url = os.getenv("OPENAI_BASE_URL", "") or DEFAULT_OPENAI_BASE_URL
         self.db_path = Path(self.db_path)
         self.output_dir = Path(self.output_dir)
 

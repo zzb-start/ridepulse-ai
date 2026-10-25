@@ -104,7 +104,7 @@ class Pipeline:
 
         任一步失败：更新 DB 状态为 FAILED 并保留前序结果，可 resume。
         """
-        summary = RunSummary(run_id=self.run_id)
+        summary = self._new_summary()
         try:
             self.db.create_run(self.run_id)
             self.run_dir.mkdir(parents=True, exist_ok=True)
@@ -168,7 +168,7 @@ class Pipeline:
         """
         if self.db.get_run(self.run_id) is None:
             raise ValueError(f"run 不存在: {self.run_id}")
-        summary = RunSummary(run_id=self.run_id)
+        summary = self._new_summary()
         try:
             rows = self.db.list_feedback(self.run_id)
             records = [self._row_to_record(row) for row in rows]
@@ -220,6 +220,17 @@ class Pipeline:
             summary.error_message = str(exc)[:500]
             self._write_summary(summary)
             raise
+
+    def _new_summary(self) -> RunSummary:
+        """新建运行摘要，并把本次使用的模型与推理强度写进摘要（可溯源）。"""
+        summary = RunSummary(run_id=self.run_id)
+        if not self.offline_mode:
+            summary.model_stack = self.config.llm_model_stack
+            summary.reasoning_effort = {
+                stage: self.config.reasoning_effort_for(stage)
+                for stage in ("classify", "review", "evidence")
+            }
+        return summary
 
     # ------------------------------------------------------------
     # 各阶段
@@ -304,6 +315,7 @@ class Pipeline:
                     model=self.config.llm_primary_model,
                     timeout_seconds=self.config.llm_timeout_seconds,
                     max_retries=self.config.llm_max_retries,
+                    reasoning_effort=self.config.reasoning_effort_for("classify"),
                 )
             results = classify_batch(records, self.classify_client)
         for result in results:
@@ -364,6 +376,7 @@ class Pipeline:
                     model=self.config.llm_review_model or self.config.llm_primary_model,
                     timeout_seconds=self.config.llm_timeout_seconds,
                     max_retries=self.config.llm_max_retries,
+                    reasoning_effort=self.config.reasoning_effort_for("review"),
                 )
             results = review_batch(records, classifications, self.review_client)
         for result in results:
@@ -554,6 +567,7 @@ class Pipeline:
                 model=self.config.llm_evidence_model or self.config.llm_primary_model,
                 timeout_seconds=self.config.llm_timeout_seconds,
                 max_retries=self.config.llm_max_retries,
+                reasoning_effort=self.config.reasoning_effort_for("evidence"),
             )
         cards = generate_cards(clusters, records_by_id, class_by_id, scores,
                                client or self.evidence_client)
@@ -769,12 +783,23 @@ class Pipeline:
             encoding="utf-8",
         )
         completed = f"{summary.completed_at:%Y-%m-%d %H:%M:%S}" if summary.completed_at else "-"
+        if self.offline_mode:
+            model_line = "- 模型: 离线基线（数据标注列），未调用 LLM"
+        else:
+            stack = self.config.llm_model_stack
+            model_line = (
+                f"- 模型分工: 分类 `{stack['classify']}`({self.config.reasoning_effort_for('classify')}) / "
+                f"复判 `{stack['review']}`({self.config.reasoning_effort_for('review')}) / "
+                f"证据卡 `{stack['evidence']}`({self.config.reasoning_effort_for('evidence')})"
+                f"（{self.config.llm_provider}）"
+            )
         lines = [
             "# RidePulse AI 运行报告",
             "",
             f"- run_id: `{summary.run_id}`",
             f"- 状态: `{summary.state.value}`",
             f"- 分类来源: {'离线基线（数据标注列，非 LLM）' if self.offline_mode else 'LLM'}",
+            model_line,
             f"- Embedding 模式: `{self.embedding_mode_used or self.config.embedding_mode}`"
             + ("（⚠️ 未配置密钥回退 fake，语义聚类仅演示）" if self.embedding_mode_used == "fake" else ""),
             f"- 输入/有效/去重后: {summary.total_input} / {summary.valid_count} / {summary.deduped_count}",

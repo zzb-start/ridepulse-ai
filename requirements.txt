@@ -14,11 +14,9 @@ pydantic>=2.0
 # 配置
 python-dotenv>=1.0
 
-# HTTP 客户端
+# LLM 调用：直接走 HTTP chat/completions
+# （GPT-6 各档参数能力不同，需要按模型裁剪请求体，故不用官方 SDK）
 httpx>=0.25
-
-# LLM 调用（OpenAI 兼容接口）
-openai>=1.0
 
 # 机器学习 / 聚类
 scikit-learn>=1.3

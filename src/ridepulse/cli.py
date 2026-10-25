@@ -163,6 +163,43 @@ def _cmd_push_feishu(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_check_llm(args: argparse.Namespace) -> int:
+    """检查 LLM 接入：打印三层模型分工，--live 时真发一次请求验证端点。"""
+    from ridepulse.llm_client import LLMClientError, probe_endpoint, resolve_reasoning_effort
+
+    config = get_config()
+    roles = {"classify": "分类", "review": "复判", "evidence": "证据卡"}
+    print(f"provider  : {config.llm_provider}")
+    print(f"base_url  : {config.llm_base_url}")
+    print(f"api_key   : {'已配置' if config.llm_api_key else '未配置'}")
+    for key, model in config.llm_model_stack.items():
+        effort = resolve_reasoning_effort(model, config.reasoning_effort_for(key))
+        suffix = f"（reasoning_effort={effort}）" if effort else ""
+        print(f"{roles.get(key, key):<9} : {model}{suffix}")
+    if not args.live:
+        print("\n加 --live 会真发一次最小请求，核对端点、模型 ID 与回包模型名。")
+        return 0
+    if not config.llm_configured:
+        print("未配置 API key，无法发起真实调用（OPENAI_API_KEY 或 LLM_API_KEY）",
+              file=sys.stderr)
+        return 2
+    try:
+        result = probe_endpoint(
+            base_url=config.llm_base_url,
+            api_key=config.llm_api_key,
+            models=config.llm_model_stack,
+            reasoning_effort=config.reasoning_effort_for("classify"),
+        )
+    except LLMClientError as exc:
+        print(f"自检失败: {exc}", file=sys.stderr)
+        return 2
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    if result.get("missing_from_list"):
+        print(f"提示: 以下模型不在 /models 清单中 {result['missing_from_list']}，"
+              "清单可能不全，以真实调用是否成功为准。", file=sys.stderr)
+    return 0
+
+
 def main() -> int:
     _load_dotenv()
     parser = argparse.ArgumentParser(prog="ridepulse", description="RidePulse AI CLI")
@@ -195,6 +232,10 @@ def main() -> int:
     p_push.add_argument("--run-id", required=True, help="证据卡所在 run_id")
     p_push.add_argument("--card-id", default=None, help="只推送指定 card_id")
 
+    p_check = sub.add_parser("check-llm", help="检查 LLM 接入（模型分工 / 端点连通性）")
+    p_check.add_argument("--live", action="store_true",
+                         help="真发一次最小请求，核对端点与回包模型名")
+
     args = parser.parse_args()
     handlers = {
         "validate": _cmd_validate,
@@ -203,6 +244,7 @@ def main() -> int:
         "resume": _cmd_resume,
         "evaluate": _cmd_evaluate,
         "push-feishu": _cmd_push_feishu,
+        "check-llm": _cmd_check_llm,
     }
     return handlers[args.command](args)
 

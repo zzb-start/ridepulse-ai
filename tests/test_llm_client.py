@@ -14,7 +14,12 @@ from typing import Callable
 import httpx
 import pytest
 
-from ridepulse.llm_client import BaseLLMClient, LLMClientError
+from ridepulse.llm_client import (
+    BaseLLMClient,
+    LLMClientError,
+    capabilities_for,
+    resolve_reasoning_effort,
+)
 
 BASE_URL = "https://api.example.test/v1"
 API_KEY = "secret-test-key"
@@ -109,16 +114,64 @@ class TestSuccessPath:
         client.complete_json("s", "u", temperature=0.7)
         assert json.loads(calls[0].content)["temperature"] == 0.7
 
-    def test_minimax_base_url_disables_thinking(self):
-        client, calls = make_client(sequential(completion_response(VALID_JSON)))
-        client.base_url = "https://api.minimaxi.com/v1"
-        client.complete_json("s", "u")
-        assert json.loads(calls[0].content)["thinking"] == {"type": "disabled"}
 
-    def test_non_minimax_base_url_has_no_thinking_field(self):
+class TestGpt6Payload:
+    """GPT-6 系列不接受采样参数，推理深度改由 reasoning_effort 控制。"""
+
+    def test_gpt6_omits_temperature_and_sends_reasoning_effort(self):
         client, calls = make_client(sequential(completion_response(VALID_JSON)))
+        client.model = "gpt-6-astra"
+        client.capabilities = capabilities_for(client.model)
+        client.reasoning_effort = resolve_reasoning_effort(client.model, "medium")
         client.complete_json("s", "u")
-        assert "thinking" not in json.loads(calls[0].content)
+        body = json.loads(calls[0].content)
+        assert "temperature" not in body
+        assert body["reasoning_effort"] == "medium"
+        assert body["response_format"] == {"type": "json_object"}
+
+    def test_gpt6_rejects_none_effort_and_falls_back_to_low(self):
+        # GPT-6 取消了 none / minimal：配置成 none 不能静默发出去
+        assert resolve_reasoning_effort("gpt-6-sol", "none") == "low"
+        assert resolve_reasoning_effort("gpt-6-sol", "minimal") == "low"
+
+    def test_gpt6_accepts_all_five_efforts(self):
+        for effort in ("low", "medium", "high", "xhigh", "max"):
+            assert resolve_reasoning_effort("gpt-6-luna", effort) == effort
+
+    def test_unknown_effort_falls_back_to_low(self):
+        assert resolve_reasoning_effort("gpt-6-luna", "turbo") == "low"
+
+    def test_standard_model_keeps_temperature_and_no_effort(self):
+        caps = capabilities_for("some-compatible-model")
+        assert caps.supports_temperature is True
+        assert resolve_reasoning_effort("some-compatible-model", "low") is None
+
+    def test_rejected_param_is_dropped_and_retried(self):
+        # 服务端明确报某个参数不支持：剔除该参数重试一次，而不是整条失败
+        reject = httpx.Response(
+            400,
+            json={
+                "error": {
+                    "message": "Unsupported parameter: 'response_format'",
+                    "type": "invalid_request_error",
+                    "param": "response_format",
+                    "code": "unsupported_parameter",
+                }
+            },
+        )
+        client, calls = make_client(
+            sequential(reject, completion_response(VALID_JSON))
+        )
+        assert client.complete_json("s", "u")["feedback_id"] == "F0001"
+        assert len(calls) == 2
+        assert "response_format" not in json.loads(calls[1].content)
+
+    def test_param_rejection_without_param_field_still_fails(self):
+        # 没有 param 字段的 400 不做协商，避免把真实错误当成参数问题吞掉
+        client, calls = make_client(sequential(httpx.Response(400, json={"error": "bad"})))
+        with pytest.raises(LLMClientError, match="400"):
+            client.complete_json("s", "u")
+        assert len(calls) == 1
 
 
 class TestRetry:
@@ -164,7 +217,7 @@ class TestJsonParsing:
         assert client.complete_json("s", "u")["feedback_id"] == "F0001"
 
     def test_strips_think_block_prefix_before_parsing(self):
-        # 部分模型（如 MiniMax M3 自适应思考模式）会在正文前输出 <think>…</think>
+        # 推理模型偶尔会在正文前输出 <think>…</think>，解析前必须剥离
         with_think = "<think>用户要求输出JSON，先分析字段含义…</think>\n\n" + VALID_JSON
         client, _ = make_client(sequential(completion_response(with_think)))
         assert client.complete_json("s", "u")["feedback_id"] == "F0001"
@@ -216,6 +269,22 @@ class TestUsageLog:
         assert entry["completion_tokens"] == 40
         assert entry["duration_ms"] >= 0
         assert entry["attempts"] >= 1
+
+    def test_logs_reasoning_tokens(self):
+        # 推理模型的思考 token 单独计入 usage，便于按档位核算成本
+        client, _ = make_client(
+            sequential(
+                completion_response(
+                    VALID_JSON,
+                    tokens={
+                        "prompt_tokens": 100, "completion_tokens": 60, "total_tokens": 160,
+                        "completion_tokens_details": {"reasoning_tokens": 40},
+                    },
+                )
+            )
+        )
+        client.complete_json("s", "u")
+        assert client.usage_log[0]["reasoning_tokens"] == 40
 
     def test_failure_logs_failed_status_and_no_secret(self):
         client, _ = make_client(

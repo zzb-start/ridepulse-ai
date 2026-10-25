@@ -64,3 +64,5 @@
 | 38 | BERTopic | github.com/MaartenGr/BERTopic |
 | 39 | langID | github.com/saffsd/langid.py |
 | 40 | UMAP | github.com/lmcinnes/umap |
+| 41 | OpenAI GPT-6 模型与 API 文档 | platform.openai.com/docs/models |
+| 42 | OpenAI text-embedding-3 系列 | platform.openai.com/docs/guides/embeddings |

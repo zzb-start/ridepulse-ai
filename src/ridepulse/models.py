@@ -451,6 +451,13 @@ class RunSummary(BaseModel):
     started_at: datetime = Field(default_factory=datetime.now)
     completed_at: datetime | None = Field(default=None)
     error_message: str | None = Field(default=None)
+    # 模型溯源：本次运行由哪三个模型、以什么推理强度产出（离线基线时为空）
+    model_stack: dict[str, str] = Field(
+        default_factory=dict, description="三层模型分工: classify / review / evidence"
+    )
+    reasoning_effort: dict[str, str] = Field(
+        default_factory=dict, description="各阶段推理强度"
+    )
 
 
 class ValidationReport(BaseModel):

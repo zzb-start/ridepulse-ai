@@ -33,9 +33,10 @@
 
 | Secret | 填什么 |
 |---|---|
-| `LLM_BASE_URL` | OpenAI 兼容 API 地址,如 MiniMax 官方 `https://api.minimaxi.com/v1`(国内)/ `https://api.minimax.io/v1`(国际);换供应商代码零改动 |
-| `LLM_API_KEY` | 官方 API key(只存 Secrets,绝不进代码) |
-| `LLM_PRIMARY_MODEL` | 主分类模型名,如 `MiniMax-M3`(以官方平台实际可用为准) |
-| `LLM_REVIEW_MODEL` | 复判模型名,与主模型不同以保持双模型独立性(平台另有模型可选用;仅 M3 时填 `MiniMax-M3`,独立性降级) |
+| `OPENAI_API_KEY` | OpenAI API key(只存 Secrets,绝不进代码) |
+| `LLM_BASE_URL` | 可选,默认 `https://api.openai.com/v1`;换兼容端点时填该地址 |
+
+模型不用配 Secret,工作流里已写死默认三层分工(`gpt-6-luna` 分类 / `gpt-6-sol` 复判 / `gpt-6-astra` 证据卡);
+要换档位改 `.github/workflows/weekly-pipeline.yml` 的 `env` 即可,代码不动。
 
 嵌入默认走本地多语言模型(CI 内缓存,不消耗 API 费用)。

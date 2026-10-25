@@ -1,8 +1,8 @@
 """Embedding 模块 — 三种模式。
 
 实现要求：
-1. api: 正式模式（OpenAI 兼容 Embedding API）
-2. local: 备用（多语言 sentence-transformers）
+1. api: 正式模式（默认 OpenAI text-embedding-3-large，与 LLM 共用端点与密钥）
+2. local: 备用（多语言 sentence-transformers，CI 周更流水线使用）
 3. fake: 仅测试（按文本哈希生成确定性向量，不得用于比赛指标）
 
 输入文本组合: [品牌] [产品型号] [主题] [场景] [原文或译文]
@@ -61,15 +61,21 @@ def _compose_text(record: dict, classification: dict | None) -> str:
 
 
 class ApiEmbedder:
-    """OpenAI 兼容 /embeddings 接口客户端（正式模式）。"""
+    """OpenAI /embeddings 接口客户端（正式模式）。
+
+    OpenAI 的 text-embedding-3 系列支持用 dimensions 指定输出维度
+    （3072 / 1024 / 256 等），这里只在模型确实支持时才下发，避免第三方端点报错。
+    """
 
     def __init__(self, *, base_url: str, api_key: str, model: str,
                  timeout_seconds: int = 60, max_retries: int = 3,
+                 dimensions: int | None = None,
                  transport: httpx.BaseTransport | None = None) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.model = model
         self.max_retries = max_retries
+        self.dimensions = dimensions if str(model).startswith("text-embedding-3") else None
         self.usage_log: list[dict[str, Any]] = []
         self._client = httpx.Client(
             base_url=self.base_url,
@@ -93,10 +99,13 @@ class ApiEmbedder:
         while True:
             attempts += 1
             try:
+                payload = {"model": self.model, "input": texts}
+                if self.dimensions:
+                    payload["dimensions"] = self.dimensions
                 resp = self._client.post(
                     "/embeddings",
                     headers={"Authorization": f"Bearer {self.api_key}"},
-                    json={"model": self.model, "input": texts},
+                    json=payload,
                 )
                 status = resp.status_code
                 if status == 429 or status >= 500:
@@ -197,11 +206,11 @@ def embed_texts(texts: list[str], *, mode: str = "fake", model: str = "",
 
 
 def _build_api_embedder(config: Config | None = None) -> ApiEmbedder:
-    """按全局配置构造正式模式客户端。"""
+    """按全局配置构造正式模式客户端（默认 OpenAI text-embedding-3-large）。"""
     config = config or get_config()
     if not (config.llm_base_url and config.llm_api_key):
         raise EmbeddingError(
-            "api 模式需要 LLM_BASE_URL 与 LLM_API_KEY（Embedding 走同一 OpenAI 兼容接口）"
+            "api 模式需要 LLM_BASE_URL 与 LLM_API_KEY（Embedding 走同一端点）"
         )
     model = config.embedding_model or config.llm_primary_model
     if not model:
@@ -212,6 +221,7 @@ def _build_api_embedder(config: Config | None = None) -> ApiEmbedder:
         model=model,
         timeout_seconds=config.llm_timeout_seconds,
         max_retries=config.llm_max_retries,
+        dimensions=config.embedding_dimension or None,
     )
 
 

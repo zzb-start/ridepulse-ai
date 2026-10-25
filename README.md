@@ -22,7 +22,8 @@
 | 语义聚类 | 21 个需求簇，覆盖全部样本，跨平台/跨语言合并 |
 | 证据卡 | 21 张（EC-2026-0001 ~ EC-2026-0021），含问题陈述/根因假设/建议动作/证据 URL |
 | 评测 | 与双人标注 gold 配对 18/20：theme_primary 准确率 88.9% / macro-F1 75.4% |
-| 测试 | **197 项自动化测试全部通过** |
+| 测试 | **203 项自动化测试全部通过** |
+| 模型层 | OpenAI **GPT-6 系列**三层分工：`gpt-6-luna` 分类 / `gpt-6-sol` 复判 / `gpt-6-astra` 证据卡（见 [模型接入](#-模型接入gpt-6-系列)） |
 | 长期运转 | 周更自动流水线(GitHub Actions)已上线:每周一 02:37 自动采集→分类→复判→聚类→评分→证据卡,代码推送即运行,冲突自动开 issue,失败自动告警(见 `data/auto/README.md`) |
 
 完整结果、指标口径与已知限制见 [`03_system_results_m4.md`](03_system_results_m4.md) 与 `output/RUN-20260813-211103/`（模型输出、复判、裁决记录、聚类、优先级、证据卡、评测报告与图表，均已随仓库提交）。
@@ -47,12 +48,12 @@
 |------|------|------|
 | 采集 | ✅ | 公开合规渠道（应用商店 RSS / 论坛 / 媒体），保留 URL / 时间 / 平台 / 语言 |
 | 标准化 | ✅ | 字段校验、脱敏、翻译、来源台账，非法记录拒收 |
-| 分类 | ✅ | LLM 首轮分类：情感 / 主题 / 场景 / 严重度 / 需求五分类 / JTBD / 购买影响等，低置信度字段标记待复核 |
-| 独立复判 | ✅ | 第二模型全量复判，字段级冲突检测；冲突进人工队列，**不自动输出确定结论** |
+| 分类 | ✅ | `gpt-6-luna` 首轮分类：情感 / 主题 / 场景 / 严重度 / 需求五分类 / JTBD / 购买影响等，低置信度字段标记待复核 |
+| 独立复判 | ✅ | `gpt-6-sol` 全量复判（与首轮不同模型），字段级冲突检测；冲突进人工队列，**不自动输出确定结论** |
 | 人工仲裁 | ✅ | 冲突逐条裁决并留档，可审计 |
-| 聚类 | ✅ | 多语言向量嵌入（本地 paraphrase-multilingual-MiniLM，384 维）+ 主题分桶 + 确定性凝聚聚类（cosine） |
+| 聚类 | ✅ | 多语言向量嵌入（默认 `text-embedding-3-large` 3072 维；可切本地 paraphrase-multilingual-MiniLM）+ 主题分桶 + 确定性凝聚聚类（cosine） |
 | 优先级评分 | ✅ | 纯代码六维加权（证据 15 + 复现 20 + 频率 15 + 严重度 20 + 可执行 15 + 购买 15），**模型不参与评分** |
-| 证据卡 | ✅ | LLM 生成 + 代码校验；强制引用原文 ID / URL / 时间，不可回链自动作废 |
+| 证据卡 | ✅ | `gpt-6-astra` 生成 + 代码校验；强制引用原文 ID / URL / 时间，不可回链自动作废 |
 
 ### 核心设计原则
 
@@ -60,7 +61,28 @@
 - ✅ **模型分层**：代码能确定的不用模型，统计能聚类的不用推理；评分公式 100% 代码化
 - ✅ **双模型复判 + 人工仲裁**：首轮与复判冲突不自动采信，进人工队列
 - ✅ **根因假设而非定论**：模型只提假设，不替代产品经理确认
-- ✅ **模型无关架构**：分类 / 复判 / 证据卡均不绑定特定模型供应商，可灵活替换（Embedding 支持本地 / API 双模式，可切换 BGE-M3 等）
+- ✅ **按任务配档而非统一顶配**：分类跑量用低成本档、复判要独立性用通用档、证据卡要长上下文综合用旗舰档（详见下节）
+- ✅ **端点可替换**：三层模型名与 Base URL 全部走环境变量，换成任意 OpenAI 兼容端点只需改配置
+
+---
+
+## 🤖 模型接入（GPT-6 系列）
+
+分类、复判、证据卡三步都调 OpenAI GPT-6，但**不是同一个档位**——按任务特性分三层，成本与能力对齐：
+
+> **迁移说明**：早期版本的周更流水线跑在国产模型（MiniMax M3）上，全链路能跑通，但实测在跨语言语义边界判定与结构化输出稳定性上不如 GPT-6 系列——自适应思考默认开启时单条分类耗时 10.5s（关闭后 2.2s），输出还带 `<think>` 前缀需要额外剥离。默认模型因此整体迁到 GPT-6。
+
+| 环节 | 默认模型 | 推理强度 | 为什么这么配 |
+|---|---|---|---|
+| 首轮分类 | `gpt-6-luna` | `low` | 单条调用、输出结构固定、一轮跑几十到上百次，量大但对单次推理深度要求不高 |
+| 独立复判 | `gpt-6-sol` | `medium` | 复判的价值在"独立第二意见"，必须换模型；同时要能识别首轮的边界误判 |
+| 证据卡 | `gpt-6-astra` | `high` | 一个簇要综合多条跨语言证据并严格受引用约束，105 万 token 上下文与更强综合能力直接决定卡片质量 |
+
+**GPT-6 参数适配**（已内建，不需要使用者关心）：GPT-6 起采样参数 `temperature` / `top_p` 被移除，继续传会直接报错；推理深度改由 `reasoning_effort` 控制，合法值为 `low` / `medium` / `high` / `xhigh` / `max`，`none` 与 `minimal` 已取消。客户端按模型名自动判定能力：GPT-6 不发采样参数、把非法推理档位收敛到 `low`，并在服务端报"参数不支持"时剔除该参数重试一次，不会因为换模型把整条流水线跑挂。
+
+每次运行的 `run_report.md` 与 `usage_log.json` 都会记下实际请求模型、回包模型、推理强度与思考 token 数——模型回包与请求不一致（端点静默映射）会被单独记一条告警。
+
+Embedding 默认走同一端点的 `text-embedding-3-large`（3072 维）；CI 周更流水线用本地多语言模型，不额外消耗额度。
 
 ---
 
@@ -70,8 +92,15 @@
 # 安装
 pip install -e .
 
-# 环境变量（.env，不提交）：LLM_BASE_URL / LLM_API_KEY / LLM_PRIMARY_MODEL / LLM_REVIEW_MODEL
-#   （任一 OpenAI 兼容 API 即可，如 MiniMax M3 官方；双模型填两个不同模型名）/ EMBEDDING_MODE=local
+# 环境变量（.env，不提交；模板见 .env.example）
+#   OPENAI_API_KEY=sk-...            # 唯一必填项（也接受 LLM_API_KEY）
+#   LLM_PRIMARY_MODEL=gpt-6-luna     # 首轮分类
+#   LLM_REVIEW_MODEL=gpt-6-sol       # 独立复判（需与分类不同模型）
+#   LLM_EVIDENCE_MODEL=gpt-6-astra   # 证据卡
+#   这三个变量不写即用上述默认值；LLM_BASE_URL 默认 https://api.openai.com/v1
+
+# 先确认接入是否通（--live 会真发一次最小请求，核对端点与回包模型名）
+python -m ridepulse.cli check-llm --live
 
 # 运行完整流水线（需配置 LLM；无密钥可用 --offline 演示基线）
 python -m ridepulse.cli run --input data/verified/feedback_verified.csv
@@ -83,7 +112,7 @@ python -m ridepulse.cli evaluate --run-id RUN-20260813-211103 --gold data/verifi
 streamlit run app.py
 
 # 全量测试
-pytest   # 197 passed
+pytest   # 203 passed
 ```
 
 > 正式运行产物已随仓库提交：`output/RUN-20260813-211103/`（`model_outputs.csv` / `review_outputs.csv` / `human_final_outputs.csv` / `cluster_results.csv` / `priority_scores.csv` / `evidence_cards.json` / `metrics.json` / `error_cases.csv` / `charts/` 等）。
@@ -130,7 +159,7 @@ ridepulse-ai/
 │   └── 04_references.txt                  # 参考资料清单
 ├── scripts/                               # 周更编排 / 评测落盘 / 裁决回填 / PDF 构建 / Excel 导出
 ├── .github/workflows/weekly-pipeline.yml  # 周更自动流水线（定时 + push 触发）
-├── tests/                                 # 197 项测试
+├── tests/                                 # 203 项测试
 ├── output/RUN-20260813-211103/            # M4 正式运行全部产物
 └── team_outputs/liang/                    # 业务审查交付（审查框架与模板：李昂；逐卡执行：队长）
 ```

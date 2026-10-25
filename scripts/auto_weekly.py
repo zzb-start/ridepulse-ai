@@ -1,7 +1,8 @@
 """RidePulse 周更自动编排 — 让系统长期自动运转,人工只处理冲突裁决。
 
 步骤(可用 --steps 指定子集,默认全部):
-  selfcheck  探测 LLM API(先 /models,失败则最小 chat 调用);任何异常立即失败,不静默产出
+  selfcheck  探测 LLM API(查 /models 清单 + 用分类模型发一次最小调用,核对回包模型名);
+             任何异常立即失败,不静默产出
   collect    对 data/auto/collect_targets.csv 的每个目标做增量采集(App Store RSS 公开接口),
              新评论按 FeedbackRecord 契约追加到 data/auto/feedback_pool.csv(游标去重、可回链)
   run        对 feedback_pool.csv 跑完整流水线(分类→复判→聚类→评分→证据卡);
@@ -23,11 +24,10 @@ import sys
 from datetime import date, datetime
 from pathlib import Path
 
-import httpx
-
 from ridepulse.cli import _load_dotenv
 from ridepulse.config import get_config
 from ridepulse.database import Database
+from ridepulse.llm_client import LLMClientError, probe_endpoint
 from ridepulse.pipeline import Pipeline
 
 AUTO_DIR = Path("data/auto")
@@ -61,28 +61,21 @@ def _now() -> datetime:
 # ------------------------------------------------------------
 
 def selfcheck(config) -> dict:
-    """探测 LLM API 是否可用:先 GET /models,失败退回最小 chat 调用。"""
-    base = config.llm_base_url.rstrip("/")
-    headers = {"Authorization": f"Bearer {config.llm_api_key}"}
-    with httpx.Client(timeout=20) as client:
-        resp = client.get(f"{base}/models", headers=headers)
-        if resp.status_code == 200:
-            return {"ok": True, "method": "models", "base_url": base,
-                    "model": config.llm_primary_model}
-        resp = client.post(
-            f"{base}/chat/completions", headers=headers,
-            json={
-                "model": config.llm_primary_model,
-                "messages": [{"role": "user", "content": "ping"}],
-                "max_tokens": 4, "temperature": 0,
-            },
+    """探测 LLM API 与三层模型是否真的可用。
+
+    先 GET /models 看清单（只作参考，多数端点不返回全量），
+    再用分类模型发一次最小调用并核对回包 model 字段——模型名被端点静默映射时，
+    只有这一层能发现。请求体按该模型能力构造（GPT-6 不发 temperature）。
+    """
+    try:
+        return probe_endpoint(
+            base_url=config.llm_base_url,
+            api_key=config.llm_api_key,
+            models=config.llm_model_stack,
+            reasoning_effort=config.reasoning_effort_for("classify"),
         )
-        if resp.status_code == 200:
-            return {"ok": True, "method": "chat", "base_url": base,
-                    "model": config.llm_primary_model}
-        raise RuntimeError(
-            f"LLM API 自检失败: HTTP {resp.status_code} — {resp.text[:200]}"
-        )
+    except LLMClientError as exc:
+        raise RuntimeError(str(exc)) from exc
 
 
 # ------------------------------------------------------------
@@ -370,7 +363,9 @@ def main() -> int:
     try:
         if "selfcheck" in steps:
             if not config.llm_configured:
-                raise RuntimeError("未配置 LLM_BASE_URL / LLM_API_KEY / LLM_PRIMARY_MODEL")
+                raise RuntimeError(
+                    "未配置 LLM 凭证:需要 OPENAI_API_KEY（或 LLM_API_KEY）"
+                )
             summary["selfcheck"] = selfcheck(config)
         if "collect" in steps:
             summary["collect"] = collect(config)
