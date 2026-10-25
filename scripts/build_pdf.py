@@ -19,7 +19,7 @@ EDGE = Path("C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe")
 
 CSS = """
 @page { size: A4; margin: 12mm 11mm 15mm 11mm;
-  @bottom-center { content: "RidePulse AI | 2026 AI先锋未来人才大赛·迈金科技命题 | 第 " counter(page) " 页"; font-size: 7pt; color: #a0aec0; } }
+  @bottom-center { content: "RidePulse AI | 第 " counter(page) " 页"; font-size: 7pt; color: #a0aec0; } }
 body { font-family: 'Noto Sans SC', 'SimHei', 'Microsoft YaHei', sans-serif; font-size: 9pt; color: #2d3748; line-height: 1.5; }
 h1 { font-size: 22pt; color: #1a365d; text-align: center; margin-bottom: 4pt; }
 h2 { font-size: 13.5pt; color: #1a365d; margin: 9pt 0 5pt 0; border-bottom: 1.5px solid #ed8936; padding-bottom: 3pt; }

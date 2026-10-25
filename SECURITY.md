@@ -2,7 +2,7 @@
 
 ## Status
 
-This project has **not** undergone a formal security review. It is maintained by a single developer and was built for a competition deadline. This document exists to state that plainly and to enumerate the attack surface, so that a reviewer (human or automated) knows where to look.
+This project has **not** undergone a formal security review. It is maintained by a single developer. This document exists to state that plainly and to enumerate the attack surface, so that a reviewer (human or automated) knows where to look.
 
 We are actively seeking a security review of the areas listed under [Threat model](#threat-model).
 

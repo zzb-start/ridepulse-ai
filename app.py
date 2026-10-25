@@ -7,7 +7,7 @@
 4. 评测(指标表 + 字段级错误案例 + 图表)
 5. 人工复核(双模型复判 + 裁决记录)
 
-侧边栏可切换数据版本:默认展示正式运行 RUN-20260813-211103(与参赛材料一致);
+侧边栏可切换数据版本:默认展示正式运行 RUN-20260813-211103;
 周更自动流水线(GitHub Actions)产生的新运行可切换查看。
 
 运行: streamlit run app.py
@@ -153,7 +153,7 @@ with st.expander("📖 怎么看这个工作台(30 秒导读)", expanded=False):
 
 
 def main() -> None:
-    # ---- 数据版本切换(默认=参赛正式运行) ----
+    # ---- 数据版本切换(默认=正式运行) ----
     run_dirs = list_run_dirs()
     with st.sidebar:
         st.markdown("### 数据版本")
@@ -161,7 +161,7 @@ def main() -> None:
             default_idx = run_dirs.index(OFFICIAL_RUN) if OFFICIAL_RUN in run_dirs else 0
             run_dir = st.selectbox("选择运行", run_dirs, index=default_idx)
             if run_dir == OFFICIAL_RUN:
-                st.caption("正式运行(与参赛材料一致)")
+                st.caption("正式运行")
             else:
                 st.caption("周更自动流水线产生的运行")
         else:

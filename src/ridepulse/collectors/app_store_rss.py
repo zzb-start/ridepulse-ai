@@ -28,7 +28,7 @@ APP_STORE_REVIEWS_URL = (
     "id={app_id}/sortBy=mostRecent/json"
 )
 
-USER_AGENT = "RidePulseAI/0.1 (2026 AI Pioneer Competition, Magene Pilot Collector)"
+USER_AGENT = "RidePulseAI/0.1 (Magene Pilot Collector)"
 
 
 @dataclass
