@@ -2,10 +2,16 @@
 
 ## 全球骑行用户需求雷达
 
+**简体中文 | [English](README.en.md)**
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-203%20passed-brightgreen)](tests/)
+[![Models](https://img.shields.io/badge/LLM-GPT--6%20family-412991)](https://platform.openai.com/docs/models)
 [![Competition](https://img.shields.io/badge/2026%20AI%E5%85%88%E9%94%8B%E5%A4%A7%E8%B5%9B-%E8%BF%88%E9%87%91%E7%A7%91%E6%8A%80%E5%91%BD%E9%A2%98-orange)](https://www.magene.cn)
 
 > **将全球、多语言、碎片化的骑行用户声音，转化为可追溯、可排序、可行动的产品机会。**
+
+> **English summary** — RidePulse AI turns scattered, multilingual cycling user reviews into traceable, rankable product opportunities. The pipeline runs collect → normalize → classify → independent review (a **different** model, blind to the first pass) → human adjudication → cluster → code-only priority scoring → evidence cards. Every insight must cite an original record ID, URL and timestamp; a card that cannot be traced back is voided automatically. Runs on the OpenAI **GPT-6 family** across three tiers (`gpt-6-luna` / `gpt-6-sol` / `gpt-6-astra`). 203 tests passing, weekly CI automation live. → **[Full English README](README.en.md)**
 
 ---
 
