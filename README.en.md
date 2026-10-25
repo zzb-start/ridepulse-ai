@@ -213,6 +213,8 @@ The three backgrounds form a loop: industry judgement → data validation → pr
 
 MIT. This project was built for the 2026 AI Pioneer Future Talent Competition (Magene track). Raw sensitive data (`data/raw/`) and secrets (`.env`) are never committed; DATASET v1 is redacted and shipped with the repo.
 
+> ⚠️ **Security status:** this project has not undergone a formal security review. Its core data flow is *untrusted public review text → LLM → downstream decisions*, which makes prompt injection a real attack surface. See [`SECURITY.md`](SECURITY.md) for the threat model and the scope we want reviewed.
+
 ---
 
 *RidePulse AI — so that every cycling user's voice can be heard, traced and acted on.*
